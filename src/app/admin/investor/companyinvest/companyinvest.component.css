@@ -1,0 +1,165 @@
+.pfvisit {
+    height: 45px;
+}
+
+.mat-table{
+    width: 100%;
+}
+
+.mtb{
+    background: #e3e3e3 !important;
+}
+
+
+.invbtn{
+    padding: 3px 7px;
+    background: #eeeeee;
+    border: 1px solid gray;
+}
+
+.mt-10{
+    margin-top: 15px;
+}
+
+.mb-10{
+    margin-bottom: 15px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+
+
+
+.qstn {
+    list-style-type: none;
+    margin: 25px 0 0 0;
+    padding: 0;
+    width: 50%;
+    display: contents;
+
+  }
+  
+  .qstn li {
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    
+  }
+  
+  .qstn label,
+  .qstn input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .qstn input[type="radio"] {
+    opacity: 0.01;
+    z-index: 100;
+  }
+  
+  .qstn input[type="radio"]:checked+label,
+  .Checked+label {
+    background: rgb(0, 118, 51);
+    color:white;
+    font-weight: 900;
+  
+  }
+  
+  .qstn label {
+    padding: 10px 5px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    z-index: 90;
+    border-radius: 5px;
+  }
+  
+  .qstn label:hover {
+    background: #DDD;
+  }
+
+  .othrinput{
+    width: 45%;
+    z-index: 2222;
+    float: right;
+    height: 25px;
+    position: relative !important;
+    margin: 5px;
+    background: white;
+  }
+
+  .othrlable{
+    text-align: left;
+    padding-left: 20% !important;
+  }
+  
+
+  
+.prv{
+  float: right;
+  color: #b8b8ff;
+}
+.prv1{
+  color: #9494ab;
+}
+
+.p1{
+  padding-left: 7px !important;
+}
+  
+
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table {
+  width: 100%;
+  margin-top: 22px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table-bordered td, .table-bordered th {
+  border: 1px solid #dee2e6;
+  padding: 10px;
+}
+
+th{
+  text-align: left !important;
+}
+
+
+
+
+.acc-gen-text{
+  font-size: small;
+  color: gray;
+  text-transform: initial;
+  font-weight: 100;
+}
+
+#lineChart1 {
+  margin: 10px auto;
+  min-width: 550px;
+}
+
+#lineChart2 {
+  margin: 10px auto;
+  min-width: 550px;
+}

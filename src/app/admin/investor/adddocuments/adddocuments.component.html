@@ -1,0 +1,46 @@
+<h2 class="mat-dialog-title">Add New Document</h2>
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <mat-dialog-content class="mat-typography">
+        <div fxLayout="column" class="container">
+            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop5">
+                <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Enter Document Name</mat-label>
+                        <input matInput formControlName="documentName" (change)="onTextChange($event.target)" required>
+                        <mat-error *ngIf="uploadForm.controls.documentName.errors?.required">Document Name is
+                            required</mat-error>
+                        <mat-error *ngIf="uploadForm.controls.documentName.hasError('maxlength')">Document Name
+                            cannot exceed more than 200 characters</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                    <div appearance="outline" class="w-100 sgln">
+                        <mat-label>Document (Format : .pdf / Size : Upto 10 MB)<span
+                                class="mat-placeholder-required">*</span></mat-label><br />
+                        <input type="file" accept=".pdf" (change)="handleFileSelect($event)" #fileInput="ngModel"
+                            required [(ngModel)]="selectedFile" />
+                        <mat-error *ngIf="fileInput.invalid && fileInput.touched">Please select a
+                            file.</mat-error>
+                        <mat-error style="font-size: 12px;"
+                            *ngIf="fileInput.valid && !selectedFile && !isFileUploaded">File is required.</mat-error>
+                        <mat-error style="font-size: 12px;" *ngIf="fileSizeError">File size must be less than
+                            1MB.</mat-error>
+                        <mat-error style="font-size: 12px;" *ngIf="fileTypeError">Select .pdf file only.</mat-error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <div fxFlex="50%" class="text-left">
+            <button (click)="closeDialog()" mat-raised-button color="accent" type="button"> <i class="fa fa-ban"
+                    aria-hidden="true"></i> CANCEL</button>
+            <button mat-raised-button color="primary" type="submit"
+                [disabled]="!uploadForm.valid && buttenDisabled || !selectedFile"><i class="fa fa-floppy-o"
+                    aria-hidden="true"></i> SUBMIT</button>
+        </div>
+        <div fxFlex="50%" class="text-right">
+            <h4 class="crdtip">Tip : (*) fields are mandatory.</h4>
+        </div>
+    </mat-dialog-actions>
+</form>

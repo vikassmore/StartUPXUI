@@ -1,0 +1,51 @@
+
+.form-field-outer{
+    width: 280px;
+}
+.mat-radio-button{
+    margin-right: 12px;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none !important;
+}
+
+.app.blue .mat-card {
+    border: none;
+}
+
+.lgpg{
+    background: #f7f7f7 !important;
+    border: 1px solid #8ebedd;
+    padding: 15px;
+    margin-top: 20%;
+}
+
+.sgn{
+    color: #ed1d25 !important;
+}
+
+.sgnhead{
+    text-decoration: none;
+}
+
+
+
+
+
+.mat-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 94% !important;
+}
+
+.bgimg{
+    background-image: url('../../../assets/images/bg/bg.jpg') !important;  
+    background-repeat: no-repeat  !important;  
+    background-size: 100% 100% !important;  
+    height: -webkit-fill-available !important;
+}
+.simple-text{
+    pointer-events: none;
+}

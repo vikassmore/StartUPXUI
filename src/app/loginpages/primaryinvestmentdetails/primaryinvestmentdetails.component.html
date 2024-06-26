@@ -1,0 +1,161 @@
+<div class="p-1">
+    <div fxLayout="column" fxLayoutGap="10px" class="container">
+        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mt-2 ">
+            <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+            </div>
+            <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item mt-2">
+                <mat-stepper orientation="horizontal" class='w100 lgpg'>
+                    <form id="msform">
+                        <mat-step>
+                            <ng-template matStepContent>
+                                <div fxLayout="column" fxLayoutGap="10px" class="container">
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center"
+                                            fxFlexFill class="grid-item">
+                                            <h3 class="mtbb-15 text-center">Choose your investment stage category</h3>
+                                        </div>
+                                    </div>                                
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                        <div fxFlex.gt-sm="45%" fxFlex.lt-md="45%" fxLayoutAlign="text-center"
+                                            fxFlexFill class="grid-item">
+                                            <input type="checkbox" color="primary" class="mlt" name="Seed" value="Seed"
+                                                (change)="onCheckBoxCategory($event)">
+                                            <label for="Seed">Seed</label>
+                                        </div>
+                                        <div fxFlex.gt-sm="45%" fxFlex.lt-md="45%" fxLayoutAlign="text-center"
+                                            fxFlexFill class="grid-item">
+                                            <input type="checkbox" color="primary" class="mlt" name="Preseed"
+                                                value="Preseed" (change)="onCheckBoxCategory($event)">
+                                            <label for="Pre seed">Pre-seed</label>
+                                        </div>
+                                    </div>
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                        <div fxFlex.gt-sm="45%" fxFlex.lt-md="45%" fxLayoutAlign="text-center"
+                                            fxFlexFill class="grid-item">
+                                            <input type="checkbox" color="primary" class="mlt" name="Angel"
+                                                value="Angel" (change)="onCheckBoxCategory($event)">
+                                            <label for="Angel">Angel</label>
+                                        </div>
+                                        <div fxFlex.gt-sm="45%" fxFlex.lt-md="45%" fxLayoutAlign="text-center"
+                                            fxFlexFill class="grid-item">
+                                            <input type="checkbox" color="primary" class="mlt" name="EarlyStage"
+                                                value="EarlyStage" (change)="onCheckBoxCategory($event)">
+                                            <label for="Early Stage">Early Stage</label>
+                                        </div>
+                                    </div>
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                        <div fxFlex.gt-sm="45%" fxFlex.lt-md="45%" fxLayoutAlign="text-center"
+                                            fxFlexFill class="grid-item">
+                                            <input type="checkbox" color="primary" class="mlt" name="GrowthStage"
+                                                value="GrowthStage" (change)="onCheckBoxCategory($event)">
+                                            <label for="Growth Stage">Growth Stage</label>
+                                        </div>
+                                        <div fxFlex.gt-sm="45%" fxFlex.lt-md="45%" fxLayoutAlign="text-center"
+                                            fxFlexFill class="grid-item">
+                                            <input type="checkbox" color="primary" class="mlt" name="LateStage"
+                                                value="LateStage" (change)="onCheckBoxCategory($event)">
+                                            <label for="Late Stage">Late Stage</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%"
+                                        class="block-2 mtts-100">
+                                        <div fxFlex="50%" class="text-left">                                         
+                                        </div>
+                                        <div fxFlex="50%" class="text-right">
+                                            <button mat-raised-button color="primary" [disabled]="buttenDisabled"
+                                                matStepperNext type="button">Continue <i
+                                                    class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </mat-step>
+                    </form>
+                    <form id="msform">
+                        <mat-step>
+                            <ng-template matStepContent>
+                                <div fxLayout="column" fxLayoutGap="10px" class="container">
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center"
+                                            fxFlexFill class="grid-item ">
+                                            <h3 class="mtbb-15 text-center">Select your interested sectors</h3>
+                                        </div>
+                                    </div>
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill
+                                            class="grid-item">
+                                            <mat-form-field appearance="outline" class="w-100 tp-2">
+                                                <mat-label>Select Sectors</mat-label>
+                                                <mat-select formControlName="interestedSectors" required multiple
+                                                    (selectionChange)="onSelectionChange($event)">
+                                                    <mat-option *ngFor="let sector of SectorList"
+                                                        [value]="sector.sectorName">
+                                                        <span>{{sector.sectorName}}</span>
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%"
+                                        class="block-2 mtts-100">
+                                        <div fxFlex="50%" class="text-left">
+                                            <button mat-raised-button color="primary" matStepperPrevious
+                                                type="button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                                                Back</button>
+                                        </div>
+                                        <div fxFlex="50%" class="text-right">
+                                            <button mat-raised-button color="primary" [disabled]="buttenDisabled1"
+                                                matStepperNext type="button">Continue <i
+                                                    class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </mat-step>
+                    </form>
+                    <form id="msform" [formGroup]="uploadForm">
+                        <mat-step>
+                            <ng-template matStepContent>
+                                <div fxLayout="column" fxLayoutGap="10px" class="container">
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center"
+                                            fxFlexFill class="grid-item ">
+                                            <h3 class="mtbb-15 text-center">Enter your investment amount in mind</h3>
+                                        </div>
+                                    </div>
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill
+                                            class="grid-item">
+                                            <mat-form-field appearance="outline" class="w-100 mtts-100">
+                                                <mat-label>Investment Amount (In Dollar)</mat-label>
+                                                <input matInput formControlName="investmentAmount"
+                                                    (keypress)="keyPressNumbers($event)">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%"
+                                        class="block-2 mtts-100">
+                                        <div fxFlex="50%" class="text-left">
+                                            <button mat-raised-button color="primary" matStepperPrevious
+                                                type="button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                                                Back</button>
+                                        </div>
+                                        <div fxFlex="50%" class="text-right">
+                                            <button mat-raised-button color="primary" matStepperNext
+                                                [disabled]="!uploadForm.valid" type="button" [routerLink]="['/']"
+                                                (click)="onSubmit()">Submit <i class="fa fa-arrow-circle-right"
+                                                    aria-hidden="true"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </mat-step>
+                    </form>
+                </mat-stepper>
+            </div>
+            <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+            </div>
+        </div>
+    </div>
+</div>

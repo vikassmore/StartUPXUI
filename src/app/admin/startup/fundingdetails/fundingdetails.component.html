@@ -1,0 +1,109 @@
+<div class="p-1">
+  <mat-card class="p-0">
+    <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+      <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; List of Funding Details</h2>
+      <table class="tblsearch">
+        <tr>
+          <td class="tdsearch"> <span class="fa fa-search searchtext-icon"></span>
+            <input matInput type="text" class="searchtext" placeholder="Search ..." name="title" [(ngModel)]="title"
+              (input)="Search()" (keyup)="Search()" (ngModelChange)="Search()">
+          </td>
+          <td class="tdbtn">
+            <button mat-raised-button color="primary" type="button"
+              [routerLink]="['../../../admin/startup/addfundingdetails']"><i class="fa fa-plus"
+                aria-hidden="true"></i>&nbsp; ADD</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="column" fxLayoutGap="10px" class="container">
+      <div class="mat-header-row mt-row">
+        <div class="mat-header-cell text-center mt-col" fxFlex="13%">Name Of<br>Series</div>
+        <div class="mat-header-cell text-center mt-col" fxFlex="10%">Share<br>Class</div>
+        <div class="mat-header-cell text-center mt-col" fxFlex="8%">Date Of<br>Financing</div>
+        <div class="mat-header-cell text-center mt-col" fxFlex="12%">Shares<br>Outstanding</div>
+        <div class="mat-header-cell text-center mt-col" fxFlex="8%">Issue<br>Price</div>
+        <div class="mat-header-cell text-center mt-col" fxFlex="12%">Conversion<br>Price</div>
+        <div class="mat-header-cell text-center mt-col" fxFlex="14%">Total Fin.<br>Size</div>
+        <div class="mat-header-cell text-center mt-col" fxFlex="16%">Liquidation<br>Preference</div>
+        <div class="mat-header-cell text-center mt-col" fxFlex="7%">Liquidity<br>Rank</div>
+      </div>
+    </div>
+    <mat-accordion [togglePosition]="'before'">
+      <div *ngFor="let series of fundingList | paginate: { itemsPerPage: count, currentPage: page }" class="mat-row ">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description class="fx-desc">
+              <div class="mat-header-cell text-left" fxFlex="12%" matTooltip="Series">{{series.seriesName}}</div>
+              <div class="text-center" fxFlex="8%">{{series.shareClass}}</div>
+              <div class="text-center" fxFlex="10%">{{series.dateFinancing | date:'dd/MM/yyyy'}}</div>
+              <div class="text-center" fxFlex="10%">{{series.sharesOutstanding}} M</div>
+              <div class="text-center" fxFlex="10%">{{series.issuePrice | currency:'USD':'symbol'}}</div>
+              <div class="text-center" fxFlex="10%">{{series.conversionPrice | currency:'USD':'symbol'}}</div>
+              <div class="text-center" fxFlex="16%">{{series.totalFinancingSize | currency:'USD':'symbol'}}</div>
+              <div class="text-center" fxFlex="16%">{{series.liquidationPreference | currency:'USD':'symbol'}}</div>
+              <div class="text-center" fxFlex="8%">{{series.liquidityRank}}</div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table class="table table-bordered">
+            <tbody>
+              <tr *ngIf="series.dividendRate!='' || null">
+                <th scope="row">Dividend Rate</th>
+                <td>{{series.dividendRate}}</td>
+              </tr>
+              <tr *ngIf="series.dividendType!='' || null">
+                <th scope="row">Dividend Type</th>
+                <td>{{series.dividendType}}</td>
+              </tr>
+              <tr *ngIf="series.qualifiedIpo!='' || null">
+                <th scope="row">Qualified IPO</th>
+                <td>{{series.qualifiedIpo}}</td>
+              </tr>
+              <tr *ngIf="series.votesPerShare!='' || null">
+                <th scope="row">Votes Per Share</th>
+                <td>{{series.votesPerShare}}</td>
+              </tr>
+              <tr *ngIf="series.redemptionRights!='' || null">
+                <th scope="row">Redemption Rights</th>
+                <td>{{series.redemptionRights}}</td>
+              </tr>
+              <tr *ngIf="series.convertibleToOnPublicListing!='' || null">
+                <th scope="row">Convertible To On Public Listing</th>
+                <td>{{series.convertibleToOnPublicListing}}</td>
+              </tr>
+              <tr *ngIf="series.otherKeyProvisions!='' || null">
+                <th scope="row">Other Key Provisions</th>
+                <td>{{series.otherKeyProvisions}}</td>
+              </tr>
+              <tr *ngIf="series.participatingPreferred!='' || null">
+                <th scope="row">Participating Preferred</th>
+                <td>{{series.participatingPreferred}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-expansion-panel>
+      </div>
+    </mat-accordion>
+    <mat-divider></mat-divider>
+    <div *ngIf="fundingList.length > 0" fxLayout="row wrap">
+      <div fxFlex="100" class="p-11">
+          <mat-card class="p-0 text-center nobxshbrd">
+              <pagination-controls class="product-pagination" autoHide="true" maxSize="5"
+              (pageChange)="onPageChanged($event)"></pagination-controls>
+          </mat-card>
+      </div>
+  </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+      <div fxLayout="" fxLayoutGap="10px" class="container">
+        <div fxFlex="50%" class="text-left">
+          <button mat-raised-button color="accent" type="button"
+            [routerLink]="['../../../admin/startup/dashboardstartup']"> <i class="fa fa-arrow-circle-left"
+              aria-hidden="true"></i> BACK</button>
+          <!-- <button mat-raised-button color="primary" type="submit" ><i class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button> -->
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

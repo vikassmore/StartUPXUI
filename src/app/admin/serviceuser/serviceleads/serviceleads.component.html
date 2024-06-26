@@ -1,0 +1,61 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;Service Leads </h2>
+            <table class="tblsearch">
+                <tr>
+                    <td class="tdsearch"> <span class="fa fa-search searchtext-icon"></span>
+                        <input matInput type="text" class="searchtext" placeholder="Search ..." name="title"
+                            [(ngModel)]="title" (input)="Search()" (keyup)="Search()" (ngModelChange)="Search()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="wid100">
+            <div class="mat-table admin-table">
+                <div class="mat-header-row">
+                    <div class="mat-header-cell">Startup Name</div>
+                    <div class="mat-header-cell">Interested Services</div>
+                    <div class="mat-header-cell text-center">Interest Date</div>
+                    <div class="mat-header-cell text-center" fxFlex.gt-sm="20">Status</div>
+                    <div class="mat-header-cell text-center">Action</div>
+                </div>
+                <div class="mat-row" *ngFor="let case of ServiceCaseList | paginate: { itemsPerPage: count, currentPage: page }">
+                    <div class="mat-cell"><a [routerLink]="['../../serviceuser/customerdetails',case.serviceCaseId,1]"
+                            matTooltip="view" class="btns1">{{case.startupDeatailModel.startUpName}}</a></div>
+                    <div class="mat-cell">{{case.intrestedServiceNames}}</div>
+                    <div class="mat-cell text-center">{{case.serviceInterestDate | date:'dd/MM/yyyy'}}</div>
+                    <div class="mat-cell text-center">{{case.status}}</div>
+                    <div class="mat-cell text-center" fxFlex.gt-sm="20">
+                        <a *ngIf="case.status==null || case.status==''" color="primary" matTooltip="Accept"
+                            class="btns2" (click)="acceptOrder(case.serviceCaseId,case.serviceId,case.founderUserId);">
+                            <i class="fa fa-check-circle-o btnck" aria-hidden="true"></i>&nbsp;Accept</a>
+                        <a (click)="openDialog(case.serviceCaseId,case.serviceId)" color="primary" matTooltip="Decline"
+                            class="btns3"> <i class="fa fa-ban btncr" aria-hidden="true"></i>&nbsp;Decline</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="ServiceCaseList.length > 0" fxLayout="row wrap">
+            <div fxFlex="100" class="p-11">
+                <mat-card class="p-0 text-center nobxshbrd">
+                    <pagination-controls class="product-pagination" autoHide="true" maxSize="5"
+                    (pageChange)="onPageChanged($event)"></pagination-controls>
+                </mat-card>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+            <div fxLayout="" fxLayoutGap="10px" class="container">
+                <div fxFlex="50%" class="text-left">
+                    <button mat-raised-button color="accent" type="button"
+                        [routerLink]="['../../serviceuser/dashboardserviceuser']"> <i class="fa fa-arrow-circle-left"
+                            aria-hidden="true"></i> BACK</button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+
+</div>

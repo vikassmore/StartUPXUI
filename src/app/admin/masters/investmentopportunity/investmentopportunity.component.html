@@ -1,0 +1,44 @@
+<h2 class="mat-dialog-title">Investment Opportunity</h2>
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit(uploadForm.value)">
+    <mat-dialog-content class="mat-typography">
+        <div fxLayout="column" class="container">
+            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2 mttop10">
+                <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Sales Fee (In Percentage)</mat-label>
+                        <input formControlName="SalesFee" matInput required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2 mttop20">
+                <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Expected Share Price (In Dollar)</mat-label>
+                        <input formControlName="ExpectedSharePrice" (keypress)="keyPressNumbers($event)" matInput
+                            required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2 mttop20">
+                <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Minimum Investment Size (In Rupees)</mat-label>
+                        <input formControlName="MinimumInvestmentSize" (keypress)="keyPressNumbers($event)" matInput
+                            required>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <div fxFlex="50%" class="text-left">
+            <button (click)="closeDialog()" mat-raised-button color="accent" type="button"> <i class="fa fa-ban"
+                    aria-hidden="true"></i> CANCEL</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"
+                *ngIf="IsShowButton"><i class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
+        </div>
+        <div fxFlex="50%" class="text-right">
+            <h4 class="crdtip">Tip : (*) fields are mandatory.</h4>
+        </div>
+    </mat-dialog-actions>
+</form>

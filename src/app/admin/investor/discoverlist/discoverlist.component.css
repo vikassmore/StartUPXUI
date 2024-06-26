@@ -1,0 +1,106 @@
+.mat-tab-label {
+  min-width: 25px !important;
+  padding: 5px !important;
+  background-color: transparent !important;
+  color: red !important;
+  font-weight: 700 !important;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+  min-width: 25px !important;
+  padding: 5px !important;
+  background-color: transparent !important;
+  color: red !important;
+  font-weight: 700 !important;
+}
+
+/* .Divbg4{
+    height: 83px;
+} */
+
+.text-center {
+  text-align: center !important;
+}
+
+.invbtn {
+  padding: 3px 7px;
+  background: #ddecd9;
+  border: 1px solid #ade8bb;
+  text-decoration: none;
+}
+
+.mt-10 {
+  margin-top: 15px;
+}
+
+.mtt-10 {
+  margin-top: 5px;
+  text-align: center !important;
+}
+
+
+::ng-deep .mat-tab-label {
+  min-width: 105px !important;
+}
+
+.layout1 {
+  background-color: #37993f;
+  height: 8px;
+  width: 80px;
+}
+
+.layout2 {
+  background-color: #37993f;
+  height: 8px;
+  width: 60px;
+}
+
+.lyout {
+  width: 90%;
+  border: 1px solid gainsboro;
+  background: #f0efef;
+}
+
+.txcg {
+  color: gray;
+}
+
+.flttxt {
+  border: 1px solid #b1abab;
+  padding: 3px 0px;
+  border-radius: 2px;
+}
+
+.fltlbl {
+  color: black;
+}
+
+.avl {
+  font-size: smaller;
+}
+
+.txtl {
+  text-align: left !important;
+}
+
+.badge {
+  top: 0;
+  font-size: 12px;
+  line-height: 13px;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  text-align: center;
+}
+
+.mat-badge-content.mat-badge-active {
+  width: 35px !important;
+  background-color: gold !important;
+  color: black !important;
+}
+
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+  top: -15px;
+  left: -10px;
+}

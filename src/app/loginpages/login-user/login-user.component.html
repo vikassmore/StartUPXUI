@@ -1,0 +1,79 @@
+<mat-card class="bgimg">
+    <div fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-sm="28" class="p-2"></div>
+        <div fxFlex="100" fxFlex.gt-sm="44" class="pt-1">
+            <div class="lgpg pt-2" fxFlex="100">
+                <br />
+                <h2 class="text-muted text-center"><img src="assets/logostartupx.png" style=" width: 200px;"
+                        class="img1" alt="StartupX"> <sup style="font-size: 13px;"></sup></h2>
+                <h2 class="text-muted text-center">LOGIN</h2>
+                <form [formGroup]="loginForm" fxLayout="row wrap">
+                    <mat-form-field appearance="outline" class="w-100 mt-2">
+                        <mat-label>Email</mat-label>
+                        <input autofocus matInput placeholder="Email" formControlName="email" required>
+                        <mat-error *ngIf="loginForm.controls.email.errors?.required">Email is required</mat-error>
+                        <mat-error *ngIf="loginForm.controls.email.hasError('pattern')">Please enter valid email address
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100 mt-1">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
+                            formControlName="password" required>
+                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
+                            'visibility'}}</mat-icon><mat-error
+                            *ngIf="loginForm.controls.password.errors?.required">Password is required</mat-error>
+                        <mat-error *ngIf="loginForm.controls.password.hasError('minlength')">Password isn't long enough,
+                            minimum of 6 characters</mat-error>
+                    </mat-form-field>
+                    <div class="text-center mt-1" fxFlex="100">
+                        <button mat-raised-button color="primary" type="submit" (click)="loginUser(loginForm.value)">
+                            SUBMIT</button>
+                    </div>
+                    <div fxLayout="row wrap" fxFlex="100" class=" mt-2">
+                        <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                            <div class="fpassword text-left" fxFlex="100">
+                                <a [routerLink]="['/register']" style="color: #374099; text-decoration: none;"> New User
+                                    ?</a>
+                            </div>
+                        </div>
+                        <div fxFlex="50" fxFlex.sm="50" class="p-1">
+                            <div class="fpassword text-right" fxFlex="100">
+                                <a [routerLink]="['/forgetpassword']" style="color: #374099;text-decoration: none;">
+                                    Forgot Password ?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row wrap" fxFlex="100">
+                        <div fxFlex="100" ffxFlex.sm="50" class="p-1 mt-0">
+                            <div class="fpassword text-center" fxFlex="100">
+                                <h4 class="text-muted text-center">Or Sign In With</h4>
+                            </div>
+                        </div>
+                        <div fxFlex="50" ffxFlex.sm="50" class="p-1 mt-0">
+                            <div class="fpassword text-center" fxFlex="100">
+                                <a [routerLink]="['']" class="sgnhead mt-1">
+                                    <h3 class="text-center sgn mt-1"><i class="fa fa-google" aria-hidden="true"></i> |
+                                        Google</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div fxFlex="50" ffxFlex.sm="50" class="p-1 mt-0">
+                            <div class="fpassword text-center" fxFlex="100">
+                                <a [routerLink]="['']" class="sgnhead mt-1" (click)="signInWithFB()">
+                                    <h3 class="text-center sgn mt-1">
+                                        <i class="fa fa-facebook" aria-hidden="true" *ngIf="!isLoggedIn">
+                                        </i> | Facebook
+                                    </h3>
+                                    <div *ngIf="isLoggedIn">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <br />
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="28" class="p-2"></div>
+    </div>
+</mat-card>

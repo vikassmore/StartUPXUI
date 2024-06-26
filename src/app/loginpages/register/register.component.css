@@ -1,0 +1,65 @@
+.form-field-outer{
+    width: 200px;
+}
+
+.mat-radio-button{
+    margin-right: 8px;
+}
+
+.container{
+    width: 100% !important;
+}
+.mat-form-field-wrapper {
+    width: 100% !important;
+    padding-bottom: 0px !important;
+}
+
+.block-2{
+    margin-top: -10px;
+}
+
+.mat-radio-button {
+    padding: 8px 5px 10px 8px;
+}
+
+.bts{
+    border-top: 1px solid #bababa;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none !important;
+}
+
+.app.blue .mat-card {
+    border: none;
+}
+
+.lgpg{
+    background: #f7f7f7 !important;
+    border: 1px solid #8ebedd;
+    padding: 15px;
+    margin-top: 2%;
+}
+
+.sgn{
+    color: #ed1d25 !important;
+}
+
+.sgnhead{
+    text-decoration: none;
+}
+
+.mat-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 94% !important;
+}
+
+.bgimg{
+    background-image: url('../../../assets/images/bg/bg.jpg') !important;  
+    background-repeat: no-repeat  !important;  
+    background-size: 100% 100% !important;  
+}

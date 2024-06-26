@@ -1,0 +1,430 @@
+<div class="p-1">
+    <div fxLayout="column" fxLayoutGap="10px" class="container">
+        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+            <div fxFlex.gt-sm="40%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                <mat-form-field appearance="outline" class="w-100" style="margin-top: 0;">
+                    <span class="fa fa-search searchtext-icon1"></span>
+                    <input matInput type="text" class="searchtext1" placeholder="Search Company Name ..."
+                        name="StartUpName" [(ngModel)]="StartUpName" (input)="Search()" (keyup)="Search()"
+                        (ngModelChange)="Search()" [(ngModel)]="value">
+                    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''"
+                        class="btnclear" (click)="myClearFunction()">
+                        <mat-icon style="color: gray;">close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <!-- <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item" >
+                <button mat-raised-button color="primary" type="button" style="width: 95px;    margin-top: 8px !important;"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;Search</button>
+            </div> -->
+            <div fxFlex.gt-sm="1%" fxFlex.lt-md="50%" fxLayoutAlign="right" fxFlexFill class="grid-item"></div>
+            <div fxFlex.gt-sm="35%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                <mat-form-field appearance="outline" class="w-100" style="margin-top: 0;">
+                    <mat-label>Sort</mat-label>
+                    <mat-select (selectionChange)="onSortChange($event)">
+                        <mat-option value=""><span></span></mat-option>
+                        <mat-option value="Discount High"><span>Discount (High to Low)</span></mat-option>
+                        <mat-option value="Valuation High"><span>Valuation (High to Low)</span></mat-option>
+                        <mat-option value="Valuation Low"><span>Valuation (Low to Hign)</span></mat-option>
+                        <!-- <mat-option value="Funding High"><span>Funding (High to Low)</span></mat-option>
+                        <mat-option value="Funding Low"><span>Funding (Low to High)</span></mat-option> -->
+                        <mat-option value="Age High"><span>Age (High to Low)</span></mat-option>
+                        <mat-option value="Age Low"><span>Age (Low to High)</span></mat-option>
+                        <mat-option value="A-Z"><span>Name (A-Z)</span></mat-option>
+                        <mat-option value="Z-A"><span>Name (Z-A)</span></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <!-- <div fxFlex.gt-sm="11%" fxFlex.lt-md="50%" fxLayoutAlign="right" fxFlexFill class="grid-item" >
+                <button mat-raised-button color="primary" type="button" style="width: 95px;    margin-top: 8px !important;"><i class="fa fa-sliders" aria-hidden="true"></i>&nbsp;&nbsp;Reset</button>
+            </div> -->
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="column" class="container">
+        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+            <div fxFlex.gt-sm="33%" class="mt-2" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                class="grid-item">
+                <mat-card class="p-0 mt-2" style="    height: 500px;overflow-x: hidden;">
+                    <div fxLayout="row wrap" fxFlex="100">
+                        <div class="text-center" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
+                            <h3>Filters</h3>
+                        </div>
+                        <mat-tab-group (selectedTabChange)="selectedTabValue($event)">
+                            <mat-tab label="Live" class="mttab"></mat-tab>
+                            <mat-tab label="Preview" class="mttab"></mat-tab>
+                            <mat-tab label="All" class="mttab"></mat-tab>
+                        </mat-tab-group>
+                        <mat-divider></mat-divider>
+                        <div fxLayout="row wrap" fxFlex="100" style="height: 50px;border-bottom: 1px solid gainsboro;">
+                            <div fxFlex="10" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left" fxFlex="100">
+                                    <i class="fa fa-eye fltic" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div fxFlex="65" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left mttop5" fxFlex="100">
+                                    On Watchlist
+                                </div>
+                            </div>
+                            <div fxFlex="25" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left" fxFlex="100">
+                                    <mat-slide-toggle color="primary" class="mttop5"
+                                        (change)="onCheckBoxwatch($event)"></mat-slide-toggle>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayout="row wrap" fxFlex="100" style="height: 50px;border-bottom: 1px solid gainsboro;">
+                            <div fxFlex="10" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left" fxFlex="100">
+                                    <i class="fa fa-file-text fltic" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div fxFlex="65" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left mttop5" fxFlex="100">
+                                    On Portfolio
+                                </div>
+                            </div>
+                            <div fxFlex="25" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left" fxFlex="100">
+                                    <mat-slide-toggle color="primary" class="mttop5"
+                                        (change)="onCheckBoxPortfolio($event)"></mat-slide-toggle>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayout="row wrap" fxFlex="100" style="height: 50px;border-bottom: 1px solid gainsboro;">
+                            <div fxFlex="10" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left" fxFlex="100">
+                                    <i class="fa fa-info-circle fltic" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div fxFlex="65" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left mttop5" fxFlex="100">
+                                    New
+                                </div>
+                            </div>
+                            <div fxFlex="25" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left" fxFlex="100">
+                                    <mat-slide-toggle color="primary" class="mttop5"
+                                        (change)="onCheckBoxNewFounder($event)"></mat-slide-toggle>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayout="row wrap" fxFlex="100" style="height: 50px;border-bottom: 1px solid gainsboro;" *ngIf="!live && preview">
+                            <div fxFlex="10" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left" fxFlex="100">
+                                    <i class="fa fa-trophy fltic" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div fxFlex="65" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left mttop5" fxFlex="100">
+                                    Standard
+                                </div>
+                            </div>
+                            <div fxFlex="25" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left" fxFlex="100">
+                                    <mat-slide-toggle color="primary" class="mttop5"></mat-slide-toggle>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayout="row wrap" fxFlex="100"
+                            style="height: 72px;border-bottom: 1px solid gainsboro; padding:10px 0px !important;">
+                            <div fxFlex="100" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left txcg" fxFlex="100">
+                                    <b>Live</b> : Offerings that the currently available to eligible investors only.
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayout="row wrap" fxFlex="100"
+                            style="height: 72px;border-bottom: 1px solid gainsboro; padding:10px 0px !important;">
+                            <div fxFlex="100" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left txcg" fxFlex="100">
+                                    <b>Preview</b> : Sourced shares only, Once collected enough information eligible for
+                                    All.
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayout="row wrap" fxFlex="100" style="border-bottom: 1px solid gainsboro;">
+                            <div fxFlex="100" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left " fxFlex="100">
+                                    <mat-label>Industry Groups</mat-label>
+                                    <input matInput type="text" class="flttxt" placeholder=" e.g. Healthcare.."
+                                        name="SectorName" [(ngModel)]="SectorName" (input)="SearchIndustoryGroup()"
+                                        (keyup)="SearchIndustoryGroup()" (ngModelChange)="SearchIndustoryGroup()">
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayout="row wrap" fxFlex="100" style="border-bottom: 1px solid gainsboro;">
+                            <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;" *ngIf="!live && preview">
+                                <h3>&nbsp;&nbsp;Single Company Funds</h3>
+                            </div>
+                            <div fxLayout="row wrap" fxFlex="100" style="height: 50px;" *ngIf="!live && preview">
+                                <div fxFlex="10" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <i class="fa fa-bolt fltic" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div fxFlex="65" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left mttop5" fxFlex="100">
+                                        Express
+                                    </div>
+                                </div>
+                                <div fxFlex="25" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-slide-toggle color="primary" class="mttop5"></mat-slide-toggle>
+                                    </div>
+                                </div>
+                            </div>
+                            <div fxLayout="row wrap" fxFlex="100">
+                                <div fxFlex="100" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <h4>Discount to Last Valuation</h4>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="40"
+                                            (change)="onCheckBoxDiscountLast($event)"> > 40%</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="20 to 40"
+                                            (change)="onCheckBoxDiscountLast($event)"> 20% To 40%</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="0 to 20"
+                                            (change)="onCheckBoxDiscountLast($event)"> 0% To 20%</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="0"
+                                            (change)="onCheckBoxDiscountLast($event)"> Premium</mat-checkbox>
+                                    </div>
+                                </div>
+                            </div>
+                            <div fxLayout="row wrap" fxFlex="100">
+                                <div fxFlex="100" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <h4>Last Valuation</h4>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="500" (change)="onCheckBoxLast($event)">
+                                            $500M</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="500 to 1"
+                                            (change)="onCheckBoxLast($event)"> $500M to $1B</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="1 to 5" (change)="onCheckBoxLast($event)">
+                                            $1B to $5B</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="5" (change)="onCheckBoxLast($event)"> >
+                                            $5B</mat-checkbox>
+                                    </div>
+                                </div>
+                            </div>
+                            <div fxLayout="row wrap" fxFlex="100">
+                                <div fxFlex="100" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <h4>Security Type</h4>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="Common Stock"
+                                            (change)="onCheckBoxSecurityType($event)"> Common Stock</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="Preferred Stock"
+                                            (change)="onCheckBoxLast($event)"> Preferred Stock</mat-checkbox>
+                                    </div>
+                                </div>
+                            </div>
+                            <div fxLayout="row wrap" fxFlex="100" *ngIf="!live && preview">
+                                <div fxFlex="100" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <h4>Total Funding</h4>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="Less than 50" (change)="onCheckBoxTotalFunding($event)">
+                                            < $50M</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="50 to 100" (change)="onCheckBoxTotalFunding($event)"> $50M to $100M</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="100 to 250" (change)="onCheckBoxTotalFunding($event)"> $100M to $250M</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="Greater than 250" (change)="onCheckBoxTotalFunding($event)"> > $250M</mat-checkbox>
+                                    </div>
+                                </div>
+                            </div>
+                            <div fxLayout="row wrap" fxFlex="100">
+                                <div fxFlex="100" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <h4>Company Age (years)</h4>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="Less than 5"
+                                            (change)="onCheckBoxCompanyAge($event)">
+                                            < 5</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="5 to 8"
+                                            (change)="onCheckBoxCompanyAge($event)"> 5 to 8</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="8 to 10"
+                                            (change)="onCheckBoxCompanyAge($event)"> 8 to 10</mat-checkbox>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <mat-checkbox color="primary" value="Greater than 10"
+                                            (change)="onCheckBoxCompanyAge($event)"> > 10</mat-checkbox>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div fxFlex="100" ffxFlex.sm="50" class="p-1">
+                                <div class="text-left " fxFlex="100">
+                                    <mat-label>Top VC Investors</mat-label>
+                                    <input matInput type="text" class="flttxt" placeholder=" e.g. Softbank.."
+                                    name="InvestorName" [(ngModel)]="InvestorName" (input)="SearchInvestorName()"
+                                    (keyup)="SearchInvestorName()" (ngModelChange)="SearchInvestorName()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex.gt-sm="1%" class="mt-2" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                class="grid-item"></div>
+            <div fxFlex.gt-sm="66%" class="mt-2" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                class="grid-item">
+                <div fxLayout="row wrap" #resizedDiv style="margin-top: 10px;width: 100%;">
+                    <div fxFlex="100" *ngFor="let item of startupDetails" fxFlex.gt-sm="100" class="mt-1"
+                        fxFlex.sm="100" style="cursor:pointer;">
+                        <mat-card class="p-0 Divbg4">
+                            <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
+                                <div fxFlex="10" ffxFlex.sm="50" class="p-1">
+                                    <span *ngIf="item.newFounder" class="badge" matBadgePosition="above before"
+                                        matBadge="New" matBadgeOverlap="false"></span>
+                                    <div class="text-left" fxFlex="100">
+                                        <img style="max-width: 100%; " class="img1" alt="img"
+                                            [src]="item.startupDeatailModel.previewUrl">
+                                    </div>
+                                </div>
+                                <div fxFlex="25" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-left" fxFlex="100">
+                                        <h4>{{item.startupDeatailModel.startUpName}}</h4>
+                                        <p class="txtl">{{item.startupDeatailModel.companyLegalName}}</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="item.live && !item.preview" fxFlex="22" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-center" fxFlex="100">
+                                        <h4 style="text-align: justify !important;">{{item.lastRoundPrice |
+                                            currency:'USD':'symbol'}}</h4>
+                                        <p>Last Round Price</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="item.live && !item.preview" fxFlex="20" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-center" fxFlex="100">
+                                        <h4 style="text-align: justify !important;">{{item.lastValuation |
+                                            currency:'USD':'symbol'}} B</h4>
+                                        <p>Last Valuation</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="item.live && !item.preview && !item.raiseFunding" fxFlex="23"
+                                    ffxFlex.sm="50" class="p-1">
+                                    <div class="text-center mtt-10" fxFlex="100">
+                                        <a class="invbtn"
+                                            [routerLink]="['../companyinvest',item.userId,item.founderVerifyId]">Invest
+                                            Now</a>
+                                        <p class="mtt-10 avl">Availability : Live</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="item.raiseFunding" fxFlex="22" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-center" fxFlex="100">
+                                        <h4 style="text-align: justify !important;">{{item.lastRoundPrice |
+                                            currency:'USD':'symbol'}}</h4>
+                                        <p>Last Round Price</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="item.raiseFunding" fxFlex="20" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-center" fxFlex="100">
+                                        <h4 style="text-align: justify !important;">{{item.lastValuation |
+                                            currency:'USD':'symbol'}} B</h4>
+                                        <p>Last Valuation</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="item.raiseFunding" fxFlex="23" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-center mtt-10" fxFlex="100">
+                                        <a class="invbtn"
+                                            [routerLink]="['../requestoffering',item.userId,item.founderVerifyId]">Get
+                                            Details</a>
+                                        <p class="mtt-10 avl">Availability : All</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="!item.live && item.preview && !item.raiseFunding" fxFlex="22"
+                                    ffxFlex.sm="50" class="p-1">
+                                    <div class="text-center" fxFlex="100">
+                                        <h4>{{item.gaugingPercentage}}%</h4>
+                                        <mat-progress-bar mode="determinate"
+                                            value="{{item.gaugingPercentage}}"></mat-progress-bar>
+                                        <p>Gauging Demand</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="!item.live && item.preview" fxFlex="20" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-center" fxFlex="100">
+                                        <h4 style="text-align: justify !important;">{{item.gaugingAmount |
+                                            currency:'USD':'symbol'}} M</h4>
+                                        <p>Total Funding</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="!item.live && item.preview" fxFlex="23" ffxFlex.sm="50" class="p-1">
+                                    <div class="text-center mtt-10" fxFlex="100">
+                                        <a class="invbtn"
+                                            [routerLink]="['../companyinterest',item.userId,item.founderVerifyId]">Indicate
+                                            Interest</a>
+                                        <p class="mtt-10 avl">Availability : Preview</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

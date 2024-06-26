@@ -1,0 +1,72 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Sector Details</h2> <mat-icon></mat-icon>
+        </div>
+        <form [formGroup]="uploadForm" (ngSubmit)="onSectorSubmit(uploadForm.value)" autocomplete="off">
+            <mat-card-content>
+                <div fxLayout="column" fxLayoutGap="10px" class="container">
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Sector Name</mat-label>
+                                <mat-select matNativeControl formControlName="sectorName" required>
+                                    <mat-option value="Ecommerce">Ecommerce</mat-option>
+                                    <mat-option value="Healthtech">Healthtech</mat-option>
+                                    <mat-option value="Consumer Services">Consumer Services</mat-option>
+                                    <mat-option value="Edtech">Edtech</mat-option>
+                                    <mat-option value="Media & Entertainment">Media & Entertainment</mat-option>
+                                    <mat-option value="Enterprisetech">Enterprisetech</mat-option>
+                                    <mat-option value="Deeptech">Deeptech</mat-option>
+                                    <mat-option value="Agritech">Agritech</mat-option>
+                                    <mat-option value="Logistics">Logistics</mat-option>
+                                    <mat-option value="Fintech">Fintech</mat-option>
+                                </mat-select>
+                                <!-- <mat-error *ngIf=" uploadForm.controls.sectorName.errors?.required">Sector Name is required</mat-error> -->
+                                <!-- <input  matInput formControlName="sectorName" required > -->
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Sub-Sector Name</mat-label>
+                                <mat-error *ngIf=" uploadForm.controls.subSectorName.errors?.required">Sub-Sector Name
+                                    is required</mat-error>
+                                <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="subSectorName"
+                                    required>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Sector Description (Max. 200 char.)</mat-label>
+                                <textarea matInput formControlName="sectorDescription" required></textarea>
+                                <mat-error *ngIf=" uploadForm.controls.sectorDescription.errors?.required">Sector
+                                    Description is required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.sectorDescription.hasError('maxlength')">Sector
+                                    Description
+                                    cannot exceed more than 200 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+                <div fxLayout="" fxLayoutGap="10px" class="container">
+                    <div fxFlex="50%" class="text-left">
+                        <button mat-raised-button color="accent" type="button" [routerLink]="['../listsector']"> <i
+                                class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                                class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
+                    </div>
+                    <div fxFlex="50%" class="text-right">
+                        <h4 class="crdtip">Tip : (*) fields are mandatory.</h4>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,98 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Profile Details</h2>   <mat-icon>keyboard_arrow_right</mat-icon>
+        </div>
+        <form [formGroup]="uploadForm" (ngSubmit)="onfounderSubmit(uploadForm.value)" autocomplete="off">
+            <mat-card-content>
+    
+                <div fxLayout="column" fxLayoutGap="10px" class="container">
+
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                        
+                        <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>First Name</mat-label>
+                                <input matInput formControlName="firstName"  readonly style="color: #b2b2b2;">
+                                <mat-error *ngIf="uploadForm.controls.firstName.errors?.required">Please Select First Name</mat-error>
+   
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput formControlName="lastName" readonly style="color: #b2b2b2;">
+                                <mat-error *ngIf="uploadForm.controls.lastName.errors?.required">Please Select Last Name</mat-error>
+
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                        
+                        <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="emailId" readonly style="color: #b2b2b2;">
+                                <mat-error *ngIf="uploadForm.controls.emailId.errors?.required">Please Select EmailId</mat-error>
+
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label >Profile Type</mat-label>
+                                <mat-select  formControlName="founderTypeId" >
+                                    <mat-option  *ngFor="let founder of founderTypeList" [value]="founder.founderTypeId">
+                                        <span>{{founder.founderName}}</span>
+                                    </mat-option>
+                                    <mat-error *ngIf="uploadForm.controls.founderTypeId.errors?.required">Please Select Profile Type</mat-error>
+
+                                    
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+               
+                    </div>
+
+                    <!-- <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                        
+                        <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Password</mat-label>
+                                <input matInput  >
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Confirm Password</mat-label>
+                                <input matInput  >
+                            </mat-form-field>
+                        </div>
+               
+
+                    </div> -->
+
+
+                </div>
+
+            </mat-card-content>
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+                <div fxLayout="" fxLayoutGap="10px" class="container">
+                    <div fxFlex="50%" class="text-left">
+                        <button mat-raised-button color="accent" type="button" (click)="backButtonClick()"> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                        <button mat-raised-button color="primary" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i> UPDATE</button>
+                    </div>
+                    <div fxFlex="50%" class="text-right">
+                        <h4 class="crdtip">Tip : (*) fields are mandatory.</h4>
+                    </div>
+                </div>
+            </div>
+        </form> 
+    </mat-card>
+</div>
+

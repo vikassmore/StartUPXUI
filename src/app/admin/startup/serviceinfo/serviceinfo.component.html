@@ -1,0 +1,107 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <mat-card-content>
+            <div fxLayout="column" fxLayoutGap="10px" class="container">
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                    <div *ngIf="!myServiceShow && dashBoardShow" fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%"
+                        fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <i class="fa fa-arrow-circle-left" aria-hidden="true" style="    font-size: 40px;
+                                color: #37993f;" [routerLink]="['../../../dashboardstartup']"
+                            matTooltip="Back To List"></i>
+                    </div>
+                    <div *ngIf="myServiceShow && !dashBoardShow" fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%"
+                        fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <i class="fa fa-arrow-circle-left" aria-hidden="true" style="    font-size: 40px;
+                                color: #37993f;" [routerLink]="['../../../listmyservice']"
+                            matTooltip="Back To List"></i>
+                    </div>
+                    <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                        class="grid-item">
+                        <div class="text-center" fxFlex="100">
+                            <h2 style="color:#1e293b;">{{serviceProviderName}}</h2>
+                            <span class="blink">{{category}} </span>
+                        </div>
+                    </div>
+                    <div *ngIf="!myServiceShow && dashBoardShow" fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%"
+                        fxLayoutAlign="right" fxFlexFill class="grid-item text-right">
+                        <div class="text-right" fxFlex="100">
+                            <button mat-raised-button class="addbn" color="primary" type="button"
+                                matTooltip="Show Interest" (click)="ServiceAdd(serviceId)"><i class="fa fa-share"
+                                    aria-hidden="true"></i> Show Interest</button>
+                        </div>
+                    </div>
+                </div>
+                <hr *ngIf="myServiceShow && !dashBoardShow" style="color: gray;">
+                <div *ngIf="myServiceShow && !dashBoardShow" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%"
+                    class="block-2 mttop20">
+                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right"
+                                aria-hidden="true"></i>&nbsp;&nbsp;Contact Information<br></h3> <br>
+                    </div>
+                </div>
+                <br>
+                <div *ngIf="myServiceShow && !dashBoardShow" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%"
+                    class="block-2 mttop20">
+                    <br>
+                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <p class="servp">{{contactInformation}}</p>
+                        <br>
+                    </div>
+                </div>
+                <hr style="color: gray;">
+                <br>
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right"
+                                aria-hidden="true"></i>&nbsp;&nbsp;Tags / Keywords<br></h3> <br>
+                    </div>
+                </div>
+                <br>
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                    <br>
+                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <p class="servp">{{tagsKeywords}}</p>
+                        <br>
+                    </div>
+                </div>
+                <hr style="color: gray;">
+                <br>
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right"
+                                aria-hidden="true"></i>&nbsp;&nbsp;Service Portfolio<br></h3> <br>
+                    </div>
+                </div>
+                <br>
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                    <br>
+                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <p class="servp">{{portfolio}}</p>
+                        <br>
+                        <div class="mat-row" fxFlex.gt-sm="100%">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="tleft">Portfolio Document Name</th>
+                                        <th class="txt-cen">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let doc of portfolioDocument">
+                                    <tr>
+                                        <td class="tleft">{{doc.documentName}}</td>
+                                        <td class="txt-cen"><button mat-mini-fab color="primary" matTooltip="Download"
+                                                class="mx-1"
+                                                (click)="downloadDocument(doc.serviceId,doc.servicePortFolioId,doc.fileName);"><i
+                                                    class="fa fa-download" aria-hidden="true"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr style="color: gray;">
+                <br>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

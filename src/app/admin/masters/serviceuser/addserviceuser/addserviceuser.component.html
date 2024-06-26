@@ -1,0 +1,136 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Add Service User Details</h2> <mat-icon></mat-icon>
+        </div>
+        <form [formGroup]="uploadForm" (ngSubmit)="onServiceUserSubmit(uploadForm.value)" autocomplete="off">
+            <mat-card-content>
+                <div fxLayout="column" fxLayoutGap="10px" class="container">
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>First Name</mat-label>
+                                <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="firstName"
+                                    required>
+                                <mat-error *ngIf="uploadForm.controls.firstName.errors?.required">First Name is
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.firstName.hasError('minlength')">Please enter
+                                    valid First Name</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.firstName.hasError('maxlength')"> First Name
+                                    exceed more than 100 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Last Name</mat-label>
+                                <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="lastName"
+                                    required>
+                                <mat-error *ngIf="uploadForm.controls.lastName.errors?.required">Last Name is
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.lastName.hasError('minlength')">Please enter
+                                    valid Last Name</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.lastName.hasError('maxlength')"> Last Name
+                                    exceed more than 100 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Role</mat-label>
+                                <mat-select matNativeControl formControlName="roleId" required>
+                                    <mat-option *ngFor="let service of services" [value]="service.roleId">
+                                        <span>{{service.roleName}}</span>
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf=" uploadForm.controls.roleId.errors?.required">Role is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%"
+                        class="block-2 mttop20">
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Entity Type</mat-label>
+                                <mat-select matNativeControl formControlName="founderTypeId" required>
+                                    <mat-option *ngFor="let founder of FounderType" [value]="founder.founderTypeId">
+                                        <span>{{founder.founderName}}</span>
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf=" uploadForm.controls.founderTypeId.errors?.required">Entity Type is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="emailId" required>
+                                <mat-error *ngIf="uploadForm.controls.emailId.errors?.required">Email is
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.emailId.hasError('pattern')">Please enter
+                                    valid
+                                    email</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.emailId.hasError('maxlength')"> EmailId
+                                    exceed more than 100 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Password</mat-label>
+                                <input matInput formControlName="password" required [type]="hide ? 'password' : 'text'">
+                                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
+                                    'visibility'}}</mat-icon>
+                                <mat-error *ngIf="uploadForm.controls.password.errors?.required">Password is
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.password.hasError('minlength')">Password isn't
+                                    long enough, minimum of 6 characters</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.password.hasError('pattern')">Password must
+                                    contain at least one number, one uppercase, one lowercase letter & one special
+                                    character & at least 6 characters.</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.password.hasError('maxlength')">Password lenght
+                                    exceed more than of 10 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%"
+                        class="block-2 mttop20">
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill
+                                class="grid-item">
+                                <mat-form-field appearance="outline" class="w-100 tp-2">
+                                    <mat-label>Select Category</mat-label>
+                                    <mat-select formControlName="category" (selectionChange)="onSelectionChange($event)"
+                                        required multiple>
+                                        <mat-option *ngFor="let cat of ServiceCategoryList" [value]="cat.name">
+                                            <span>{{cat.name}}</span>
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf=" uploadForm.controls.category.errors?.required">Category is
+                                        required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+                <div fxLayout="" fxLayoutGap="10px" class="container">
+                    <div fxFlex="50%" class="text-left">
+                        <button mat-raised-button color="accent" type="button" [routerLink]="['../listserviceuser']"> <i
+                                class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                                class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
+                    </div>
+                    <div fxFlex="50%" class="text-right">
+                        <h4 class="crdtip">Tip : (*) fields are mandatory.</h4>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,30 @@
+<h2 class="mat-dialog-title">Show Interest</h2>
+<form [formGroup]="uploadForm" (ngSubmit)="onServiceSubmit(uploadForm.value)" autocomplete="off">
+    <mat-dialog-content class="mat-typography">
+        <div fxLayout="column" class="container">
+            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2 ">
+                <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Service Interest Description (Max. 200 char.)</mat-label>
+                        <textarea matInput formControlName="intrestedServiceNames" required></textarea>
+                        <mat-error *ngIf="uploadForm.controls.intrestedServiceNames.hasError('maxlength')">Intrested
+                            Service Names
+                            cannot exceed more than 200 characters</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <div fxFlex="50%" class="text-left">
+            <button (click)="closeDialog()" mat-raised-button color="accent" type="button"> <i class="fa fa-ban"
+                    aria-hidden="true"></i> CANCEL</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                    class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
+        </div>
+        <div fxFlex="50%" class="text-right">
+            <h4 class="crdtip">Tip : (*) fields are mandatory.</h4>
+        </div>
+    </mat-dialog-actions>
+</form>

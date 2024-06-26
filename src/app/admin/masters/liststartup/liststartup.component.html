@@ -1,0 +1,90 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; <span> {{type}} </span> STARTUPS</h2>
+            <table class="tblsearch">
+                <tr>
+                    <td class="tdsearch"> <span class="fa fa-search searchtext-icon"></span>
+                        <input matInput type="text" class="searchtext" placeholder="Search ..." name="title"
+                            [(ngModel)]="title" (input)="Search()" (keyup)="Search()" (ngModelChange)="Search()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="wid100">
+            <div class="mat-table admin-table">
+                <div class="mat-header-row">
+                    <div class="mat-header-cell text-center">Startup Name</div>
+                    <div class="mat-header-cell text-center" fxFlex.gt-sm="7">Logo</div>
+                    <div *ngIf="!isStealth" class="mat-header-cell text-center" fxFlex.gt-sm="7">Verify?</div>
+                    <div class="mat-header-cell text-center">Sector</div>
+                    <div class="mat-header-cell text-center">Founding Year</div>
+                    <div class="mat-header-cell text-center">Address</div>
+                    <div *ngIf="!isStealth" class="mat-header-cell text-center" fxFlex="100" fxFlex.gt-sm="19">Action
+                    </div>
+                </div>
+                <div *ngFor="let founder of founderList | paginate: { itemsPerPage: count, currentPage: page }" class="mat-row ">
+                    <div *ngIf="isStealth" class="mat-cell text-center">{{founder.startupDeatailModel.startUpName}}
+                    </div>
+                    <div *ngIf="(verified && !isStealth) || (!verified && !isStealth)" class="mat-cell text-center"><a
+                            [routerLink]="['../../viewstartup',founder.userId,founder.founderVerifyId,formType]"
+                            color="primary" matTooltip="view"
+                            class="btns1">{{founder.startupDeatailModel.startUpName}}</a> </div>
+                    <div class="mat-cell text-center" fxFlex.gt-sm="7"><span class="lgprev"><img
+                                style="max-width: 40%; max-height: 35px;border: 1px solid gray;"
+                                [src]="founder.startupDeatailModel.previewUrl"></span></div>
+                    <div *ngIf="!isStealth && founder.verified" class="mat-cell text-center" fxFlex.gt-sm="7">Yes</div>
+                    <div *ngIf="!isStealth && !founder.verified" class="mat-cell text-center" fxFlex.gt-sm="7">No</div>
+                    <div class="mat-cell text-center">{{founder.startupDeatailModel.sectorName}} </div>
+                    <div class="mat-cell text-center">{{founder.startupDeatailModel.foundingYear}}</div>
+                    <div class="mat-cell text-center">{{founder.startupDeatailModel.address}}</div>
+                    <div *ngIf="!isStealth" class="mat-cell text-center" fxFlex="100" fxFlex.gt-sm="19">
+                        <div *ngIf="verified && !isStealth">
+                            <a (click)="openDialog2(founder.userId,founder.founderVerifyId)" color="primary"
+                                matTooltip="Investment Opportunity" class="btns2 fls"> <i
+                                    class="fa fa-info-circle btnck" aria-hidden="true"></i> Investment Opportunity</a>
+                            <a disabled="{{founder.live || founder.investmnetopportunity}}" [ngClass]="{'simple-text': founder.live || founder.investmnetopportunity}"
+                                (click)="makeLivefounder(founder.userId,founder.founderVerifyId);" color="primary"
+                                matTooltip="Live" class="btns2"> <i class="fa fa-check-circle btnck"
+                                    aria-hidden="true"></i> Live</a>
+                            <a disabled="{{founder.live}}" [ngClass]="{'simple-text': founder.live}"
+                                *ngIf="!live && preview"
+                                (click)="openDialog1(founder.userId,founder.founderVerifyId,founder.gaugingAmount)"
+                                color="primary" matTooltip="Preview" class="btns3"> <i class="fa fa-bandcamp btncr"
+                                    aria-hidden="true"></i> Preview</a>
+                        </div>
+                        <div *ngIf="!verified && !isStealth">
+                            <a (click)="approvefounder(founder.userId,founder.founderVerifyId);" color="primary"
+                                matTooltip="Approve" class="btns2"> <i class="fa fa-check-circle btnck"
+                                    aria-hidden="true"></i> Approve</a>
+                            <a (click)="openDialog(founder.userId,founder.founderVerifyId)" color="primary"
+                                matTooltip="Not Approve" class="btns3"> <i class="fa fa-times-circle btncr"
+                                    aria-hidden="true"></i> Not Approve</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="founderList.length > 0" fxLayout="row wrap">
+            <div fxFlex="100" class="p-11">
+                <mat-card class="p-0 text-center nobxshbrd">
+                    <pagination-controls class="product-pagination" autoHide="true" maxSize="5"
+                    (pageChange)="onPageChanged($event)"></pagination-controls>
+                </mat-card>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+            <div fxLayout="" fxLayoutGap="10px" class="container">
+                <div fxFlex="50%" class="text-left">
+
+                    <button mat-raised-button color="accent" type="button"
+                        [routerLink]="['../../../../admin/dashboard-menu/dash-board']"> <i
+                            class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

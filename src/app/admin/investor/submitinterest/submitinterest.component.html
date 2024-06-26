@@ -1,0 +1,88 @@
+<div fxLayout="column" fxLayoutGap="10px" class="container">
+    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+        <div fxFlex.gt-sm="18%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+        </div>
+        <div fxFlex.gt-sm="64%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+            <mat-stepper orientation="horizontal" class='w100'>
+                <mat-step>
+                    <ng-template matStepContent>
+                        <div fxLayout="column" fxLayoutGap="10px" class="container">
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item">
+                                    <h3 class="mtbb-15 text-center">How would you classify your interest ?</h3>
+                                </div>
+                            </div>
+                            <ul class="qstn">
+                                <li>
+                                    <input type="radio" id="a1" name="amounta1" />
+                                    <label for="a1">I am considering investment in this company</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a3" name="amounta1" />
+                                    <label for="a3">I am just watching this company</label>
+                                </li>
+                            </ul>
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mtts-100">
+                                <div fxFlex="50%" class="text-left">
+                                    <!-- <button mat-raised-button color="primary" matStepperPrevious type="button" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back</button> -->
+                                </div>
+                                <div fxFlex="50%" class="text-right">
+                                    <button mat-raised-button color="primary" matStepperNext type="button">Continue <i
+                                            class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepContent>
+                        <div fxLayout="column" fxLayoutGap="10px" class="container">
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item ">
+                                    <h3 class="mtbb-15 text-center">Question 2</h3>
+                                </div>
+                            </div>
+                            <br>
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mtts-100">
+                                <div fxFlex="50%" class="text-left">
+                                    <button mat-raised-button color="primary" matStepperPrevious type="button"><i
+                                            class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back</button>
+                                </div>
+                                <div fxFlex="50%" class="text-right">
+                                    <button mat-raised-button color="primary" matStepperNext type="button">Continue <i
+                                            class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepContent>
+                        <div fxLayout="column" fxLayoutGap="10px" class="container">
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                                <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item ">
+                                    <h3 class="mtbb-15 text-center">Question 3</h3>
+                                </div>
+                            </div>
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mtts-100">
+                                <div fxFlex="50%" class="text-left">
+                                    <button mat-raised-button color="primary" matStepperPrevious type="button"><i
+                                            class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back</button>
+                                </div>
+                                <div fxFlex="50%" class="text-right">
+                                    <button mat-raised-button color="primary" matStepperNext type="button">Submit <i
+                                            class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </mat-step>
+            </mat-stepper>
+        </div>
+        <div fxFlex.gt-sm="18%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+        </div>
+    </div>
+</div>

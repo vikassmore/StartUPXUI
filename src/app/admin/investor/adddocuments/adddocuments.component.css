@@ -1,0 +1,94 @@
+/* .mat-form-field-appearance-outline {
+    margin-top: 1em;
+    padding: 0px;
+}
+
+.mat-cell, .mat-footer-cell, .mat-header-row, .mat-row {
+    padding: 0px !important;
+} */
+
+.fndr{
+    display: flex;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.mat-card-content {
+    padding: 10px 10px 10px 10px;
+}
+
+.mttop5{
+    margin-top: -5px !important;
+}
+
+.mttop20 {
+    margin-top: -35px !important;
+}
+
+.mttop20s {
+    margin-top: -35px !important;
+    margin-bottom: -7px !important;
+}
+
+.delbtn{
+    display: block !important;
+}
+
+.delbn{
+    float: right !important;
+    margin-right: -5px !important;
+    border-radius: 5px;
+}
+
+.addbn{
+    border-radius: 5px;
+    margin-right: -6px !important;
+}
+
+.mt-20{
+    margin-top: 25px;
+    color: gray;
+}
+
+.docs{
+    font-size: 25px;
+    color: rgb(86, 86, 86);
+}
+
+.txtar{
+    height: 15px;
+    padding: 0px !important;
+    margin: 0;
+    line-height: 0.8;
+}
+
+.mat-dialog-title{
+    letter-spacing: 1.2px;
+    font-size: 16px;
+    color: #0e0e6a;
+    border-bottom: 1px solid gainsboro;
+    margin-top: -5px;
+    padding-bottom: 14px;
+    margin-bottom: 10px;
+}
+
+.mat-dialog-actions {
+    border-top: 1px solid gainsboro;
+    margin-bottom: -14px;
+    margin-top: 5px;
+}
+
+.cdk-overlay-pane{
+    width: 140vh !important;
+}
+
+.mat-dialog-container{
+    width: 140vh !important;
+} 
+
+.crdtip{
+    font-size: 11px;
+    letter-spacing: 1.3px;
+    color: #004487;
+}

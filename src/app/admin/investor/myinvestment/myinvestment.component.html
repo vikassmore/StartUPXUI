@@ -1,0 +1,276 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; My Investments </h2>
+        </div>
+        <div fxLayout="column" fxLayoutGap="10px" class="container p-1">
+            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                <div fxFlex.gt-sm="40%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                    <mat-form-field appearance="outline" class="w-100" style="margin-top: 0;padding: 0;">
+                        <span class="fa fa-search searchtext-icon1"></span>
+                        <input matInput type="text" class="searchtext1" placeholder="Search Company Name ..."
+                            name="title" [(ngModel)]="title" (input)="Search()" (keyup)="Search()"
+                            (ngModelChange)="Search()" [(ngModel)]="value">
+                        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''"
+                            class="btnclear" (click)="myClearFunction()">
+                            <mat-icon style="color: gray;">close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="1%" fxFlex.lt-md="50%" fxLayoutAlign="right" fxFlexFill class="grid-item"></div>
+                <div fxFlex.gt-sm="35%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                    <mat-form-field appearance="outline" class="w-100" style="margin-top: 0;">
+                        <mat-label>Sort</mat-label>
+                        <mat-select (selectionChange)="onSortChange($event)">
+                            <mat-option value="Latest" selected><span>Latest</span></mat-option>
+                            <mat-option value="Oldest"><span>Oldest</span></mat-option>
+                            <mat-option value="High Invest Amount"><span>Investment (Higt to Low)</span></mat-option>
+                            <mat-option value="Low Invest Amount"><span>Investment (Low to High)</span></mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="11%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                    <button mat-raised-button color="primary" type="button"
+                        style="width: 95px;    margin-top: 8px !important;"><i class="fa fa-sliders"
+                            aria-hidden="true"></i>&nbsp;&nbsp;Reset</button>&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+        </div>
+        <form>
+            <mat-card-content style="margin-top: -25px;">
+                <mat-tab-group (selectedTabChange)="selectedTabValue($event)">
+                    <mat-tab label="Ongoing ({{ongoingCount}})" value="Ongoing">
+                        <h3 style="margin: 10px;">Your Current Deals</h3>
+                        <div class="mat-table admin-table">
+                            <div class="mat-header-row mthead">
+                                <div class="mat-header-cell text-center" fxFlex="25">Founder Company</div>
+                                <div class="mat-header-cell text-center" fxFlex="20">Investment Date</div>
+                                <div class="mat-header-cell text-center" fxFlex="18">Investment Amount</div>
+                                <div class="mat-header-cell text-center" fxFlex="19">Investment Round</div>
+                            </div>
+                            <div class="mat-row" *ngFor="let item of investmentList">
+                                <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100"
+                                    style="cursor:pointer;padding : 10px;">
+                                    <mat-card class="p-0 Divbg4">
+                                        <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
+                                            <div fxFlex="7" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-left" fxFlex="100">
+                                                    <img style="height: 38px; " class="img1" alt="cinque terre"
+                                                        [src]="item.startupDeatailModel.previewUrl"><sup
+                                                        style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="20" ffxFlex.sm="50">
+                                                <div class="text-left" fxFlex="100">
+                                                    <h3>{{item.startupDeatailModel.startUpName}}</h3>
+                                                    <p>{{item.startupDeatailModel.companyLegalName}}</p>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="18" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-center" fxFlex="100">
+                                                    <h4 class="mt12">{{item.investmentDate | date:'dd/MM/yyyy'}}</h4>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="18" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-center" fxFlex="100">
+                                                    <h4 class="mt12">{{item.investmentAmount |
+                                                        currency:'USD':'symbol'}}/-</h4>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="18" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-center" fxFlex="100">
+                                                    <h4 class="mt12">{{item.investmentRound}}</h4>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="16" ffxFlex.sm="50" class="p-1">
+                                                <div class="mt-11">
+                                                    <a color="primary" class="mybtn" matTooltip="Get Investment Details"
+                                                        [routerLink]="['../../../admin/investor/companydetails',1,item.userId,item.founderVerifyId]"><i
+                                                            class="fa fa-info-circle" aria-hidden="true"></i> Get
+                                                        Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-card>
+                                </div>
+                            </div>
+                            <div class="mat-header-row mthead">
+                                <div class="mat-header-cell text-center"></div>
+                                <div class="mat-header-cell text-center"></div>
+                                <div class="mat-header-cell text-center">Total Ongoing Investment</div>
+                                <div class="mat-header-cell text-center">{{ongoingInvestmentAmountSum |
+                                    currency:'USD':'symbol'}} /- (Till Now)</div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Closed ({{closedCount}})">
+                        <h3 style="margin: 10px;">Your Companies</h3>
+                        <div fxLayout="column" fxLayoutGap="10px" class="container">
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 " style="    background: #f1f1f1;margin-bottom: 10px;">
+                                <div fxFlex.gt-sm="46%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                                    <div class="relative w-24 h-24" style="margin: 1rem 0rem 0rem 1rem;">
+                                        <h2 style="color:#1e293b;">Your Portfolio : </h2> 
+                                        <span style="color:#1e293b;">Companies investments that are fully closed and have not yet been realized will be visible in your portfolio. </span> 
+                                    </div>
+                                </div>
+                                <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item" >
+                                    <span class="dot"></span>
+                                </div>
+                                <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                                    <div class="relative w-24 h-24" style="margin: 2.5rem 0rem 0rem 0rem; text-align: center;">
+                                        <h4 style="color:#1e293b;">Amount Invested </h4>
+                                        <h4 style="color:#1e293b;">{{closedInvestmentAmountSum |
+                                            currency:'USD':'symbol'}} /- </h4>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="mat-table admin-table">
+                            <div class="mat-header-row mthead">
+                                <div class="mat-header-cell text-center" fxFlex="25">Founder Company</div>
+                                <div class="mat-header-cell text-center" fxFlex="18">Investment Date</div>
+                                <div class="mat-header-cell text-center" fxFlex="20">Investment Amount</div>
+                                <div class="mat-header-cell text-center" fxFlex="19">Investment Rounds</div>
+                            </div>
+                            <div class="mat-row" *ngFor="let item of investmentList">
+                                <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" style="padding : 10px;">
+                                    <mat-card class="p-0 Divbg4">
+                                        <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
+                                            <div fxFlex="7" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-left" fxFlex="100">
+                                                    <img style="height: 38px; " class="img1" alt="cinque terre"
+                                                        [src]="item.startupDeatailModel.previewUrl"><sup
+                                                        style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="20" ffxFlex.sm="50">
+                                                <div class="text-left" fxFlex="100">
+                                                    <h3>{{item.startupDeatailModel.startUpName}}</h3>
+                                                    <p>{{item.startupDeatailModel.companyLegalName}}</p>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="14" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-center" fxFlex="100">
+                                                    <h4 class="mt12">{{item.investmentDate | date:'dd/MM/yyyy'}}</h4>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="23" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-center" fxFlex="100">
+                                                    <h4 class="mt12">{{item.investmentAmount |
+                                                        currency:'USD':'symbol'}}/-</h4>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="18" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-center" fxFlex="100">
+                                                    <h4 class="mt12">{{item.investmentRound}}</h4>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="16" ffxFlex.sm="50" class="p-1">
+                                                <div class="mt-11">
+                                                    <a color="primary" class="mybtn" matTooltip="Get Investment Details"
+                                                        [routerLink]="['../../../admin/investor/companydetails',1,item.userId,item.founderVerifyId]"><i
+                                                            class="fa fa-info-circle" aria-hidden="true"></i> Get
+                                                        Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-card>
+                                </div>
+                            </div>
+                            <div class="mat-header-row mthead">
+                                <div class="mat-header-cell text-center"></div>
+                                <div class="mat-header-cell text-center"></div>
+                                <div class="mat-header-cell text-center">Total Closed Investment</div>
+                                <div class="mat-header-cell text-center">{{closedInvestmentAmountSum |
+                                    currency:'USD':'symbol'}} /- (Closed)</div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Exited ({{exitedCount}})">
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2 " *ngIf="!isExisted">
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                class="grid-item">
+                                <div class=" text-center mt-2 mb-2">
+                                    <img src="assets/images/bg/none.png" class="img1 mt-2 mb-2" style="width:180px">
+                                    <br>
+                                    <h3 class="mt-2 mb-2">You have nothing in exited investments.</h3>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mat-table admin-table" *ngIf="isExisted">
+                            <div class="mat-header-row mthead">
+                                <div class="mat-header-cell text-center" fxFlex="25">Founder Company</div>
+                                <div class="mat-header-cell text-center" fxFlex="18">Investment Date</div>
+                                <div class="mat-header-cell text-center" fxFlex="20">Investment Amount</div>
+                                <div class="mat-header-cell text-center" fxFlex="19">Investment Rounds</div>
+                            </div>
+                            <div class="mat-row" *ngFor="let item of investmentList">
+                                <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" style="padding : 10px;">
+                                    <mat-card class="p-0 Divbg4">
+                                        <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
+                                            <div fxFlex="7" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-left" fxFlex="100">
+                                                    <img style="height: 38px; " class="img1" alt="cinque terre"
+                                                        [src]="item.startupDeatailModel.previewUrl"><sup
+                                                        style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="20" ffxFlex.sm="50">
+                                                <div class="text-left" fxFlex="100">
+                                                    <h3>{{item.startupDeatailModel.startUpName}}</h3>
+                                                    <p>{{item.startupDeatailModel.companyLegalName}}</p>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="14" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-center" fxFlex="100">
+                                                    <h4 class="mt12">{{item.investmentDate | date:'dd/MM/yyyy'}}</h4>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="23" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-center" fxFlex="100">
+                                                    <h4 class="mt12">{{item.investmentAmount |
+                                                        currency:'USD':'symbol'}}/-</h4>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="18" ffxFlex.sm="50" class="p-1">
+                                                <div class="text-center" fxFlex="100">
+                                                    <h4 class="mt12">{{item.investmentRound}}</h4>
+                                                </div>
+                                            </div>
+                                            <div fxFlex="16" ffxFlex.sm="50" class="p-1">
+                                                <div class="mt-11">
+                                                    <a color="primary" class="mybtn" matTooltip="Get Investment Details"
+                                                        [routerLink]="['../../../admin/investor/companydetails',1,item.userId,item.founderVerifyId]"><i
+                                                            class="fa fa-info-circle" aria-hidden="true"></i> Get
+                                                        Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-card>
+                                </div>
+                            </div>
+                            <div class="mat-header-row mthead">
+                                <div class="mat-header-cell text-center"></div>
+                                <div class="mat-header-cell text-center"></div>
+                                <div class="mat-header-cell text-center">Total Closed Investment</div>
+                                <div class="mat-header-cell text-center">{{exitedInvestmentAmountSum |
+                                    currency:'USD':'symbol'}} /- (Closed)</div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+                <div fxLayout="" fxLayoutGap="10px" class="container">
+                    <div fxFlex="50%" class="text-left">
+                        <button mat-raised-button color="accent" type="button"
+                            [routerLink]="['../../../admin/investor/dashboardinvestor']"> <i
+                                class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

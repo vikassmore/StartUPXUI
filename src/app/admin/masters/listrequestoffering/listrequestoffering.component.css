@@ -1,0 +1,82 @@
+.btns1{
+    width: auto;
+    padding: 0px 3px 0px 3px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: transparent !important;
+    text-transform: uppercase;
+    color: #004487 !important;
+    text-align: left;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.btns2{
+    width: auto;
+    padding: 0px 0px 0px 6px;
+    margin: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: transparent !important;
+    color: #000 !important;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.btns3{
+    width: auto;
+    padding: 0px 9px 0px 9px;
+    margin: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: transparent !important;
+    color: #000 !important;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.btncr{
+    font-size: 15px;
+    color: #657300;
+    vertical-align: middle;
+}
+
+.btnck{
+    font-size: 17px;
+    color: #005003;
+    vertical-align: middle;
+}
+
+.btney{
+    font-size: 17px;
+    color: #1e2032;
+}
+
+.fls{
+    width: -webkit-fill-available;
+    text-align: center;
+}
+
+.wid100{
+    overflow: auto;
+}
+
+/* .mat-table{
+    width: 150%;
+} */
+
+.admin-table.mat-table .mat-header-cell {
+    font-size: 13px !important;
+}
+
+.mat-slide-toggle {
+    margin-top: 5px !important;
+}
+.simple-text{
+    pointer-events: none;
+}

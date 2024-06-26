@@ -1,0 +1,53 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Notification List</h2>
+            <table class="tblsearch">
+                <tr>
+                    <td class="tdsearch"> <span class="fa fa-search searchtext-icon"></span>
+                        <input matInput type="text" class="searchtext" placeholder="Search ..." name="title">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="mat-table admin-table">
+            <div class="mat-header-row">
+                <div class="mat-header-cell text-center" style="padding-left: 5%;" fxFlex.gt-sm="10">Date</div>
+                <div class="mat-header-cell text-center" fxFlex.gt-sm="10">Time</div>
+                <div class="mat-header-cell text-center" fxFlex.gt-sm="70">Notification</div>
+                <div class="mat-header-cell text-center" fxFlex="100" fxFlex.gt-sm="10">Action</div>
+            </div>
+            <div class="mat-row" *ngFor="let item of NotificationList">
+                <div class="mat-cell text-center" fxFlex.gt-sm="10">{{item.createdDate | date:'dd/MM/yyyy'}}</div>
+                <div class="mat-cell text-center" fxFlex.gt-sm="10">{{item.createdDate | date:'H:mm a'}}</div>
+                <div class="mat-cell text-center" fxFlex.gt-sm="70">{{item.message}}.</div>
+                <div class="mat-cell text-center" fxFlex="100" fxFlex.gt-sm="10">
+                    <div class="p-1">
+                        <button mat-mini-fab color="warn" matTooltip="Delete" class="mx-1"
+                            (click)="deleteNotification(item);">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row wrap">
+            <div fxFlex="100" class="p-11">
+                <mat-card class="p-0 text-center nobxshbrd">
+                    <!-- <pagination-controls class="product-pagination" autoHide="true" maxSize="5" ></pagination-controls> -->
+                </mat-card>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+            <div fxLayout="" fxLayoutGap="10px" class="container">
+                <div fxFlex="50%" class="text-left">
+                    <button mat-raised-button color="accent" type="button" (click)="backButtonClick()"> <i
+                            class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

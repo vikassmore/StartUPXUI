@@ -1,0 +1,42 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <mat-card-content>
+            <div fxLayout="column" fxLayoutGap="10px" class="container">
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
+                    <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <i class="fa fa-arrow-circle-left" aria-hidden="true" style="    font-size: 40px;
+                                color: #37993f;" [routerLink]="['../../../investor/dashboardinvestor']"
+                            matTooltip="Back To List"></i>
+                    </div>
+                    <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                        class="grid-item">
+                        <div class="text-center" fxFlex="100">
+                            <h2 style="color:#1e293b;">{{serviceName}}</h2>
+                            <span class="blink">{{category}}/{{subcategory}} </span>
+                        </div>
+                    </div>
+                    <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="right" fxFlexFill
+                        class="grid-item text-right">
+                        <div class="text-right" fxFlex="100">
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                        <h3 style="color:#1e293b;font-style: italic;"><br>&nbsp;About {{serviceName}}<br></h3> <br>
+                    </div>
+                </div>
+                <br>
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                    <br>
+                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                        class="grid-item">
+                        <p style="line-height: 1.8 !important;color: gray;">{{serviceDescription}}</p>
+                        <br>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

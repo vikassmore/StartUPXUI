@@ -1,0 +1,153 @@
+<div class="p-1">
+  <mat-card class="p-0">
+    <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+      <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Investor Details</h2>
+      <h4>{{firstName}}<span>&nbsp;</span>{{lastName}}</h4>
+    </div>
+    <div fxLayout="column" fxLayoutGap="10px" class="container">
+      <mat-accordion [togglePosition]="'before'">
+        <div class="mat-row ">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="fx-title">
+                <div class="mat-header-cell text-center" matTooltip="Investor Details">Investor Details</div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th scope="row" style=" width: 30%;">Name</th>
+                  <td>{{firstName}}<span>&nbsp;</span>{{lastName}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Email</th>
+                  <td>{{emailId}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">MobileNo</th>
+                  <td>{{mobileNo}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Entity Type</th>
+                  <td>{{entityType}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Address</th>
+                  <td>{{address1}}</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Zip Code</th>
+                  <td>{{zipCode}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="fx-title">
+                <div class="mat-header-cell text-center" matTooltip="Interested Sectors & Investment Details">Interested
+                  Sectors & Investment Details</div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th scope="row" style=" width: 30%;">Investment Category</th>
+                  <td>{{investmentStage}}</td>
+                </tr>
+                <tr>
+                  <th scope="row" style=" width: 30%;">Interested Sectors</th>
+                  <td>{{investmentSector}}</td>
+                </tr>
+                <tr>
+                  <th scope="row" style=" width: 30%;">Investment Amount</th>
+                  <td>{{investmentAmount}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-expansion-panel>
+          <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">         
+                      <mat-expansion-panel-header>
+                          <mat-panel-title class="fx-title">
+                              <div class="mat-header-cell text-center" matTooltip="Investor's Investment Details">Investor's Investment Details</div>
+                          </mat-panel-title>
+                      </mat-expansion-panel-header>
+  
+                      <table class="table table-bordered">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Founder Comapany</th>
+                            <th scope="row" class="text-center">Investment Date</th>
+                            <th scope="row" class="text-center">Investment Amount</th>
+                            <th scope="row" class="text-center">Investment Round</th>
+                            <th scope="row" class="text-center">Status</th>
+                          </tr>
+                          <tr>
+                              <td>Data</td>
+                              <td class="text-center">Data</td>
+                              <td class="text-center">Data</td>
+                              <td class="text-center">Data</td>
+                              <td class="text-center">Data</td>
+                          </tr>
+                          <tr>
+                            <td>Data</td>
+                            <td class="text-center">Data</td>
+                            <td class="text-center">Data</td>
+                            <td class="text-center">Data</td>
+                            <td class="text-center">Data</td>
+                          </tr>
+                          <tr>
+                            <td>Data</td>
+                            <td class="text-center">Data</td>
+                            <td class="text-center">Data</td>
+                            <td class="text-center">Data</td>
+                            <td class="text-center">Data</td>
+                          </tr>
+                          <tr>
+                            <td>Data</td>
+                            <td class="text-center">Data</td>
+                            <td class="text-center">Data</td>
+                            <td class="text-center">Data</td>
+                            <td class="text-center">Data</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                  </mat-expansion-panel> -->
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="fx-title">
+                <div class="mat-header-cell text-center" matTooltip="Document Details">Document Details</div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="row">Document Name</th>
+                  <th scope="row" class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let doc of documentList">
+                <tr>
+                  <td>{{doc.documentName}}</td>
+                  <td class="text-center"><button mat-mini-fab color="primary" matTooltip="Download" class="mx-1"
+                      (click)="downloadDocument(doc.userId,doc.documentId,doc.fileName);"><i class="fa fa-download"
+                        aria-hidden="true"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-expansion-panel>
+        </div>
+      </mat-accordion>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+      <div fxLayout="" fxLayoutGap="10px" class="container">
+        <div fxFlex="50%" class="text-left">
+          <button mat-raised-button color="accent" type="button" [routerLink]="['../../../../listinvestor',formType]">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,155 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;Interested Sectors & Investment Details</h2>
+        </div>
+        <form [formGroup]="uploadForm" (ngSubmit)="onInvestmentSubmit()" autocomplete="off">
+            <input matInput formControlName="investmentId" hidden>
+            <mat-card-content>
+                <div fxLayout="column" fxLayoutGap="10px" class="container">
+                    <mat-tab-group mat-stretch-tabs>
+                        <mat-tab label="Investment Category">
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2 ">
+                                <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item">
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2">
+                                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center"
+                                            fxFlexFill class="grid-item">
+                                            <div fxLayout="row wrap" #resizedDiv class="p-1">
+                                                <div fxFlex="100" ffxFlex.sm="50" class="pfvisit Divbg3 ">
+                                                    <div fxLayout="row wrap" fxFlex="100">
+                                                        <div fxFlex="33.33" ffxFlex.sm="50" class="p-1">
+                                                            <div class="text-left chkd" fxFlex="100">
+                                                                <input type="checkbox" color="primary" class="mlt"
+                                                                    formControlName="Seed" value="Seed"
+                                                                    (change)="onCheckBoxCategory($event)">
+                                                                <label for="Seed">Seed</label>
+                                                            </div>
+                                                        </div>
+                                                        <div fxFlex="33.33" ffxFlex.sm="50" class="p-1">
+                                                            <div class="text-left chkd" fxFlex="100">
+                                                                <input type="checkbox" color="primary" class="mlt"
+                                                                    formControlName="Preseed" value="Preseed"
+                                                                    (change)="onCheckBoxCategory($event)">
+                                                                <label for="Pre seed">Pre seed</label>
+                                                            </div>
+                                                        </div>
+                                                        <div fxFlex="33.33" ffxFlex.sm="50" class="p-1">
+                                                            <div class="text-left chkd" fxFlex="100">
+                                                                <input type="checkbox" color="primary" class="mlt"
+                                                                    formControlName="Angel" value="Angel"
+                                                                    (change)="onCheckBoxCategory($event)">
+                                                                <label for="Angel">Angel</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div fxFlex="100" ffxFlex.sm="50" class="pfvisit Divbg3 ">
+                                                    <div fxLayout="row wrap" fxFlex="100">
+
+                                                        <div fxFlex="33.33" ffxFlex.sm="50" class="p-1">
+                                                            <div class="text-left chkd" fxFlex="100">
+                                                                <input type="checkbox" color="primary" class="mlt"
+                                                                    formControlName="EarlyStage" value="EarlyStage"
+                                                                    (change)="onCheckBoxCategory($event)">
+                                                                <label for="Early Stage">Early Stage</label>
+                                                            </div>
+                                                        </div>
+                                                        <div fxFlex="33.33" ffxFlex.sm="50" class="p-1">
+                                                            <div class="text-left chkd" fxFlex="100">
+                                                                <input type="checkbox" color="primary" class="mlt"
+                                                                    formControlName="GrowthStage" value="GrowthStage"
+                                                                    (change)="onCheckBoxCategory($event)">
+                                                                <label for="Growth Stage">Growth Stage</label>
+                                                            </div>
+                                                        </div>
+                                                        <div fxFlex="33.33" ffxFlex.sm="50" class="p-1">
+                                                            <div class="text-left chkd" fxFlex="100">
+                                                                <input type="checkbox" color="primary" class="mlt"
+                                                                    formControlName="LateStage" value="LateStage"
+                                                                    (change)="onCheckBoxCategory($event)">
+                                                                <label for="Late Stage">Late Stage</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Interested Sectors">
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2 ">
+                                <div fxFlex.gt-sm="30%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item"></div>
+                                <div fxFlex.gt-sm="40%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item">
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2">
+                                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center"
+                                            fxFlexFill class="grid-item  tp-2">
+                                            <mat-form-field appearance="outline" class="w-100">
+                                                <mat-label>Select Sectors</mat-label>
+                                                <mat-select formControlName="investSector" multiple required
+                                                    (selectionChange)="onSelectionChange($event)">
+                                                    <mat-option *ngFor="let sector of SectorList"
+                                                        [value]="sector.sectorName">
+                                                        <span>{{sector.sectorName}}</span>
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div fxFlex.gt-sm="30%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item"></div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Investment Amount">
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2 ">
+                                <div fxFlex.gt-sm="30%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item"></div>
+                                <div fxFlex.gt-sm="40%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item">
+                                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2">
+                                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center"
+                                            fxFlexFill class="grid-item  tp-2">
+                                            <mat-form-field appearance="outline" class="w-100 ">
+                                                <mat-label>Investment Amount (In Dollar)</mat-label>
+                                                <input matInput formControlName="investmentAmount"
+                                                    (keypress)="keyPressNumbers($event)"
+                                                    (change)="onTextChange($event.target)" required>
+                                                <mat-error
+                                                    *ngIf=" uploadForm.controls.investmentAmount.errors?.required">Investment
+                                                    Amount is required</mat-error>
+                                                <mat-error
+                                                    *ngIf="uploadForm.controls.investmentAmount.hasError('maxlength')">Investment
+                                                    Amount
+                                                    cannot exceed more than 100 characters</mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div fxFlex.gt-sm="30%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                    class="grid-item"></div>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+                <div fxLayout="" fxLayoutGap="10px" class="container">
+                    <div fxFlex="50%" class="text-left">
+                        <button mat-raised-button color="accent" type="button"
+                            [routerLink]="['../../../admin/investor/investmentprofile']"> <i
+                                class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="buttenDisabled"><i
+                                class="fa fa-floppy-o" aria-hidden="true"></i> UPDATE</button>
+                    </div>
+                    <div fxFlex="50%" class="text-right">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

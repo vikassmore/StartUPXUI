@@ -1,0 +1,218 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Suitability Questionnaire Details</h2>
+        </div>
+        <form [formGroup]="uploadForm" (ngSubmit)="onSuitabilityQuestionSubmit(uploadForm.value)">
+            <input matInput formControlName="squestionId" hidden>
+            <input matInput formControlName="userId" hidden>
+            <mat-card-content>
+                <div fxLayout="column" fxLayoutGap="10px" class="container">
+                    <div fxLayout.gt-sm="row wrap" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <h3 class="mtbb-15 text-left">1. My maximum investment horizon for this investment (i.e. how
+                                long you are willing to hold the investment) is <span
+                                    class="mat-placeholder-required">*</span>:</h3>
+                        </div>
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <ul class="qstns">
+                                <li class="qstnsli">
+                                    <input type="radio" id="1op1" formControlName="maximumInvestent"
+                                        value="Less than 2 years" class="qstnc" name="maximumInvestent"
+                                        (change)="onSelectionChangemaxInv($event)">
+                                    <label for="1op1"> &nbsp; Less than 2 years</label>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="1op2" formControlName="maximumInvestent"
+                                        value="Between 2 and 5 years" class="qstnc" name="maximumInvestent"
+                                        (change)="onSelectionChangemaxInv($event)">
+                                    <label for="1op2"> &nbsp; Between 2 and 5 years</label>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="1op3" formControlName="maximumInvestent"
+                                        value="Between 5 and 7 years" class="qstnc" name="maximumInvestent"
+                                        (change)="onSelectionChangemaxInv($event)">
+                                    <label for="1op3"> &nbsp; Between 5 and 7 years</label>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="1op4" formControlName="maximumInvestent"
+                                        value="More than 7 years" class="qstnc" name="maximumInvestent"
+                                        (change)="onSelectionChangemaxInv($event)">
+                                    <label for="1op4"> &nbsp; More than 7 years</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row wrap" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <h3 class="mtbb-15 text-left">2. My willingness to accept risk for this investment is <span
+                                    class="mat-placeholder-required">*</span>:</h3>
+                        </div>
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <ul class="qstns">
+                                <li class="qstnsli">
+                                    <input type="radio" id="2op1" formControlName="acceptInvestment"
+                                        value="Conservative" class="qstnc" name="acceptInvestment"
+                                        (change)="onSelectionChangeaccInv($event)">
+                                    <label for="2op1" style="width: 105px;"> &nbsp; Conservative</label> <i
+                                        class="fa fa-info-circle sgln1ico" aria-hidden="true"
+                                        matTooltip="You are an investor who prioritizes stability and is less focused on achieving significant growth. Your primary goal is to preserve the capital rather than pursue aggressive returns. You aim to minimize portfolio losses and prefer investments that are regularly priced and can be easily sold with a high level of certainty. While you generally opt for investments with a lower risk profile, you may occasionally consider individual liquid investments that involve higher levels of risk."></i>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="2op2" formControlName="acceptInvestment" value="Moderate"
+                                        class="qstnc" name="acceptInvestment"
+                                        (change)="onSelectionChangeaccInv($event)">
+                                    <label for="2op2" style="width: 105px;"> &nbsp; Moderate</label> <i
+                                        class="fa fa-info-circle sgln1ico" aria-hidden="true"
+                                        matTooltip="You are an investor whose primary objective is to achieve a stable and consistent pattern of long-term growth. You are not reliant on immediate income from your investments. While you are willing to tolerate moderate portfolio losses, you prefer investments that are regularly priced and have a high probability of being sold quickly. However, you may occasionally consider individual illiquid investments that involve higher levels of risk in your pursuit of long-term growth."></i>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="2op3" formControlName="acceptInvestment" value="Aggressive"
+                                        class="qstnc" name="acceptInvestment"
+                                        (change)="onSelectionChangeaccInv($event)">
+                                    <label for="2op3" style="width: 105px;"> &nbsp; Aggressive</label> <i
+                                        class="fa fa-info-circle sgln1ico" aria-hidden="true"
+                                        matTooltip="You have a high tolerance for risk and prioritize aggressive capital growth over current income. You are comfortable accepting significant portfolio losses in pursuit of your primary goal. Your investment approach often involves concentrated portfolios, where you focus on a limited number of investments. Unlike more conservative strategies, you are willing to buy illiquid investments or those with uncertain realizable value, recognizing the potential for higher returns despite the increased risk involved. investing in concentrated portfolios. You are generally willing to buy investments that are illiquid or have an uncertain realizable value."></i>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="2op4" formControlName="acceptInvestment"
+                                        value="Significant Risk" class="qstnc" name="acceptInvestment"
+                                        (change)="onSelectionChangeaccInv($event)">
+                                    <label for="2op4" style="width: 105px;"> &nbsp; Significant Risk</label> <i
+                                        class="fa fa-info-circle sgln1ico" aria-hidden="true"
+                                        matTooltip="As a seasoned investor, you possess a high risk appetite and are willing to take substantial risks with your entire portfolio. You feel comfortable engaging in speculative and concentrated positions within higher risk securities. Your overarching objective is to achieve exceptional growth in the long-term expected value of your investment, fully aware that this approach entails a potential risk to your invested capital. You are prepared to endure significant capital losses as you pursue the possibility of attaining substantial returns."></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row wrap" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <h3 class="mtbb-15 text-left">3. My relevant investment experience is <span
+                                    class="mat-placeholder-required">*</span>:</h3>
+                        </div>
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <ul class="qstns">
+                                <li class="qstnsli">
+                                    <input type="radio" id="3op1" formControlName="releventInvestment"
+                                        value="Less than 2 years" class="qstnc" name="releventInvestment"
+                                        (change)="onSelectionChangerelInv($event)">
+                                    <label for="3op1"> &nbsp; Less than 2 years</label>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="3op2" formControlName="releventInvestment"
+                                        value="Between 2 and 5 years" class="qstnc" name="releventInvestment"
+                                        (change)="onSelectionChangerelInv($event)">
+                                    <label for="3op2"> &nbsp; Between 2 and 5 years</label>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="3op3" formControlName="releventInvestment"
+                                        value="Between 5 and 10 years" class="qstnc" name="releventInvestment"
+                                        (change)="onSelectionChangerelInv($event)">
+                                    <label for="3op3"> &nbsp; Between 5 and 10 years</label>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="3op4" formControlName="releventInvestment"
+                                        value="More than 10 years" class="qstnc" name="releventInvestment"
+                                        (change)="onSelectionChangerelInv($event)">
+                                    <label for="3op4"> &nbsp; More than 10 years</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row wrap" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <h3 class="mtbb-15 text-left">4. My immediate liquid worth (e.g., cash, marketable
+                                securities, etc.) is <span class="mat-placeholder-required">*</span>:</h3>
+                        </div>
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <ul class="qstns">
+                                <li class="qstnsli">
+                                    <input type="radio" id="4op1" formControlName="liquidWorth"
+                                        value="Less than $50,000" class="qstnc" name="liquidWorth"
+                                        (change)="onSelectionChangeliquidWorth($event)">
+                                    <label for="4op1"> &nbsp; Less than $50,000</label>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="4op2" formControlName="liquidWorth"
+                                        value="Between $50,000 and $250,000" class="qstnc" name="liquidWorth"
+                                        (change)="onSelectionChangeliquidWorth($event)">
+                                    <label for="4op2"> &nbsp; Between $50,000 and $250,000</label>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="4op3" formControlName="liquidWorth"
+                                        value="Between $250,000 and $500,000" class="qstnc" name="liquidWorth"
+                                        (change)="onSelectionChangeliquidWorth($event)">
+                                    <label for="4op3"> &nbsp; Between $250,000 and $500,000</label>
+                                </li>
+                                <li class="qstnsli">
+                                    <input type="radio" id="4op4" formControlName="liquidWorth"
+                                        value="Greater than $500,000" class="qstnc" name="liquidWorth"
+                                        (change)="onSelectionChangeliquidWorth($event)">
+                                    <label for="4op4"> &nbsp; Greater than $500,000</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row wrap" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <h3 class="mtbb-15 text-left">5. Risk Factors <span
+                                    class="mat-placeholder-required">*</span>:</h3>
+                        </div>
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <ul class="qstns">
+                                <li class="qstnsli">
+                                    <input type="checkbox" id="5op1" formControlName="riskFector"
+                                        value="I have read and understood the risk factors." class="qstnc"
+                                        (change)="onSelectionChangeriskFector($event)">
+                                    <label for="5op1"> &nbsp; I have read and understood the risk factors</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row wrap" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <h3 class="mtbb-15 text-left">6. Confidentiality Agreement <span
+                                    class="mat-placeholder-required">*</span>:</h3>
+                        </div>
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="text-left" fxFlexFill
+                            class="grid-item">
+                            <ul class="qstns">
+                                <li class="qstnsli">
+                                    <input type="checkbox" formControlName="confiditialAgreement"
+                                        (change)="onSelectionChangeConAgree($event)"
+                                        value="I have read and agree to the Confidentiality Agreement." class="qstnc">
+                                    <label for="confiditialAgreement"> &nbsp; I have read and agree to the
+                                        Confidentiality Agreement</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+                <div fxLayout="" fxLayoutGap="10px" class="container">
+                    <div fxFlex="50%" class="text-left">
+                        <button mat-raised-button color="accent" type="button" [routerLink]="['../../questionnaire']">
+                            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
+                    </div>
+                    <div fxFlex="50%" class="text-right">
+                        <h4 class="crdtip">Tip : (*) fields are mandatory.</h4>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

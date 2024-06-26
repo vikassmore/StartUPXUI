@@ -1,0 +1,54 @@
+.mat-vertical-content {
+    padding: 24px 24px 24px 24px !important;
+}
+
+.mtbb-30 {
+    margin-bottom: 25px !important;
+}
+
+.mtb-30 {
+    margin-bottom: -30px !important;
+}
+
+.mtb-20 {
+    margin-bottom: -20px !important;
+}
+
+.mtb-10 {
+    margin-bottom: -20px !important;
+}
+
+.mtb-0 {
+    margin-bottom: 0px !important;
+}
+
+.mtt-10 {
+    margin-top: 10px !important;
+}
+
+.mtt-25 {
+    margin-top: 25px !important;
+}
+
+.mtts-100{
+    margin-top: 30% !important;
+}
+
+.mat-vertical-content-container {
+    border-radius: 0px 15px 15px 0px !important;
+    background: #fcfafac4 !important;
+}
+
+.mtt-2{
+    margin-top: 8%;
+}
+
+.mlt{
+    margin-left: 33%;
+    margin-right: 10px !important;
+    zoom: 1.4;
+}
+.chkd{
+    vertical-align: middle;
+    display: contents;
+}

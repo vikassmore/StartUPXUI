@@ -1,0 +1,60 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; List of Workflow Management</h2>
+            <table class="tblsearch">
+                <tr>
+                    <td class="tdsearch"> <span class="fa fa-search searchtext-icon"></span>
+                        <input matInput type="text" class="searchtext" placeholder="Search ..." name="title"
+                            [(ngModel)]="title" (input)="Search()" (keyup)="Search()" (ngModelChange)="Search()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+            <div class="mat-table admin-table">
+                <div class="mat-header-row">
+                    <div class="mat-header-cell">Startup Name</div>
+                    <div class="mat-header-cell">Service Provider</div>
+                    <div class="mat-header-cell">Interested Services</div>
+                    <div class="mat-header-cell" fxFlex.gt-sm="10">Interest Date</div>
+                    <div class="mat-header-cell" fxFlex.gt-sm="14">Accepted/Declined Date</div>
+                    <div class="mat-header-cell" fxFlex.gt-sm="10">Status</div>
+                    <div class="mat-header-cell" fxFlex.gt-sm="10">Invoice</div>
+                </div>
+                <div class="mat-row" *ngFor="let case of ServiceCaseList | paginate: { itemsPerPage: count, currentPage: page }">
+                    <div class="mat-cell">{{case.startupDeatailModel.startUpName}}</div>
+                    <div class="mat-cell">{{case.serviceModel.serviceProviderName}}</div>
+                    <div class="mat-cell">{{case.intrestedServiceNames}}</div>
+                    <div class="mat-cell" fxFlex.gt-sm="10">{{case.serviceInterestDate | date:'dd/MM/yyyy'}}</div>
+                    <div class="mat-cell" fxFlex.gt-sm="14">{{case.acceptedDate | date:'dd/MM/yyyy'}}</div>
+                    <div class="mat-cell" fxFlex.gt-sm="10">{{case.status}}</div>
+                    <div *ngIf="case.invoiceCount!=0" class="mat-cell" fxFlex.gt-sm="10"><button color="primary"
+                            matTooltip="Download" class="mx-1 mydoc" (click)="downloadDocument(case.serviceCaseId,case.serviceModel.serviceProviderName);"><i
+                                class="fa fa-download" aria-hidden="true"></i> Invoice </button></div>
+                    <div *ngIf="case.invoiceCount==0" class="mat-cell" fxFlex.gt-sm="10"></div>
+                </div>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="ServiceCaseList.length > 0" fxLayout="row wrap">
+            <div fxFlex="100" class="p-11">
+                <mat-card class="p-0 text-center nobxshbrd">
+                    <pagination-controls class="product-pagination" autoHide="true" maxSize="5"
+                    (pageChange)="onPageChanged($event)"></pagination-controls>
+                </mat-card>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+            <div fxLayout="" fxLayoutGap="10px" class="container">
+                <div fxFlex="50%" class="text-left">
+                    <button mat-raised-button color="accent" type="button"
+                        [routerLink]="['../../../admin/dashboard-menu/dash-board']"> <i class="fa fa-arrow-circle-left"
+                            aria-hidden="true"></i> BACK</button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,34 @@
+<mat-card class="bgimg">
+    <div fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-sm="35" class="p-2"></div>
+        <div fxFlex="100" fxFlex.gt-sm="30" class="pt-1">
+            <div class="lgpg pt-2" fxFlex="100">
+                <br />
+                <h2 class="text-muted text-center"><img src="assets/logostartupx.png" style=" width: 200px;"
+                        class="img1" alt="StartupX"> <sup style="font-size: 13px;"></sup></h2>
+                <h2 class="text-muted text-center">Two-Step Verification</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="twostepverify(loginForm.value)" fxLayout="row wrap">
+                    <div class="text-center mt-1" fxFlex="100">
+                        <span fxFlex="100" class="pt-1">For added security, Please enter your authentication code to
+                            verify.</span>
+                    </div>
+                    <mat-form-field appearance="outline" class="w-100 mt-2">
+                        <mat-label>Enter Code</mat-label>
+                        <input autofocus matInput formControlName="otp" required (keypress)="keyPressNumbers($event)">
+                    </mat-form-field>
+                    <div class="text-center" fxFlex="100">
+                        {{display}} &nbsp; : &nbsp;&nbsp;<a mat-button style="cursor:pointer;" disabled="{{isDisabled}}"
+                            [ngClass]="{'simple-text': isDisabled}" (click)="reSendOtp();"><i class="fa fa-repeat"
+                                aria-hidden="true"></i> &nbsp;Resent Code</a>
+                    </div>
+                    <div class="text-center mt-1" fxFlex="100">
+                        <button style="background-color: rgb(55 153 63);" mat-raised-button color="primary"
+                            type="submit"> VERIFY</button>
+                    </div>
+                </form>
+                <br />
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="35" class="p-2"></div>
+    </div>
+</mat-card>

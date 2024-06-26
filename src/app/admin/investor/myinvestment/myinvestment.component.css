@@ -1,0 +1,41 @@
+.mthead{
+    background: #f1f1f1;
+}
+
+.mybtn{
+    background: rgb(88, 88, 219);
+    color: white;
+    padding: 6px 14px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.mat-table{
+    border: 1px solid gainsboro;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.mat-cell{
+    font-weight: 800;
+}
+
+.dot {
+    height: 80px;
+    width: 80px;
+    background-color: #5f9d71;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 15px;
+  }
+
+
+  .Divbg4{
+    height: 72px;
+  }
+
+  .mt-11{
+    margin-top: 7px;
+  }

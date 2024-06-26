@@ -1,0 +1,100 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Edit Founder Details</h2>
+        </div>
+        <form [formGroup]="uploadForm" (ngSubmit)="onfounderSubmit(uploadForm.value)" autocomplete="off">
+            <mat-card-content>
+                <div fxLayout="column" fxLayoutGap="10px" class="container">
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>First Name</mat-label>
+                                <input matInput formControlName="firstName" required readonly style="color: #b2b2b2;">
+                                <mat-error *ngIf="uploadForm.controls.firstName.errors?.required">First Name
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.firstName.hasError('maxlength')">First Name
+                                    cannot exceed more than 100 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput formControlName="lastName" required readonly style="color: #b2b2b2;">
+                                <mat-error *ngIf="uploadForm.controls.lastName.errors?.required">Last Name
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.lastName.hasError('maxlength')">Last Name
+                                    cannot exceed more than 100 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="emailId" required readonly style="color: #b2b2b2;">
+                                <mat-error *ngIf="uploadForm.controls.emailId.errors?.required">Email
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.emailId.hasError('maxlength')">EmailId
+                                    cannot exceed more than 100 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Mobile No</mat-label>
+                                <input matInput formControlName="mobileNo" required>
+                                <mat-error *ngIf="uploadForm.controls.mobileNo.errors?.required">Mobile No
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.mobileNo.hasError('maxlength')">MobileNo
+                                    cannot exceed more than 15 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-95">
+                                <mat-label>Gender</mat-label>
+                                <mat-select matNativeControl formControlName="gender" required>
+                                    <mat-option value="Male">Male</mat-option>
+                                    <mat-option value="Female">Female</mat-option>
+                                    <mat-error *ngIf="uploadForm.controls.gender.errors?.required">Please Select
+                                        Gender</mat-error>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Description</mat-label>
+                                <textarea matInput formControlName="description" required></textarea>
+                                <mat-error *ngIf="uploadForm.controls.description.errors?.required">Description
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.description.hasError('maxlength')">Description
+                                    cannot exceed more than 200 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+                <div fxLayout="" fxLayoutGap="10px" class="container">
+                    <div fxFlex="50%" class="text-left">
+                        <button mat-raised-button color="accent" type="button"
+                            [routerLink]="['../../../../admin/startup/listfounderdetails']"> <i
+                                class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                                class="fa fa-floppy-o" aria-hidden="true"></i> UPDATE</button>
+                    </div>
+                    <div fxFlex="50%" class="text-right">
+                        <h4 class="crdtip">Tip : (*) fields are mandatory.</h4>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,96 @@
+/* .mat-form-field-appearance-outline {
+    margin-top: 1em;
+    padding: 0px;
+}
+
+.mat-cell, .mat-footer-cell, .mat-header-row, .mat-row {
+    padding: 0px !important;
+} */
+
+.fndr{
+    display: flex;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.mat-card-content {
+    padding: 10px 10px 10px 10px;
+}
+
+
+.mttop20s {
+    margin-top: -35px !important;
+    margin-bottom: -7px !important;
+}
+
+.delbtn{
+    display: block !important;
+}
+
+.delbn{
+    float: right !important;
+    margin-right: -5px !important;
+    border-radius: 5px;
+}
+
+.addbn{
+    border-radius: 5px;
+    margin-top: 3px !important;
+    width: 60px !important;
+}
+
+.mt-20{
+    margin-top: 25px;
+    color: gray;
+}
+
+.docs{
+    font-size: 25px;
+    color: rgb(86, 86, 86);
+}
+
+.txtar{
+    height: 15px;
+    padding: 0px !important;
+    margin: 0;
+    line-height: 0.8;
+}
+
+
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table {
+    width: 100%;
+    margin-top: 0px !important;
+    margin-bottom: 8px;
+    background-color: transparent;
+    border-collapse: collapse;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+  }
+  
+  th{
+    text-align: left !important;
+  }
+
+  
+  .text-center{
+  text-align: center !important;
+  }
+  
+  .table {
+  margin-top: 22px;
+  background: #f6f6f6;
+  }

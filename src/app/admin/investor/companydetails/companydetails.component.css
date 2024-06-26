@@ -1,0 +1,37 @@
+.pfvisit {
+    height: 45px;
+}
+
+.mat-table{
+    width: 100%;
+}
+
+.mtb{
+    background: #e3e3e3 !important;
+}
+
+
+.invbtn{
+    padding: 3px 7px;
+    background: #eeeeee;
+    border: 1px solid gray;
+}
+
+.mt-10{
+    margin-top: 15px;
+}
+.text-center {
+    text-align: center !important;
+}
+
+.prv{
+    float: right;
+    color: #b8b8ff;
+  }
+  .prv1{
+    color: #9494ab;
+  }
+  
+  .p1{
+    padding-left: 7px !important;
+  }

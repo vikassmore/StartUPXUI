@@ -1,0 +1,283 @@
+<div class="p-1">
+    <div fxLayout="row wrap" #resizedDiv>
+        <div fxFlex="100" fxFlex.gt-sm="47" fxFlex.sm="50" class="p-1">
+            <div class="relative w-24 h-24" style="margin: 0.7rem 0rem 0rem 0rem; text-align: left;">
+                <h2 style="color:#1e293b;">Welcome Back ! <span style="font-size: small;">(Investor)</span></h2>
+                <span class="blink" [routerLink]="['../../../admin/notification/listnotification']"><i
+                        class="fa fa-bell" aria-hidden="true"></i> You have {{notificationCount}} new notifications regarding emails.</span>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="13" fxFlex.sm="50" class="p-1"
+            style="border-right: 1px solid #b5b5ca;text-align: center;">
+            <div class="relative w-24 h-24">
+                <i class="fa fa-user lgtype" aria-hidden="true"></i>
+                <h4 class="mt-1">{{founderTypeName}}</h4>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="12" fxFlex.sm="50" class="p-1">
+            <div class="relative w-24 h-24" style="margin:0rem; text-align: center;">
+                <div class="circle-wrap">
+                    <div class="circle">
+
+                        <div class="mask full">
+                            <div class="fill"></div>
+                        </div>
+
+                        <div class="mask half">
+                            <div class="fill"></div>
+                        </div>
+
+                        <div class="inside-circle">
+                            {{investorProfileCompetion}}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="17" fxFlex.sm="50" class="p-1">
+            <div class="relative w-24 h-24" style="margin-top:1rem; text-align: left;">
+                <h4>Profile<br>Complete</h4>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="11" fxFlex.sm="50" class="p-1">
+            <div class="relative w-24 h-24" style="margin: 0.3rem 0rem 0rem 0rem; text-align: center;">
+                <img *ngIf="verified" src="assets/images/others/ver.png" style="height: 50px; " class="img1">
+                <img *ngIf="!verified" src="assets/images/others/unver.png" style="height: 50px;" class="img1">
+                <h5>{{ProfileStatus}}</h5>
+            </div>
+        </div>
+
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row wrap" #resizedDiv>
+        <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="mt-1" style="display: block; cursor: pointer;">
+            <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1"
+                [routerLink]="['../../../admin/investor/myinvestment']">
+                <mat-card class="p-0 Divbg2">
+                    <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 103px;"
+                        [routerLink]="['../../../admin/investor/myinvestment']">
+                        <div fxFlex="38" ffxFlex.sm="50" class="p-1">
+                            <img src="assets/images/bg/amount1.jpg" class="img1 mtt-25 mtbb-30 mt-1"
+                                style="width:50px;    padding-top: 7px;">
+                        </div>
+                        <div fxFlex="62" ffxFlex.sm="50" class="p-1">
+                            <div class="text-center" fxFlex="100" style="margin-top:22px; letter-spacing: 1px;">
+                                <h4>My<br>Investment</h4>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="mt-1" style="display: block; cursor: pointer;">
+            <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1"
+                [routerLink]="['../../../admin/investor/mywatchlist']">
+                <mat-card class="p-0 Divbg2">
+                    <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 103px;"
+                        [routerLink]="['../../../admin/investor/mywatchlist']">
+                        <div fxFlex="38" ffxFlex.sm="50" class="p-1">
+                            <img src="assets/images/bg/watchlist.jpg" class="img1 mtt-25 mtbb-30 mt-1"
+                                style="width:50px;    padding-top: 7px;">
+                        </div>
+                        <div fxFlex="62" ffxFlex.sm="50" class="p-1">
+                            <div class="text-center" fxFlex="100" style="margin-top:22px; letter-spacing: 1px;">
+                                <h4>My<br>Watchlist</h4>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="mt-1" style="display: block; cursor: pointer;">
+            <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1"
+                [routerLink]="['../../../admin/investor/mydocuments']">
+                <mat-card class="p-0 Divbg2">
+                    <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 103px;"
+                        [routerLink]="['../../../admin/investor/mydocuments']">
+                        <div fxFlex="38" ffxFlex.sm="50" class="p-1">
+                            <img src="assets/images/bg/documents.jpg" class="img1 mtt-25 mtbb-30 mt-1"
+                                style="width:50px;    padding-top: 7px;">
+                        </div>
+                        <div fxFlex="62" ffxFlex.sm="50" class="p-1">
+                            <div class="text-center" fxFlex="100" style="margin-top:22px; letter-spacing: 1px;">
+                                <h4>My<br>Documents</h4>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="26" fxFlex.sm="50">
+            <ul class="numbered-list">
+                <li>
+                    <mat-card class="p-0 Divbg2">
+                        <div fxLayout="row wrap" fxFlex="100" style="height: 30px; cursor: pointer;"
+                            [routerLink]="['../../../admin/investor/basicdetails']">
+                            <!-- <div fxFlex="15" ffxFlex.sm="50" > 
+                                <div class="text-left" fxFlex="100" style="display:none">
+                                    <i class="fa fa-check-circle oktick" aria-hidden="true"></i><sup style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                </div>
+                            </div> -->
+                            <div fxFlex="100" ffxFlex.sm="50">
+                                <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
+                                    <h4 style="padding-left:16px">Profile Details</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </li>
+                <li>
+                    <mat-card class="p-0 Divbg2">
+                        <div fxLayout="row wrap" fxFlex="100" style="height: 30px; cursor: pointer;"
+                            [routerLink]="['../../../admin/investor/investmentdetails']">
+                            <!-- <div fxFlex="15" ffxFlex.sm="50" > 
+                                <div class="text-left" fxFlex="100" style="display:none">
+                                    <i class="fa fa-check-circle oktick" aria-hidden="true"></i><sup style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                </div>
+                            </div> -->
+                            <div fxFlex="100" ffxFlex.sm="50">
+                                <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
+                                    <h4 style="padding-left:16px">Interested Sectors & Investment</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </li>
+                <li>
+                    <mat-card class="p-0 Divbg2">
+                        <div fxLayout="row wrap" fxFlex="100" style="height: 30px; cursor: pointer;"
+                            [routerLink]="['../../../admin/investor/questionnaire']">
+                            <!-- <div fxFlex="15" ffxFlex.sm="50" > 
+                                <div class="text-left" fxFlex="100" style="display:none">
+                                    <i class="fa fa-exclamation-circle oktick1" aria-hidden="true"></i><sup style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                    <i class="fa fa-check-circle oktick" aria-hidden="true"></i><sup style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                </div>
+                            </div> -->
+                            <div fxFlex="100" ffxFlex.sm="50">
+                                <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
+                                    <h4 style="padding-left:16px">Suitability Questionnaire</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </li>
+            </ul>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="14" fxFlex.sm="50">
+            <div fxFlex="100" fxFlex.gt-sm="12" fxFlex.sm="50" class="p-1">
+                <div class="relative w-24 h-24" style=" text-align: center;">
+                    <button color="primary" class="btnverify mt-1 btnsv" mat-raised-button type="button"
+                        [disabled]="buttonDisabled" matTooltip="Send For Verification" (click)="senForVerification();">
+                        <h4 style="line-height: 1.3;margin-bottom: 5px;"><i class="fa fa-hand-o-up oktick"
+                                aria-hidden="true"></i><br>Send For<br>Verification</h4>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-tab-group>
+        <mat-tab label="Discover Startups" style="width: 25%;">
+            <br>
+            <div fxLayout="row wrap" #resizedDiv class="mttop20 fxht">
+                <div fxFlex="100" *ngFor="let item of startupDetails" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-1 "
+                    [routerLink]="['../../../admin/investor/companydetails',0,item.userId,item.founderVerifyId]">
+                    <mat-card class="p-0 Divbg1">
+                        <div class="p-1" fxLayoutAlign="space-between center">
+                            <p class="pc1">{{item.startupDeatailModel.sectorName}}</p>
+                            <div fxLayoutAlign="center center">
+                            </div>
+                        </div>
+                        <div class="  text-center">
+                            <img style="height: 50px; " class="img1" alt="cinque terre"
+                                [src]="item.startupDeatailModel.previewUrl"><sup
+                                style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                            <h3>{{item.startupDeatailModel.startUpName}}</h3>
+                            <p class="text-center">Total Funding :<span class="para-col"> {{item.lastValuation |
+                                    currency:'USD':'symbol'}} B </span></p>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+            <div fxLayout="row wrap" #resizedDiv class="p-1">
+                <div fxFlex.gt-sm="38%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                </div>
+                <div fxFlex.gt-sm="24%" fxFlex.lt-md="50%" fxLayoutAlign="text-center" fxFlexFill class="grid-item">
+                    <button [disabled]="investmentDisabled" mat-raised-button color="primary" type="button"
+                        class="explr Divbg5" style="width: 100%;margin-top: 8px !important;"
+                        [routerLink]="['../../../admin/investor/discoverlist']"><i class="fa fa-binoculars"
+                            aria-hidden="true"></i>&nbsp;&nbsp; | &nbsp;&nbsp;Investment Opportunities</button>
+                </div>
+                <div fxFlex.gt-sm="38%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                </div>
+            </div>
+        </mat-tab>
+        <!-- <mat-tab label="Services" style="width: 25%;">
+            <div fxLayout="row wrap" #resizedDiv>
+                <div  style="border-right: 1px solid #b5b5ca;"> 
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">                   
+                        <div fxLayout="column" fxLayoutGap="10px" class="container">
+                            <br>
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">  
+                                <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
+                                    <mat-form-field appearance="outline" >
+                                        <mat-label>Find Required Service</mat-label>
+                                        <input matInput type="text" class="searchtext" placeholder="Search Service Name ..." name="serviceName"
+                                        [(ngModel)]="serviceName" (input)="Search()" (keyup)="Search()" (ngModelChange)="Search()">
+                                    </mat-form-field>
+                                </div>                     
+                            </div>
+         
+                        </div>
+                    </div>
+                </div>
+                <div fxFlex="100" fxFlex.gt-sm="4.5" fxFlex.sm="50" class="p-1"> 
+                    <div fxLayout="row wrap" fxFlex="100" class=" mt-1" >            
+                    </div>
+                </div>  
+                <div fxFlex="100" fxFlex.gt-sm="14" fxFlex.sm="50" class="p-1" *ngFor="let service of ServiceList "> 
+                    <div fxLayout="row wrap" fxFlex="100" class=" mt-1" >
+                        <mat-card class="p-0 Divbg4" matTooltip="Explore Health Service" [routerLink]="['../../../admin/investor/serviceinfo',service.serviceId]">
+                            <div fxFlex="100" ffxFlex.sm="50" class="p-1"> 
+                                <div class="text-center" fxFlex="100">
+                                    <h4 style="margin-top: 10px;">Service Name</h4><br><sup style="font-size: 13px;margin-top: -16px;color: green;font-style: italic;">{{service.serviceName}}</sup>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>   
+            </div>
+        </mat-tab> -->
+        <mat-tab label="FAQ's" style="width: 25%;">
+            <mat-accordion *ngFor="let faq of FAQList">
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="fx40">
+                            {{faq.question}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>{{faq.answer}}</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-tab>
+        <mat-tab label="Privacy Policy" style="width: 25%;">
+            <mat-accordion *ngFor="let policy of PolicyList">
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="fx10">
+                            {{policy.policyName}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Summary of the content Term Policy
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>{{policy.policyDescription}}.</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-tab>
+    </mat-tab-group>
+    <mat-divider></mat-divider>
+    <p class="ftr">© Startupx - 2023</p>
+</div>

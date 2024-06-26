@@ -1,0 +1,17 @@
+.clrgr{
+    color :gray;
+}
+
+.container{
+    padding: 15px 15px 25px 15px;
+}
+
+.material-devider {
+    color: red
+}
+
+.ansfld{
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 15px !important;
+    margin-bottom: 20px !important;
+}

@@ -1,0 +1,88 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; My Watchlist </h2>
+            <table class="tblsearch">
+                <tr>
+                    <td class="tdsearch"> <span class="fa fa-search searchtext-icon"></span>
+                        <input matInput type="text" class="searchtext" placeholder="Search ..." name="title"
+                            [(ngModel)]="title" (input)="Search()" (keyup)="Search()" (ngModelChange)="Search()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <form>
+            <mat-card-content>
+                <div class="p-1">
+                    <div fxLayout="row wrap " #resizedDiv>
+                        <div fxFlex="100" *ngFor="let item of watchList | paginate: { itemsPerPage: count, currentPage: page }" fxFlex.gt-sm="100" fxFlex.sm="100"
+                            style="cursor:pointer">
+                            <mat-card class="p-0 Divbg4">
+                                <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
+                                    <div fxFlex="10" ffxFlex.sm="50" class="p-1">
+                                        <div class="text-left" fxFlex="100"
+                                            [routerLink]="['../../../admin/investor/companydetails',2,item.userId,item.founderVerifyId]">
+                                            <img style="max-width: 80%;" class="img1" alt="logo"
+                                                [src]="item.startupDeatailModel.previewUrl"><sup
+                                                style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                        </div>
+                                    </div>
+                                    <div fxFlex="23" ffxFlex.sm="50" class="p-1">
+                                        <div class="text-left" fxFlex="100">
+                                            <h3>{{item.startupDeatailModel.startUpName}}</h3>
+                                            <p>{{item.startupDeatailModel.sectorName}}</p>
+                                        </div>
+                                    </div>
+                                    <div fxFlex="17" ffxFlex.sm="50" class="p-1">
+                                        <div class="text-center" fxFlex="100">
+                                            <h3>{{item.lastValuation}} M</h3>
+                                            <p class="text-center">Market Cap</p>
+                                        </div>
+                                    </div>
+                                    <div fxFlex="20" ffxFlex.sm="50" class="p-1">
+                                        <div class="text-center" fxFlex="100">
+                                            <h3>{{item.lastRoundPrice}} M</h3>
+                                            <p class="text-center">Total Revenue</p>
+                                        </div>
+                                    </div>
+                                    <div fxFlex="20" ffxFlex.sm="50" class="p-1">
+                                        <div class="text-center" fxFlex="100">
+                                            <h4>{{item.addedOn | date:'dd-MM-yyyy'}}</h4>
+                                            <p class="text-center">Added On</p>
+                                        </div>
+                                    </div>
+                                    <div fxFlex="10" ffxFlex.sm="50" class="p-1">
+                                        <!-- <div class="text-center " fxFlex="100" > -->
+                                        <button mat-mini-fab color="warn" matTooltip="Remove From Watchlist"
+                                            class="mx-1" (click)="deletefromwatchList(item);"><i class="fa fa-trash"
+                                                aria-hidden="true"></i> </button> Remove
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <div *ngIf="watchList.length > 0" fxLayout="row wrap">
+                <div fxFlex="100" class="p-11">
+                    <mat-card class="p-0 text-center nobxshbrd">
+                        <pagination-controls class="product-pagination" autoHide="true" maxSize="5"
+                        (pageChange)="onPageChanged($event)"></pagination-controls>
+                    </mat-card>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+                <div fxLayout="" fxLayoutGap="10px" class="container">
+                    <div fxFlex="50%" class="text-left">
+                        <button mat-raised-button color="accent" type="button"
+                            [routerLink]="['../../../admin/investor/dashboardinvestor']"> <i
+                                class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

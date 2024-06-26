@@ -1,0 +1,31 @@
+.mat-dialog-title{
+    letter-spacing: 1.2px;
+    font-size: 16px;
+    color: #0e0e6a;
+    border-bottom: 1px solid gainsboro;
+    margin-top: -5px;
+    padding-bottom: 14px;
+    margin-bottom: 10px;
+}
+
+.mat-dialog-actions {
+    border-top: 1px solid gainsboro;
+    margin-bottom: -14px;
+    margin-top: 5px;
+}
+
+.cdk-overlay-pane{
+    width: 140vh !important;
+}
+
+.mat-dialog-container{
+    width: 140vh !important;
+} 
+
+.crdtip{
+    font-size: 11px;
+    letter-spacing: 1.3px;
+    color: #004487;
+}
+
+

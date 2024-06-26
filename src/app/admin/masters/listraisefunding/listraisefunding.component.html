@@ -1,0 +1,61 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; <span> Raise Funding </span> </h2>
+            <table class="tblsearch">
+                <tr>
+                    <td class="tdsearch"> <span class="fa fa-search searchtext-icon"></span>
+                        <input matInput type="text" class="searchtext" placeholder="Search ..." name="title">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="wid100">
+            <div class="mat-table admin-table">
+                <div class="mat-header-row">
+                    <div class="mat-header-cell text-center">Startup Name</div>
+                    <div class="mat-header-cell text-center" fxFlex.gt-sm="7">Logo</div>
+                    <div class="mat-header-cell text-center" fxFlex.gt-sm="7">Verify?</div>
+                    <div class="mat-header-cell text-center">Sector</div>
+                    <div class="mat-header-cell text-center">Founding Year</div>
+                    <div class="mat-header-cell text-center">Address</div>
+                </div>
+                <div *ngFor="let founder of founderList | paginate: { itemsPerPage: count, currentPage: page }" class="mat-row ">
+                    <div class="mat-cell text-center"><a
+                            [routerLink]="['../../viewstartup',founder.userId,founder.founderVerifyId,formType]"
+                            color="primary" matTooltip="view"
+                            class="btns1">{{founder.startupDeatailModel.startUpName}}</a> </div>
+                    <div class="mat-cell text-center" fxFlex.gt-sm="7"><span class="lgprev"><img
+                                style="max-width: 40%; max-height: 35px;border: 1px solid gray;"
+                                [src]="founder.startupDeatailModel.previewUrl"></span></div>
+                    <div *ngIf="!isStealth && founder.verified" class="mat-cell text-center" fxFlex.gt-sm="7">Yes</div>
+                    <div *ngIf="!isStealth && !founder.verified" class="mat-cell text-center" fxFlex.gt-sm="7">No</div>
+                    <div class="mat-cell text-center">{{founder.startupDeatailModel.sectorName}} </div>
+                    <div class="mat-cell text-center">{{founder.startupDeatailModel.foundingYear}}</div>
+                    <div class="mat-cell text-center">{{founder.startupDeatailModel.address}}</div>
+                </div>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="founderList.length > 0" fxLayout="row wrap">
+            <div fxFlex="100" class="p-11">
+                <mat-card class="p-0 text-center nobxshbrd">
+                    <pagination-controls class="product-pagination" autoHide="true" maxSize="5"
+                    (pageChange)="onPageChanged($event)"></pagination-controls>
+                </mat-card>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+            <div fxLayout="" fxLayoutGap="10px" class="container">
+                <div fxFlex="50%" class="text-left">
+                    <button mat-raised-button color="accent" type="button"
+                        [routerLink]="['../../../../admin/dashboard-menu/dash-board']"> <i
+                            class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+
+</div>

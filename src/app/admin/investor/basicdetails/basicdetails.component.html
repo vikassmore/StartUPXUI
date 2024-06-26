@@ -1,0 +1,174 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Basic Details</h2>
+        </div>
+        <form [formGroup]="uploadForm" (ngSubmit)="onInvestorSubmit(uploadForm.value)" autocomplete="off">
+            <mat-card-content>
+                <input matInput formControlName="investorId" hidden="true">
+                <div fxLayout="column" fxLayoutGap="10px" class="container">
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Profile Type</mat-label>
+                                <input matInput value="Investor" readonly style="color: #b2b2b2;">
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Entity Type</mat-label>
+                                <input matInput formControlName="entityType" readonly style="color: #b2b2b2;">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>First Name</mat-label>
+                                <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="firstName"
+                                    required>
+                                <mat-error *ngIf=" uploadForm.controls.firstName.errors?.required">First Name is
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.firstName.hasError('maxlength')">First Name
+                                    cannot exceed more than 100 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Last Name</mat-label>
+                                <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="lastName"
+                                    required>
+                                <mat-error *ngIf=" uploadForm.controls.lastName.errors?.required">Last Name is
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.lastName.hasError('maxlength')">Last Name
+                                    cannot exceed more than 100 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="emailId" required>
+                                <mat-error *ngIf="uploadForm.controls.emailId.errors?.required">EmailId is
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.emailId.hasError('maxlength')">Email Id
+                                    cannot exceed more than 100 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Country</mat-label>
+                                <mat-select matNativeControl formControlName="countryId" required
+                                    (selectionChange)="onChangeCountry($event)">
+                                    <mat-option *ngFor="let con of country" [value]="con.countryId">
+                                        {{con.countryName}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="uploadForm.controls.countryId.errors?.required">Please Select
+                                    Country</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>State</mat-label>
+                                <mat-select matNativeControl formControlName="stateId" required
+                                    (selectionChange)="onChangeState($event)">
+                                    <mat-option *ngFor="let state of states" [value]="state.stateId">
+                                        {{state.stateName}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="uploadForm.controls.stateId.errors?.required">Please Select
+                                    State</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>City</mat-label>
+                                <mat-select matNativeControl formControlName="cityId" required>
+                                    <mat-option *ngFor="let city of cities" [value]="city.cityId">
+                                        {{city.cityName}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="uploadForm.controls.cityId.errors?.required">Please Select
+                                    City</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                        <div fxFlex.gt-sm="66.66%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Address 1</mat-label>
+                                <input matInput formControlName="address1" required>
+                                <mat-error *ngIf="uploadForm.controls.address1.errors?.required">Please Select
+                                    Address1</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.address1.hasError('maxlength')">Address
+                                    cannot exceed more than 200 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Mobile No.</mat-label>
+                                <input matInput formControlName="mobileNo" (keypress)="keyPressNumbers($event)"
+                                    minlength="10" maxlength="10" required>
+                                <mat-error *ngIf="uploadForm.controls.mobileNo.errors?.required">Mobile No is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Address 2</mat-label>
+                                <input matInput formControlName="address2">
+                                <mat-error *ngIf="uploadForm.controls.address2.errors?.required">Please Select
+                                    Address2</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.address2.hasError('maxlength')">Address
+                                    cannot exceed more than 200 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                            class="grid-item">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Zip Code</mat-label>
+                                <input matInput type="number" formControlName="zipCode"
+                                    (keypress)="keyPressNumbers($event)" required>
+                                <mat-error *ngIf="uploadForm.controls.zipCode.errors?.required">Zip code is
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.zipCode.hasError('minlength')">Please enter
+                                    valid Zip code</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.zipCode.hasError('maxlength')">Please enter
+                                    valid Zip code</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+                <div fxLayout="" fxLayoutGap="10px" class="container">
+                    <div fxFlex="50%" class="text-left">
+                        <button mat-raised-button color="accent" type="button"
+                            [routerLink]="['../../../admin/investor/dashboardinvestor']"> <i
+                                class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
+                    </div>
+                    <div fxFlex="50%" class="text-right">
+                        <h4 class="crdtip">Tip : (*) fields are mandatory.</h4>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

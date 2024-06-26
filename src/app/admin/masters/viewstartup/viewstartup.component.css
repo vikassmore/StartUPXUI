@@ -1,0 +1,50 @@
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    border-collapse: collapse;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+  }
+  
+  th{
+    text-align: left !important;
+  }
+  
+  .mat-expansion-panel-header.mat-expanded {
+    height: 50px;
+    border-bottom: 1px solid gainsboro;
+    border-radius: 0px;
+    background: #f4f4f4;
+}
+
+.text-center{
+  text-align: center !important;
+}
+
+.table {
+  margin-top: 22px;
+  background: #f6f6f6;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 16px 16px !important;
+}
+
+.mat-row {
+  padding: 0px 0px !important;
+}

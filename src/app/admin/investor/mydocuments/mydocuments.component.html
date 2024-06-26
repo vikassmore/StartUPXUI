@@ -1,0 +1,61 @@
+<div class="p-1">
+    <mat-card class="p-0">
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
+            <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; My Documents</h2>
+            <table class="tblsearch">
+                <tr>
+                    <td class="tdsearch"> <span class="fa fa-search searchtext-icon"></span>
+                        <input matInput type="text" class="searchtext" placeholder="Search ..." name="title"
+                            [(ngModel)]="title" (input)="Search()" (keyup)="Search()" (ngModelChange)="Search()">
+                    </td>
+                    <td class="tdbtn">
+                        <button mat-raised-button color="primary" type="button" (click)="openDialog()"><i
+                                class="fa fa-plus" aria-hidden="true"></i>&nbsp; ADD</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="row" fxFlex.gt-sm="70%">Document Name</th>
+                        <th scope="row" class="text-center" fxFlex.gt-sm="15%">Download</th>
+                        <th scope="row" class="text-center" fxFlex.gt-sm="15%">Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let doc of documentdetail">
+                    <tr>
+                        <td fxFlex.gt-sm="70%">{{doc.documentName}}</td>
+                        <td class="text-center" fxFlex.gt-sm="15%"> <button mat-mini-fab color="primary"
+                                matTooltip="Download This Document" class="mx-1"
+                                (click)="downloadDocument(doc.userId,doc.documentId,doc.fileName);"><i class="fa fa-download"
+                                    aria-hidden="true"></i></button> </td>
+                        <td class="text-center" fxFlex.gt-sm="15%"> <button mat-mini-fab color="warn"
+                                matTooltip="Delete This Document" class="mx-1" (click)="deleteDocument(doc);"><i
+                                    class="fa fa-trash" aria-hidden="true"></i></button> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <div fxLayout="row wrap">
+            <div fxFlex="100" class="p-11">
+                <mat-card class="p-0 text-center nobxshbrd">
+                    <!-- <pagination-controls class="product-pagination" autoHide="true" maxSize="5" ></pagination-controls> -->
+                </mat-card>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
+            <div fxLayout="" fxLayoutGap="10px" class="container">
+                <div fxFlex="50%" class="text-left">
+                    <button mat-raised-button color="accent" type="button"
+                        [routerLink]="['../../../admin/investor/dashboardinvestor']"> <i class="fa fa-arrow-circle-left"
+                            aria-hidden="true"></i> BACK</button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>
