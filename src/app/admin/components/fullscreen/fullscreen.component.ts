@@ -5,9 +5,9 @@ const document: any = window.document;
   selector: 'app-fullscreen',
   encapsulation: ViewEncapsulation.None,
   template: `
-    <button mat-icon-button class="full-screen">
-        <mat-icon *ngIf="!toggle" #expand>fullscreen</mat-icon>
-        <mat-icon *ngIf="toggle" #compress>fullscreen_exit</mat-icon>
+    <button mat-icon-button class="full-screen" class="headerbtn">
+        <mat-icon *ngIf="!toggle" #expand class="headericon">fullscreen</mat-icon>
+        <mat-icon *ngIf="toggle" #compress class="headericon">fullscreen_exit</mat-icon>
     </button> 
   `
 })

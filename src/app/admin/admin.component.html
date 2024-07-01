@@ -1,15 +1,50 @@
-<mat-toolbar color="primary" class="admin-toolbar mat-elevation-z2 gradient-blue">
+<mat-toolbar color="primary" class="admin-toolbar mat-elevation-z2 gradient-blue1" style="padding: 0 10px 0 0">
     <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
-        <div fxLayout="row" fxLayoutAlign="center center">
-            <div class="logo-section" fxShow="false" fxShow.gt-xs>
+        <div fxLayout="row" fxLayoutAlign="center center" >
+            <div class="logo-section mylogo" fxShow="false" fxShow.gt-xs >
                 <a routerLink="/admin" fxLayout="row" fxLayoutAlign="start center" class="logo">
                     <!--<span>Good Delivery</span>-->
-                    <img src="assets/logostartupx.png" style="height: 50px; " class="img1" alt="StartupX"><sup style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                    <img src="assets/logostartupx1.png" style="height: 50px; margin-left: 20px;" class="img1" alt="StartupX"><sup style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
                 </a>
             </div>
-            <button mat-icon-button (click)="toggleSidenav()">
+            <button mat-icon-button (click)="toggleSidenav()" style="color: #07206b;">
                 <mat-icon>menu</mat-icon>
             </button>
+
+            <img class="w-full h-full rounded-full ng-star-inserted" style="border-radius: 50%;width: 35px;" src="assets/images/profile/adam.jpg">
+            
+            <div> 
+                <table>
+                    <tr>
+                        <td class="hname">{{ userInfo.firstName}} {{userInfo.lastName}} <span class="htype">(Investor)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="hemail">{{userInfo.emailId}} </td>
+                    </tr>
+                </table>
+            </div>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <div style="border-left: 1px solid #a8a8bd;padding-left: 10px;"> 
+                <table>
+                    <tr style="    line-height: 0;">
+                        <td class="hname" style="width: 50%;"><mat-progress-bar mode="determinate" value="70"></mat-progress-bar></td> <td> <span class="htype">&nbsp; 70% Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="hemail">Please complete your profile</td>
+                    </tr>
+                </table>
+            </div>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <img class="w-full h-full rounded-full ng-star-inserted" style="border-radius: 50%;width: 35px;" src="assets/images/others/ver.png"> &nbsp; <span class="htype">Verified</span>
+
+           
+        
+            
+    
             <!-- <button mat-icon-button (click)="settings.adminSidenavIsPinned = !settings.adminSidenavIsPinned"
                 fxShow="false" fxShow.gt-xs>
                 <svg class="pin">
@@ -39,7 +74,7 @@
                 </form>
             </div>               -->
             <!-- <app-lang fxShow="false" fxShow.gt-xs></app-lang> -->
-            <app-fullscreen></app-fullscreen>
+            <app-fullscreen ></app-fullscreen>
             <app-messages fxShow="false" fxShow.gt-xs ></app-messages>
             <app-user-menu></app-user-menu>
         </div>
@@ -87,7 +122,7 @@
         </perfect-scrollbar>
     </mat-drawer>
     <mat-drawer-content>
-        <app-breadcrumb></app-breadcrumb>
+        <!-- <app-breadcrumb></app-breadcrumb> -->
         <router-outlet></router-outlet>
     </mat-drawer-content>
 

@@ -1,6 +1,6 @@
 
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Basic Details</h2>   <mat-icon>keyboard_arrow_right</mat-icon>
         </div>
@@ -12,7 +12,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
                         
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100">
                                 <mat-label>First Name</mat-label>
                                 <input matInput  >
                 
@@ -20,7 +20,7 @@
                         </div>
 
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100">
                                 <mat-label>Last Name</mat-label>
                                 <input matInput  >
                 
@@ -28,7 +28,7 @@
                         </div>
 
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100">
                                 <mat-label>Founder Type</mat-label>
                                 <mat-select >
                                     <mat-option value="Individual">Individual</mat-option>
@@ -44,7 +44,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100">
                                 <mat-label>Email</mat-label>
                                 <input matInput >
                 
@@ -52,14 +52,14 @@
                         </div>
 
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                            <div appearance="outline" class="w-100 sgln">
+                            <div appearance="" class="w-100 sgln">
                                 <mat-label>Photo (.jpg /.jpeg /.png)</mat-label><br/>
                                 <input type="file" >
                             </div>
                         </div>
         
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                            <div appearance="outline" class="w-100 sgln mt-2">
+                            <div appearance="" class="w-100 sgln mt-2">
                                 <span class="lgprev">Photo Preview</span>
                             </div>
                         </div>
@@ -85,11 +85,11 @@
                 </div>
             </div>
 
-    </mat-card>
+        </div>
 </div>
 
 <div class="p-1">
-    <mat-card class="p-0" >
+    <div class="p-0" >
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;Interested Sectors, Investment Amount & Funding Details</h2>   <mat-icon>keyboard_arrow_right</mat-icon>
         </div>
@@ -101,7 +101,7 @@
 
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
                     <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                        <mat-form-field appearance="outline" class="w-100">
+                        <mat-form-field appearance="" class="w-100">
                             <mat-select  placeholder="Interested Sectors" multiple>
                                 <mat-option value="Legal">Legal</mat-option>
                                 <mat-option value="Software">Software</mat-option>
@@ -114,14 +114,14 @@
                     </div>
   
                     <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                        <mat-form-field appearance="outline" class="w-100">
+                        <mat-form-field appearance="" class="w-100">
                             <mat-label>Investment Amount In Mind</mat-label>
                             <input  matInput  formControlName="invamt" required >
                         </mat-form-field>
                     </div>
               
                     <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                        <mat-form-field appearance="outline" class="w-100">
+                        <mat-form-field appearance="" class="w-100">
                             <mat-label>Type Of Funding</mat-label>
                             <mat-select required>
                                 <mat-option value="Angel">Angel</mat-option>
@@ -139,14 +139,14 @@
         <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
             <div fxLayout="" fxLayoutGap="10px" class="container">
                 <div fxFlex="50%" class="text-left">
-                    <button mat-raised-button color="primary" type="submit" style="width: 190px;">Save All Details</button>
+                    <button mat-raised-button color="primary" type="submit" class="explr" style="width: 190px;">Save All Details</button>
                 </div>
                 <div fxFlex="50%" class="text-right">
                   
                 </div>
             </div>
         </div>
-    </mat-card>
+    </div>
 </div>
 
 

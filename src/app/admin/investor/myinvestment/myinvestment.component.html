@@ -1,12 +1,12 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; My Investments </h2>
         </div>
         <div fxLayout="column" fxLayoutGap="10px" class="container p-1">
             <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                 <div fxFlex.gt-sm="40%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                    <mat-form-field appearance="outline" class="w-100" style="margin-top: 0;padding: 0;">
+                    <mat-form-field appearance="" class="w-100 w-101" style="margin-top: 0;padding: 0;">
                         <span class="fa fa-search searchtext-icon1"></span>
                         <input matInput type="text" class="searchtext1" placeholder="Search Company Name ..."
                             name="title" [(ngModel)]="title" (input)="Search()" (keyup)="Search()"
@@ -19,7 +19,7 @@
                 </div>
                 <div fxFlex.gt-sm="1%" fxFlex.lt-md="50%" fxLayoutAlign="right" fxFlexFill class="grid-item"></div>
                 <div fxFlex.gt-sm="35%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                    <mat-form-field appearance="outline" class="w-100" style="margin-top: 0;">
+                    <mat-form-field appearance="" class="w-100 w-101" style="margin-top: 0;">
                         <mat-label>Sort</mat-label>
                         <mat-select (selectionChange)="onSortChange($event)">
                             <mat-option value="Latest" selected><span>Latest</span></mat-option>
@@ -31,7 +31,7 @@
                 </div>
                 <div fxFlex.gt-sm="11%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
                     <button mat-raised-button color="primary" type="button"
-                        style="width: 95px;    margin-top: 8px !important;"><i class="fa fa-sliders"
+                        style="width: 95px;    margin-top: 8px !important;" class="explr"><i class="fa fa-sliders"
                             aria-hidden="true"></i>&nbsp;&nbsp;Reset</button>&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <mat-card-content style="margin-top: -25px;">
                 <mat-tab-group (selectedTabChange)="selectedTabValue($event)">
                     <mat-tab label="Ongoing ({{ongoingCount}})" value="Ongoing">
-                        <h3 style="margin: 10px;">Your Current Deals</h3>
+                        <h3 style="margin: 10px;     padding: 7px;">Your Current Deals</h3>
                         <div class="mat-table admin-table">
                             <div class="mat-header-row mthead">
                                 <div class="mat-header-cell text-center" fxFlex="25">Founder Company</div>
@@ -104,9 +104,9 @@
                         </div>
                     </mat-tab>
                     <mat-tab label="Closed ({{closedCount}})">
-                        <h3 style="margin: 10px;">Your Companies</h3>
+                        <h3 style="margin: 10px;     padding: 7px;">Your Companies</h3>
                         <div fxLayout="column" fxLayoutGap="10px" class="container">
-                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 " style="    background: #f1f1f1;margin-bottom: 10px;">
+                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 " style="margin-bottom: 10px;">
                                 <div fxFlex.gt-sm="46%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
                                     <div class="relative w-24 h-24" style="margin: 1rem 0rem 0rem 1rem;">
                                         <h2 style="color:#1e293b;">Your Portfolio : </h2> 
@@ -272,5 +272,5 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
 </div>

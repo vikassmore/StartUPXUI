@@ -1,12 +1,12 @@
-<button mat-icon-button [matMenuTriggerFor]="userMenu" #userMenuTrigger="matMenuTrigger" >
-    <mat-icon>account_circle</mat-icon>
+<button mat-icon-button [matMenuTriggerFor]="userMenu" #userMenuTrigger="matMenuTrigger" class="headerbtn">
+    <mat-icon class="headericon">account_circle</mat-icon>
 </button>
 
 <mat-menu #userMenu="matMenu" [overlapTrigger]="false" class="toolbar-dropdown-menu user-menu">
     <span (mouseleave)="userMenuTrigger.closeMenu()">
         <mat-toolbar color="primary">
             <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info">
-                <h5 style="font-size: 14px;">Settings</h5>
+                <h6 style="font-size: 14px;color: white;">Settings</h6>
                 <!-- <mat-icon width="80" class="mat-elevation-z6">person</mat-icon> -->
                 <!--<img [src]="userImage" alt="user-image" width="80" class="mat-elevation-z6">
                 <p>Emilio Verdines <br> <small>General Manager</small></p>-->

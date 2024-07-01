@@ -39,8 +39,6 @@
 }
 
 .mat-tab-group {
-    background: #f0f0f0 !important;
-    border: 1px solid #dbdbdb;
     border-radius: 8px;
     padding-bottom: 10px;
 }
@@ -60,9 +58,11 @@
 }
 
 .pc1 {
-    color: #1976d2;
+    color: #10225c;
     font-weight: 600;
     font-size: 15px;
+    font-style: italic;
+    margin-top: 5px;
 }
 
 .pc11 {
@@ -153,7 +153,7 @@
 }
 
 .Divbg1:hover {
-    background: -webkit-linear-gradient(50deg, #fcf2d4, #ffb49d) !important;
+    background: -webkit-linear-gradient(50deg, #dbd4fc, #9dabff) !important;
 }
 
 .Divbg2:hover {
@@ -368,3 +368,9 @@ li {
     color: rgb(255, 62, 62);
     padding: 4px 22px;
 }
+
+.mat-tab-body-content {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+

@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Bank Account Details</h2>
         </div>
@@ -9,7 +9,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
                         <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>IFSC Code</mat-label>
                                 <input matInput formControlName="ifsccode" required>
                                 <mat-error *ngIf="uploadForm.controls.ifsccode.errors?.required">IFSC Code is
@@ -20,7 +20,7 @@
                         </div>
                         <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Account Number</mat-label>
                                 <input matInput formControlName="accountNumber" (keypress)="keyPressNumbers($event)"
                                     required>
@@ -35,7 +35,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="66.66%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Bank Name</mat-label>
                                 <input matInput formControlName="bankName" required>
                                 <mat-error *ngIf="uploadForm.controls.bankName.errors?.required">Bank Name is
@@ -46,7 +46,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Branch Name</mat-label>
                                 <input matInput formControlName="branchName" required>
                                 <mat-error *ngIf="uploadForm.controls.branchName.errors?.required">Branch Name is
@@ -64,7 +64,7 @@
                         <button mat-raised-button color="accent" type="button"
                             [routerLink]="['../../../admin/investor/dashboardinvestor']"> <i
                                 class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
-                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid">
+                        <button mat-raised-button color="primary" type="submit" class="explr" [disabled]="!uploadForm.valid">
                             <i class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
                     </div>
                     <div fxFlex="50%" class="text-right">
@@ -73,5 +73,5 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
 </div>

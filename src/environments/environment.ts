@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   url: '',
   //urlAddress: 'http://wwmapi.meshbagroup.com'
-  urlAddress:'https://localhost:7230'
-  //urlAddress: 'http://startupxapi.meshbagroup.com'
+  //urlAddress:'https://localhost:7230'
+  urlAddress: 'http://startupxapi.meshbagroup.com'
 };
 
 

@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Trusted Contact Person Details</h2>
         </div>
@@ -25,7 +25,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>First Name</mat-label>
                                 <input matInput formControlName="firstName" (keypress)="keyPressOnlyChar($event)"
                                     required>
@@ -37,7 +37,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Last Name</mat-label>
                                 <input matInput formControlName="lastName" (keypress)="keyPressOnlyChar($event)"
                                     required>
@@ -49,7 +49,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Email</mat-label>
                                 <input matInput formControlName="emailId" required>
                                 <mat-error *ngIf=" uploadForm.controls.emailId.errors?.required">EmailId is
@@ -65,7 +65,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Country</mat-label>
                                 <mat-select matNativeControl formControlName="countryId" required
                                     (selectionChange)="onChangeCountry($event)">
@@ -79,7 +79,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>State</mat-label>
                                 <mat-select matNativeControl formControlName="stateId" required
                                     (selectionChange)="onChangeState($event)">
@@ -93,7 +93,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>City</mat-label>
                                 <mat-select matNativeControl formControlName="cityId" required>
                                     <mat-option *ngFor="let city of cities" [value]="city.cityId">
@@ -108,7 +108,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="66.66%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Address 1</mat-label>
                                 <input matInput formControlName="address1" required>
                                 <mat-error *ngIf="uploadForm.controls.address1.errors?.required">Address is
@@ -119,7 +119,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Zip Code</mat-label>
                                 <input matInput formControlName="zipCode" (keypress)="keyPressNumbers($event)" required>
                                 <mat-error *ngIf="uploadForm.controls.mobileNo.errors?.required">Zip Code is
@@ -132,7 +132,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="66.66%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Address 2</mat-label>
                                 <input matInput formControlName="address2">
                                 <mat-error *ngIf="uploadForm.controls.address2.hasError('maxlength')">Address
@@ -141,7 +141,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Mobile No.</mat-label>
                                 <input matInput formControlName="mobileNo" (keypress)="keyPressNumbers($event)"
                                     maxlength="10" minlength="10" required>
@@ -158,7 +158,7 @@
                         <button mat-raised-button color="accent" type="button"
                             [routerLink]="['../../../admin/investor/dashboardinvestor']"> <i
                                 class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
-                        <button mat-raised-button color="primary" type="submit"
+                        <button mat-raised-button color="primary" type="submit" class="explr"
                             [disabled]="!uploadForm.valid && buttonDisabled">
                             <i class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
                     </div>
@@ -168,5 +168,5 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
 </div>
