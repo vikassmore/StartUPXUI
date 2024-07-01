@@ -19,6 +19,17 @@ export class AdminComponent implements OnInit {
   public settings: Settings;
   public menuItems: Array<any>;
   public toggleSearchBar: boolean = false;
+  verified: boolean;
+  buttonDisabled: boolean;
+  investmentDisabled: boolean;
+  raisebuttonDisabled: boolean;
+  ProfileStatus: string | any;
+  investorProfileCompetion: string | any;
+  founderProfileCompetion: string | any;
+  FounderDetailCount:number;
+  FundingDetailCount:number;
+  userId:number;
+  roleId:string | any;
   constructor(public appSettings: AppSettings,
     public router: Router,
     private menuService: MenuService, private appService: AppService,private tokenStorage: TokenStorageService) {
@@ -30,6 +41,16 @@ export class AdminComponent implements OnInit {
       this.settings.adminSidenavIsOpened = false;
       this.settings.adminSidenavIsPinned = false;      
     };
+    debugger
+    this.userId = this.tokenStorage.getUser().userId;
+    this.roleId = this.tokenStorage.getUser().roleName;
+    if (this.userId && this.userId > 0) {
+      if (this.roleId === 'Startup') {
+        this.getFounderProfileCompletion(this.userId);
+      } else if (this.roleId === 'Investor') {
+        this.getInvestorProfileCompletion(this.userId);
+      }
+    }
     // if (!this.tokenStorage.getToken())
     //             {this.router.onSameUrlNavigation = 'reload';
     //             this.router.navigate(['/']);}
@@ -38,11 +59,13 @@ export class AdminComponent implements OnInit {
     });
     this.menuItems = this.menuService.getMenuItems();
    this.getInfo();
+   
   }
   public getInfo() {
     var user = JSON.parse(sessionStorage.getItem("userID"))
      this.appService.getUserId("api/User/" + user).subscribe((data: any) => {
       this.userInfo = data;
+      
     });
   
 
@@ -101,5 +124,62 @@ export class AdminComponent implements OnInit {
       this.settings.adminSidenavIsPinned = true;
     }
   }
+  getInvestorProfileCompletion(userId): void {
+    debugger
+    this.appService.getAllById('api/InvestorVerification/InvestorProfileCompletion/', userId).subscribe((data: any) => {
+      this.investorProfileCompetion = (((data.investorProfileCompletion) * 100) / 4).toFixed(0);
+      this.verified = data.verified;
+      if (this.verified == null) {
+        this.verified = false;
+      }
+      if (this.investorProfileCompetion == 100) {
+        if (data.verified == true) {
+          this.buttonDisabled = true;
+          this.ProfileStatus = "Verified Profile";
+          // this.investmentDisabled = false;
+        } else {
+          this.buttonDisabled = false;
+          this.ProfileStatus = "Non Verified Profile";
+          // this.investmentDisabled = true;
+        }
 
+      } else {
+        this.buttonDisabled = true;
+        // this.investmentDisabled = true;
+        this.ProfileStatus = "Non Verified Profile";
+      }
+    })
+    error => {
+      console.log(error.error.errors);
+    }
+  }
+
+  getFounderProfileCompletion(userId): void {
+    this.appService.getAllById('api/FounderVerification/FounderProfileCompletion/', userId).subscribe((data: any) => {
+      this.founderProfileCompetion = (((data.founderProfileCompletion) * 100) / 5).toFixed(0);
+      this.verified = data.verified;
+      this.FounderDetailCount = data.founderDetailCount;
+      this.FundingDetailCount = data.fundingDetailCount;
+      if (this.verified == null) {
+        this.verified = false;
+      }
+      if (this.founderProfileCompetion == 100) {
+        if (data.verified == true) {
+          this.buttonDisabled = true;
+          this.ProfileStatus = "Verified Profile";
+        } else {
+          this.buttonDisabled = false;
+          this.ProfileStatus = "Non Verified Profile";
+        }
+        this.raisebuttonDisabled = false;
+      } else {
+        this.buttonDisabled = true;
+        this.raisebuttonDisabled = true;
+        this.ProfileStatus = "Non Verified Profile";
+      }
+    })
+    error => {
+      console.log(error.error.errors);
+    }
+  }
 }
