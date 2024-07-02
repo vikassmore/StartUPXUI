@@ -8,12 +8,12 @@ import { AppService } from 'src/app/app.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 @Component({
-  selector: 'app-listrequestoffering',
-  templateUrl: './listrequestoffering.component.html',
-  styleUrls: ['./listrequestoffering.component.css']
+  selector: 'app-listindicateinterest',
+  templateUrl: './listindicateinterest.component.html',
+  styleUrls: ['./listindicateinterest.component.css']
 })
-export class ListrequestofferingComponent implements OnInit {
-  RequestOfferingList: [];
+export class ListindicateinterestComponent implements OnInit {
+  IndicateInterestList: [];
   public page: any;
   public count = 10;
   formType: string | any;
@@ -21,18 +21,19 @@ export class ListrequestofferingComponent implements OnInit {
 
   ngOnInit(): void {
     this.formType = this.route.snapshot.params['id'];
-    this.getAllRequestOfferingDetails();
+    this.getAllIndicateInvstmentDetails();
   }
-  public getAllRequestOfferingDetails() {
-    this.appService.getAll("api/InvestorVerification/GetAllRequestOfferDetails").subscribe(data => {
+  public getAllIndicateInvstmentDetails() {
+    this.appService.getAll("api/InvestorVerification/GetAllIndicateinterestDetails").subscribe(data => {
       debugger
-      this.RequestOfferingList = data.map(p => ({
+      this.IndicateInterestList = data.map(p => ({
         investorName: p.investorName,
         verified: p.verified,
         userId:p.userId,
         investorId:p.investorId,
         investorVerifiedId:p.investorVerifiedId,
         founderVerifiedId:p.founderVerifiedId,
+        indicateInterest:p.indicateInterest,
         startupDeatailModel: {
           startupId: p.startupDeatailModel.startupId,
           startUpName: p.startupDeatailModel.startUpName,
@@ -46,6 +47,4 @@ export class ListrequestofferingComponent implements OnInit {
       }));
     });
   }
-  
-  
 }

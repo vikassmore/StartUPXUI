@@ -46,7 +46,7 @@ export const routes = [
   { path: 'myinvestment', component: MyinvestmentComponent, data: { breadcrumb: 'My Investments' } },
   { path: 'mywatchlist', component: MywatchlistComponent, data: { breadcrumb: 'My Watchlist' } },
   { path: 'mydocuments', component: MydocumentsComponent, data: { breadcrumb: 'My Documents' } },
-  { path: 'submitinterest', component: SubmitinterestComponent, data: { breadcrumb: 'Submit Interest' } },
+  { path: 'submitinterest/:id/:id1', component: SubmitinterestComponent, data: { breadcrumb: 'Submit Interest' } },
   { path: 'companyinvest/:id/:id1', component: CompanyinvestComponent, data: { breadcrumb: 'Invest Now' } },
   { path: 'companyinterest/:id/:id1', component: CompanyinterestComponent, data: { breadcrumb: 'Indicate Interest' } },
   { path: 'adddocuments', component: AdddocumentsComponent, data: { breadcrumb: 'Add Document' } },

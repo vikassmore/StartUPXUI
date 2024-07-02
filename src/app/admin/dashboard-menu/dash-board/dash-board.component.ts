@@ -16,6 +16,9 @@ export class DashBoardComponent {
   RaiseCount:string | any;
   InvestorVerifiedCount:number | any;
   InvestorNonVerifiedCount:string | any;
+  RequestOfferingCount:string | any;
+  InvestorsInvestedCount:string | any;
+  IndicateInvestmentCount:string | any;
   public FAQList= [];
   public PolicyList= [];
   public ServiceUserList= [];
@@ -342,6 +345,9 @@ getInvestorStatusCount(): void {
   this.appService.getAll('api/InvestorVerification/InvestorStatusCount').subscribe((data: any) => {
 this.InvestorVerifiedCount = data.verifiedCount;
 this.InvestorNonVerifiedCount = data.nonVerifiedCount;
+this.RequestOfferingCount = data.requestFundingCount;
+this.InvestorsInvestedCount = data.investorsInvestedCount;
+this.IndicateInvestmentCount = data.indicateInvestmentCount;
   })
   error => {
     console.log(error.error.errors);

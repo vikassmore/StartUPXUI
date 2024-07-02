@@ -144,8 +144,17 @@
     <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
       <div fxLayout="" fxLayoutGap="10px" class="container">
         <div fxFlex="50%" class="text-left">
-          <button mat-raised-button color="accent" type="button" [routerLink]="['../../../../listinvestor',formType]">
+          <button *ngIf="formType != 3&&formType != 4&& formType != 5" mat-raised-button color="accent" type="button" [routerLink]="['../../../../listinvestor',formType]">
             <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
+            <button *ngIf="formType == 3" mat-raised-button color="accent" type="button"
+            [routerLink]="['../../../../listrequestoffering',formType]"> <i class="fa fa-arrow-circle-left"
+                aria-hidden="true"></i> BACK</button>
+                <button *ngIf="formType == 5 " mat-raised-button color="accent" type="button"
+                [routerLink]="['../../../../listinvested',formType]"> <i class="fa fa-arrow-circle-left"
+                    aria-hidden="true"></i> BACK</button>
+                    <button *ngIf="formType == 4 " mat-raised-button color="accent" type="button"
+                    [routerLink]="['../../../../listindicateinterest',formType]"> <i class="fa fa-arrow-circle-left"
+                        aria-hidden="true"></i> BACK</button>
         </div>
       </div>
     </div>

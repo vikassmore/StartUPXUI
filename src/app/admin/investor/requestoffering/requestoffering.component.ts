@@ -209,6 +209,7 @@ export class RequestofferingComponent implements OnInit {
     this.addRequestOffering();
   }
   private addRequestOffering = () => {
+    debugger
     let investorinvestmentModel: InvestorInvestmentModel = {
       onWatchList: true,
       investorInvestmentId: 0,
@@ -223,7 +224,7 @@ export class RequestofferingComponent implements OnInit {
     }
     this.appService.add('api/InvestorInvestment/AddRequestOffering', investorinvestmentModel).subscribe((response) => {
       if (!Number.isNaN(response)) {
-        this.snackBar.open('Company successfuly add to your watchlist!', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
+        this.snackBar.open('You have Successfully requested for the offering.', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
         this.router.navigate(['../companyinvest'], { relativeTo: this.route });
       }
       else {

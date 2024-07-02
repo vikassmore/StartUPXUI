@@ -7,13 +7,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
+
 @Component({
-  selector: 'app-listrequestoffering',
-  templateUrl: './listrequestoffering.component.html',
-  styleUrls: ['./listrequestoffering.component.css']
+  selector: 'app-listinvested',
+  templateUrl: './listinvested.component.html',
+  styleUrls: ['./listinvested.component.css']
 })
-export class ListrequestofferingComponent implements OnInit {
-  RequestOfferingList: [];
+export class ListinvestedComponent implements OnInit {
+  InvestmentList: [];
   public page: any;
   public count = 10;
   formType: string | any;
@@ -21,12 +22,12 @@ export class ListrequestofferingComponent implements OnInit {
 
   ngOnInit(): void {
     this.formType = this.route.snapshot.params['id'];
-    this.getAllRequestOfferingDetails();
+    this.getAllInvestmentsDetails();
   }
-  public getAllRequestOfferingDetails() {
-    this.appService.getAll("api/InvestorVerification/GetAllRequestOfferDetails").subscribe(data => {
+  public getAllInvestmentsDetails() {
+    this.appService.getAll("api/InvestorVerification/GetAllInvestmentsDetails").subscribe(data => {
       debugger
-      this.RequestOfferingList = data.map(p => ({
+      this.InvestmentList = data.map(p => ({
         investorName: p.investorName,
         verified: p.verified,
         userId:p.userId,
@@ -47,5 +48,6 @@ export class ListrequestofferingComponent implements OnInit {
     });
   }
   
-  
+
+
 }

@@ -239,7 +239,7 @@ export class CompanyinterestComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(SubmitinterestComponent, {
       width: '120vh',
-      data: { investorUserId: this.investorUserId, founderVerifyId: this.founderVerifyId }
+      data: { investorUserId: this.investorUserId, founderVerifyId: this.founderVerifyId ,userId: this.userId}
     });
   }
   //Show intereset

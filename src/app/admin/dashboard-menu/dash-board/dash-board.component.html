@@ -140,34 +140,34 @@
             </mat-card>
         </div>
         <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg4" >
+            <mat-card class="p-0 Divbg4" [routerLink]="['../../../admin/masters/listindicateinterest',4]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc4">Indicate Interested</p>
                 </div>  
                 <div class="">
-                    <p class="pcl4">0</p>
+                    <p class="pcl4">{{IndicateInvestmentCount}}</p>
                 </div>
             </mat-card>
         </div>  
 
         <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg4" >
+            <mat-card class="p-0 Divbg4" [routerLink]="['../../../admin/masters/listinvested',5]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc4">Invested</p>
                 </div>  
                 <div class="">
-                    <p class="pcl4">0</p>
+                    <p class="pcl4">{{InvestorsInvestedCount}}</p>
                 </div>
             </mat-card>
         </div>  
 
         <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg4" [routerLink]="['../../../admin/masters/listrequestoffering']">
+            <mat-card class="p-0 Divbg4" [routerLink]="['../../../admin/masters/listrequestoffering',3]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc4">Request Offering</p>
                 </div>  
                 <div class="">
-                    <p class="pcl4">0</p>
+                    <p class="pcl4">{{RequestOfferingCount}}</p>
                 </div>
             </mat-card>
         </div>

@@ -48,6 +48,8 @@ import { EditserviceuserComponent } from './serviceuser/editserviceuser/editserv
 import { ListprofilemanagementComponent } from './serviceuser/listprofilemanagement/listprofilemanagement.component';
 import { listworkflowmanagement } from './serviceuser/listworkflowmanagement/listworkflowmanagement.component';
 import { DenyserviceuserComponent } from './serviceuser/denyserviceuser/denyserviceuser.component';
+import { ListindicateinterestComponent } from './listindicateinterest/listindicateinterest.component';
+import { ListinvestedComponent } from './listinvested/listinvested.component';
 
 
 
@@ -90,7 +92,9 @@ export const routes = [
   { path: 'addaccreditedinvestor', component: AddaccreditedinvestorComponent, data: { breadcrumb: 'masters / Accredited Investor / Add Accredited Investor ' } },
   { path: 'listaccreditedinvestor', component: ListaccreditedinvestorComponent, data: { breadcrumb: 'masters / Accredited Investor  / List of Accredited Investor' } },
 
-  { path: 'listrequestoffering', component: ListrequestofferingComponent, data: { breadcrumb: 'dashboard / request offering' } },
+  { path: 'listrequestoffering/:id', component: ListrequestofferingComponent, data: { breadcrumb: 'dashboard / request offering' } },
+  { path: 'listinvested/:id', component: ListinvestedComponent, data: { breadcrumb: 'dashboard / invested' } },
+  { path: 'listindicateinterest/:id', component: ListindicateinterestComponent, data: { breadcrumb: 'dashboard / indicate interest' } },
 
   { path: 'listnotableinvestor', component: ListnotableinvestorComponent, data: { breadcrumb: 'dashboard / notable investor' } },
   { path: 'addeditnotableinvestor', component: AddeditnotableinvestorComponent, data: { breadcrumb: 'dashboard / add notable investor' } },
@@ -146,7 +150,9 @@ export const routes = [
     EditserviceuserComponent,
     ListprofilemanagementComponent,
     listworkflowmanagement,
-    DenyserviceuserComponent
+    DenyserviceuserComponent,
+    ListindicateinterestComponent,
+    ListinvestedComponent
 
   ],
   imports: [

@@ -287,7 +287,7 @@ export class CompanyinvestComponent implements OnInit {
           indicateInterest: null,
           investmentRound: this.FundingModelDetails.liquidityRank,
           founderVerifyId: this.founderVerifyId,
-          investorUserId: this.investorUserId,
+          investorUserId: this.userId,
           loggedUserId: 0,
           isActive: true,
         }
