@@ -39,7 +39,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="hemail" *ngIf="(roleId === 'Startup' ? founderProfileCompetion : investorProfileCompetion) <= 100">Please complete your profile</td>
+                            <td colspan="2" class="hemail" *ngIf="(roleId === 'Startup' ? founderProfileCompetion : investorProfileCompetion) < 100">Please complete your profile</td>
+                            <td colspan="2" class="hemail" *ngIf="(roleId === 'Startup' ? founderProfileCompetion : investorProfileCompetion) == 100">Profile Completed</td>
+
                         </tr>
                     </table>
                 </div>
@@ -116,7 +118,7 @@
                 </div>
             </div> -->
 
-            <div class="flex flex-col items-center w-full p-4 ng-tns-c56-5">
+            <!-- <div class="flex flex-col items-center w-full p-4 ng-tns-c56-5">
                 <div class="relative w-24 h-24" style="margin: 1.5rem 0rem 0rem 0rem;text-align: center;">
                     <img class="w-full h-full rounded-full ng-star-inserted" style="border-radius: 50%;width: 75px;" src="assets/images/profile/adam.jpg">
                 </div>
@@ -124,8 +126,8 @@
                     <div class="w-full whitespace-nowrap text-ellipsis overflow-hidden text-center leading-normal font-medium" style="color:white"> {{ userInfo.firstName}} {{userInfo.lastName}}</div>
                     <div class="w-full mt-0.5 whitespace-nowrap text-ellipsis overflow-hidden text-center text-md leading-normal font-medium text-secondary"style="color:gray"> {{userInfo.emailId}}</div>
                 </div>
-            </div>
-
+            </div> -->
+<br><br><br>
             <app-admin-menu [menuItems]="menuItems" [menuParentId]="0"> </app-admin-menu>
             
         </perfect-scrollbar>
