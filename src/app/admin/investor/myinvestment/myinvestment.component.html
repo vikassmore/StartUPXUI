@@ -6,8 +6,8 @@
         <div fxLayout="column" fxLayoutGap="10px" class="container p-1">
             <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                 <div fxFlex.gt-sm="40%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                    <mat-form-field appearance="" class="w-100 w-101" style="margin-top: 0;padding: 0;">
-                        <span class="fa fa-search searchtext-icon1"></span>
+                    <mat-form-field appearance="" class="w-100 w-101" style="margin-top: 0;">
+                        <!-- <span class="fa fa-search searchtext-icon1"></span> -->
                         <input matInput type="text" class="searchtext1" placeholder="Search Company Name ..."
                             name="title" [(ngModel)]="title" (input)="Search()" (keyup)="Search()"
                             (ngModelChange)="Search()" [(ngModel)]="value">
@@ -37,7 +37,7 @@
             </div>
         </div>
         <form>
-            <mat-card-content style="margin-top: -25px;">
+            <mat-card-content style="margin-top: -15px; padding: 10px 20px !important;" class="p-1">
                 <mat-tab-group (selectedTabChange)="selectedTabValue($event)">
                     <mat-tab label="Ongoing ({{ongoingCount}})" value="Ongoing">
                         <h3 style="margin: 10px;     padding: 7px;">Your Current Deals</h3>
@@ -104,20 +104,16 @@
                         </div>
                     </mat-tab>
                     <mat-tab label="Closed ({{closedCount}})">
-                        <h3 style="margin: 10px;     padding: 7px;">Your Companies</h3>
-                        <div fxLayout="column" fxLayoutGap="10px" class="container">
-                            <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 " style="margin-bottom: 10px;">
-                                <div fxFlex.gt-sm="46%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                                    <div class="relative w-24 h-24" style="margin: 1rem 0rem 0rem 1rem;">
-                                        <h2 style="color:#1e293b;">Your Portfolio : </h2> 
-                                        <span style="color:#1e293b;">Companies investments that are fully closed and have not yet been realized will be visible in your portfolio. </span> 
+                        <div >
+                            <div class="row">
+                                <div fxFlex.gt-sm="70%"  fxLayoutAlign="left" fxFlexFill class="grid-item">
+                                    <div style="margin-top: 20px;">
+                                        <h3 style="margin-left: 20px;">Your Portfolio :</h3>
+                                        <span style="color:#1e293b;margin-left: 20px;">Companies investments that are fully closed and have not yet been realized will be visible in your portfolio. </span> 
                                     </div>
                                 </div>
-                                <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item" >
-                                    <span class="dot"></span>
-                                </div>
-                                <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                                    <div class="relative w-24 h-24" style="margin: 2.5rem 0rem 0rem 0rem; text-align: center;">
+                                <div fxFlex.gt-sm="30%" fxLayoutAlign="right" fxFlexFill class="grid-item">
+                                    <div style="margin-top: 20px;">
                                         <h4 style="color:#1e293b;">Amount Invested </h4>
                                         <h4 style="color:#1e293b;">{{closedInvestmentAmountSum |
                                             currency:'USD':'symbol'}} /- </h4>  
@@ -187,6 +183,7 @@
                         </div>
                     </mat-tab>
                     <mat-tab label="Exited ({{exitedCount}})">
+                        <h3 style="margin: 10px;     padding: 7px;">Your Exited Deals</h3>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2 " *ngIf="!isExisted">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                                 class="grid-item">
@@ -261,7 +258,6 @@
                     </mat-tab>
                 </mat-tab-group>
             </mat-card-content>
-            <mat-divider></mat-divider>
             <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
                 <div fxLayout="" fxLayoutGap="10px" class="container">
                     <div fxFlex="50%" class="text-left">

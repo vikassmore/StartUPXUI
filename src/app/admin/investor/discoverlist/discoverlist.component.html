@@ -2,8 +2,8 @@
     <div fxLayout="column" fxLayoutGap="10px" class="container">
         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
             <div fxFlex.gt-sm="40%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                <mat-form-field appearance="outline" class="w-100" style="margin-top: 0;">
-                    <span class="fa fa-search searchtext-icon1"></span>
+                <mat-form-field appearance="" class="w-100 w-101" style="margin-top: 0;">
+                    <!-- <span class="fa fa-search searchtext-icon1"></span> -->
                     <input matInput type="text" class="searchtext1" placeholder="Search Company Name ..."
                         name="StartUpName" [(ngModel)]="StartUpName" (input)="Search()" (keyup)="Search()"
                         (ngModelChange)="Search()" [(ngModel)]="value">
@@ -18,7 +18,7 @@
             </div> -->
             <div fxFlex.gt-sm="1%" fxFlex.lt-md="50%" fxLayoutAlign="right" fxFlexFill class="grid-item"></div>
             <div fxFlex.gt-sm="35%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                <mat-form-field appearance="outline" class="w-100" style="margin-top: 0;">
+                <mat-form-field appearance="" class="w-100 w-101" style="margin-top: 0;">
                     <mat-label>Sort</mat-label>
                     <mat-select (selectionChange)="onSortChange($event)">
                         <mat-option value=""><span></span></mat-option>
@@ -39,15 +39,14 @@
             </div> -->
         </div>
     </div>
-    <mat-divider></mat-divider>
     <div fxLayout="column" class="container">
         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
             <div fxFlex.gt-sm="33%" class="mt-2" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                 class="grid-item">
-                <mat-card class="p-0 mt-2" style="    height: 500px;overflow-x: hidden;">
+                <div class="p-0 mt-2" style="    height: 500px;overflow-x: hidden;">
                     <div fxLayout="row wrap" fxFlex="100">
-                        <div class="text-center" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
-                            <h3>Filters</h3>
+                        <div class="text-center" fxFlex="100" style="letter-spacing: 1px;">
+                            <h3 class="crdtxts">Filters</h3>
                         </div>
                         <mat-tab-group (selectedTabChange)="selectedTabValue($event)">
                             <mat-tab label="Live" class="mttab"></mat-tab>
@@ -326,7 +325,7 @@
                             </div>
                         </div>
                     </div>
-                </mat-card>
+                </div>
             </div>
             <div fxFlex.gt-sm="1%" class="mt-2" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                 class="grid-item"></div>
@@ -335,7 +334,7 @@
                 <div fxLayout="row wrap" #resizedDiv style="margin-top: 10px;width: 100%;">
                     <div fxFlex="100" *ngFor="let item of startupDetails" fxFlex.gt-sm="100" class="mt-1"
                         fxFlex.sm="100" style="cursor:pointer;">
-                        <mat-card class="p-0 Divbg4">
+                        <mat-card class="p-0 mat-expansion-panel">
                             <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                                 <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                     <span *ngIf="item.newFounder" class="badge" matBadgePosition="above before"
@@ -368,7 +367,7 @@
                                 <div *ngIf="item.live && !item.preview && !item.raiseFunding" fxFlex="23"
                                     ffxFlex.sm="50" class="p-1">
                                     <div class="text-center mtt-10" fxFlex="100">
-                                        <a class="invbtn"
+                                        <a class="invbtn explr"
                                             [routerLink]="['../companyinvest',item.userId,item.founderVerifyId]">Invest
                                             Now</a>
                                         <p class="mtt-10 avl">Availability : Live</p>
@@ -390,7 +389,7 @@
                                 </div>
                                 <div *ngIf="item.raiseFunding" fxFlex="23" ffxFlex.sm="50" class="p-1">
                                     <div class="text-center mtt-10" fxFlex="100">
-                                        <a class="invbtn"
+                                        <a class="invbtn explr"
                                             [routerLink]="['../requestoffering',item.userId,item.founderVerifyId]">Get
                                             Details</a>
                                         <p class="mtt-10 avl">Availability : All</p>
@@ -414,7 +413,7 @@
                                 </div>
                                 <div *ngIf="!item.live && item.preview" fxFlex="23" ffxFlex.sm="50" class="p-1">
                                     <div class="text-center mtt-10" fxFlex="100">
-                                        <a class="invbtn"
+                                        <a class="invbtn explr"
                                             [routerLink]="['../companyinterest',item.userId,item.founderVerifyId]">Indicate
                                             Interest</a>
                                         <p class="mtt-10 avl">Availability : Preview</p>

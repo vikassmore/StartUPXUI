@@ -7,14 +7,15 @@
 }
 
 .mtb{
-    background: #e3e3e3 !important;
+  background: transparent !important;
 }
 
 
 .invbtn{
-    padding: 3px 7px;
-    background: #eeeeee;
-    border: 1px solid gray;
+  padding: 3px 7px;
+  color: #fff !important;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 
 .mt-10{
@@ -69,7 +70,7 @@
   
   .qstn input[type="radio"]:checked+label,
   .Checked+label {
-    background: rgb(0, 118, 51);
+    background: rgb(17, 25, 95);
     color:white;
     font-weight: 900;
   
@@ -95,6 +96,7 @@
     position: relative !important;
     margin: 5px;
     background: white;
+    border-radius: 7px;
   }
 
   .othrlable{
@@ -136,7 +138,7 @@
 }
 
 .table-bordered td, .table-bordered th {
-  border: 1px solid #dee2e6;
+  border: 1px solid #9ba5ae;
   padding: 10px;
 }
 
@@ -162,4 +164,11 @@ th{
 #lineChart2 {
   margin: 10px auto;
   min-width: 550px;
+}
+
+.mat-expansion-panel{
+  margin: 0px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-bottom: 10px !important;
 }

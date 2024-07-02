@@ -27,11 +27,11 @@
 
            
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <div *ngIf="roleId === 'Startup' || roleId === 'Investor'">
+            <div *ngIf="roleId === 'Startup' || roleId === 'Investor'" style="    display: contents;">
                 <div style="border-left: 1px solid #a8a8bd;padding-left: 10px;">
                     <table>
                         <tr style="line-height: 0;">
-                            <td class="hname" style="width: 50%;">
+                            <td class="hname" style="width: 70%;">
                                 <mat-progress-bar mode="determinate" [value]="roleId === 'Startup' ? founderProfileCompetion : investorProfileCompetion"></mat-progress-bar>
                             </td>
                             <td>
@@ -127,8 +127,7 @@
                     <div class="w-full mt-0.5 whitespace-nowrap text-ellipsis overflow-hidden text-center text-md leading-normal font-medium text-secondary"style="color:gray"> {{userInfo.emailId}}</div>
                 </div>
             </div> -->
-<br><br><br>
-            <app-admin-menu [menuItems]="menuItems" [menuParentId]="0"> </app-admin-menu>
+            <app-admin-menu [menuItems]="menuItems" [menuParentId]="0" class="topmn"> </app-admin-menu>
             
         </perfect-scrollbar>
     </mat-drawer>

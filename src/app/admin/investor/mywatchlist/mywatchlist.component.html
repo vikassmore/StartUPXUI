@@ -17,7 +17,7 @@
                     <div fxLayout="row wrap " #resizedDiv>
                         <div fxFlex="100" *ngFor="let item of watchList | paginate: { itemsPerPage: count, currentPage: page }" fxFlex.gt-sm="100" fxFlex.sm="100"
                             style="cursor:pointer">
-                            <mat-card class="p-0 Divbg4 mat-expansion-panel" style="margin: 7px !important;">
+                            <mat-card class="p-0  mat-expansion-panel" style="margin: 7px !important;">
                                 <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                                     <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                         <div class="text-left" fxFlex="100"
@@ -51,7 +51,7 @@
                                             <p class="text-center">Added On</p>
                                         </div>
                                     </div>
-                                    <div fxFlex="10" ffxFlex.sm="50" class="p-1">
+                                    <div fxFlex="10" ffxFlex.sm="50" class="p-1 text-center" >
                                         <!-- <div class="text-center " fxFlex="100" > -->
                                         <button mat-mini-fab color="warn" matTooltip="Remove From Watchlist"
                                             class="mx-1" (click)="deletefromwatchList(item);"><i class="fa fa-trash"

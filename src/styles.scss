@@ -99,6 +99,7 @@
 .fltic{
     font-size: 22px;
     margin-top: 4px;
+    color: #102a81;
 }
 
 .sgln{
@@ -663,7 +664,7 @@ p{
 }
 
 .searchtext1{
-    padding-left: 22px !important ;
+    // padding-left: 22px !important ;
 }
 
 .searchtext-icon1 {
@@ -1020,5 +1021,34 @@ p{
 }
 
 .mat-accent {
-    background-image: -webkit-linear-gradient(50deg, #3a3f50, #849be7) !important;
+    background-image: -webkit-linear-gradient(50deg, #151618, #7b8bbf) !important;
+}
+
+.topmn{
+    margin-top: 10px;
+}
+
+.app.blue .mat-radio-button.mat-primary .mat-radio-inner-circle, .app.blue .mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .app.blue .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple, .app.blue .mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
+    background-color: #1b3bad;
+}
+
+.h3text{
+    color: #004487;
+}
+
+.sgln1ico {
+    color: #27429a;
+}
+
+.searchtext {
+    border: 1px solid #1a3278 !important;
+    border-radius: 5px;
+    background: #fafaff !important;
+}
+
+.pheads{
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #152a6a;
 }

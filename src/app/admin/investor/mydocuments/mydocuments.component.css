@@ -1,7 +1,7 @@
 
 
 .table-bordered {
-    border: 1px solid #dee2e6;
+    /* border: 1px solid #dee2e6; */
   }
   
   .table {
@@ -14,11 +14,11 @@
   
   .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 1px solid #004487;
   }
   
   .table-bordered td, .table-bordered th {
-    border: 1px solid #dee2e6;
+    /* border: 1px solid #dee2e6; */
     padding: 10px;
   }
   
