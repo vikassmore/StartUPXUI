@@ -30,13 +30,14 @@ export class SubmitinterestComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialogRef: MatDialogRef<SubmitinterestComponent>, public dialog: MatDialog,private tokenStorage: TokenStorageService, private location: Location, public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    debugger
    // this.userId = this.route.snapshot.params['id'];
     this.founderVerifyId = this.route.snapshot.params['id1'];
     this.loggedUserId = this.tokenStorage.getUser().userId;
     // this.founderVerifyId = this.route.snapshot.params['id1'];
     this.investorUserId = this.data.investorUserId;
-    this.founderVerifyId = this.data.founderVerifyId;
-    this.userId = this.data.userId;
+    this.founderVerifyId = parseInt(this.data.founderVerifyId);
+    this.userId = parseInt(this.data.userId);
    
   }
   closeForm() {
@@ -47,12 +48,16 @@ export class SubmitinterestComponent implements OnInit {
     this.addIndicateInterest(value);
   }
   private addIndicateInterest = (Watchlistformdata) => {
-  
+  debugger
+  let indicateInterest = Watchlistformdata.indicateInterest;
+    if (typeof indicateInterest !== 'string') {
+      indicateInterest = String(indicateInterest);
+}
     let submitinterestmodel: SubmitInterestModel = {
       onWatchList: true,
       investorInvestmentId: 0,
       investmentAmount: '',
-      indicateInterest:  Watchlistformdata.indicateInterest,//this.form.get('indicateInterest')?.value || '',
+      indicateInterest:indicateInterest,//this.form.get('indicateInterest')?.value || '',
       investmentRound: '',
       founderVerifyId: this.founderVerifyId,
       investorUserId: this.userId,
