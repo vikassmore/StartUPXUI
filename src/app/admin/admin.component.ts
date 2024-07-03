@@ -41,7 +41,7 @@ export class AdminComponent implements OnInit {
       this.settings.adminSidenavIsOpened = false;
       this.settings.adminSidenavIsPinned = false;      
     };
-    debugger
+   
     this.userId = this.tokenStorage.getUser().userId;
     this.roleId = this.tokenStorage.getUser().roleName;
     if (this.userId && this.userId > 0) {
@@ -70,7 +70,7 @@ export class AdminComponent implements OnInit {
   
 
   // public getInfo() {
-  //   debugger;
+ 
   //  this.appService.getUserById("api/User/GetUserById").subscribe(data => {
   //   this.userInfo = data;
   //  });
@@ -125,7 +125,7 @@ export class AdminComponent implements OnInit {
     }
   }
   getInvestorProfileCompletion(userId): void {
-    debugger
+  
     this.appService.getAllById('api/InvestorVerification/InvestorProfileCompletion/', userId).subscribe((data: any) => {
       this.investorProfileCompetion = (((data.investorProfileCompletion) * 100) / 4).toFixed(0);
       this.verified = data.verified;

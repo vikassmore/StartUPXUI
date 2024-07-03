@@ -30,7 +30,7 @@ export class UserMenuComponent implements OnInit {
 
   }
    public logout = () => {
-    debugger;
+ 
     // this._authService.logout();
     // this._router.routeReuseStrategy.shouldReuseRoute = () => false;
     // this._router.onSameUrlNavigation = 'reload';

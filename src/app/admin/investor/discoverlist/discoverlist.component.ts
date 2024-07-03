@@ -56,7 +56,7 @@ export class DiscoverlistComponent implements OnInit {
     this.userId = this.tokenStorage.getUser().userId;
     this.onWatchList = true;
     this.getinvestorwatchById(this.onWatchList, this.userId);
-    debugger
+ 
     this.getinvestorInvestmentById(this.userId);
 
   }

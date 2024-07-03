@@ -47,7 +47,7 @@ export class SubmitinterestComponent implements OnInit {
     this.addIndicateInterest(value);
   }
   private addIndicateInterest = (Watchlistformdata) => {
-    debugger
+  
     let submitinterestmodel: SubmitInterestModel = {
       onWatchList: true,
       investorInvestmentId: 0,

@@ -4,15 +4,18 @@
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Accredited Investor Details</h2>
             <mat-icon></mat-icon>
         </div>
-        <form autocomplete="off">
+        <form [formGroup]="uploadForm" (ngSubmit)="onAccreditedInvestorSubmit(uploadForm.value)" autocomplete="off">
             <mat-card-content>
+              
                 <div fxLayout="column" fxLayoutGap="10px" class="container">
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
                             <mat-form-field appearance="outline" class="w-100">
                                 <mat-label>Name</mat-label>
-                                <input matInput required>
+                                <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="accreditedInvestorName" required>
+                                <mat-error *ngIf=" uploadForm.controls.accreditedInvestorName.errors?.required">Category Name is
+                                    required</mat-error>
                             </mat-form-field>
                         </div>
                     </div>
@@ -20,20 +23,25 @@
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
                             <mat-form-field appearance="outline" class="w-100">
-                                <mat-label>Description (Max. 200 char.)</mat-label>
-                                <textarea matInput formControlName="Description" required></textarea>
+                                <mat-label>Description (Max. 500 char.)</mat-label>
+                                <textarea matInput formControlName="description" required></textarea>
+                                <mat-error *ngIf=" uploadForm.controls.description.errors?.required">Description is
+                                    required</mat-error>
+                                <mat-error *ngIf="uploadForm.controls.description.hasError('maxlength')">Description
+                                    cannot exceed more than 500 characters</mat-error>
                             </mat-form-field>
                         </div>
                     </div>
                 </div>
+                <input type="hidden" formControlName="accreditedInvestorId">
             </mat-card-content>
             <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
                 <div fxLayout="" fxLayoutGap="10px" class="container">
                     <div fxFlex="50%" class="text-left">
                         <button mat-raised-button color="accent" type="button"
-                            [routerLink]="['../listaccreditedinvestor']"> <i class="fa fa-arrow-circle-left"
+                        (click)="navigateToList()"> <i class="fa fa-arrow-circle-left"
                                 aria-hidden="true"></i> BACK</button>
-                        <button mat-raised-button color="primary" type="submit"><i class="fa fa-floppy-o"
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i> SUBMIT</button>
                     </div>
                     <div fxFlex="50%" class="text-right">

@@ -5,6 +5,7 @@ import { FormGroup } from '@angular/forms';
 import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SectorModel } from '../listsector/Sector.Model';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-editsector',
@@ -14,6 +15,7 @@ import { SectorModel } from '../listsector/Sector.Model';
 export class EditsectorComponent implements OnInit {
   private sub: any;
   sectorId: string | any;
+  userId: string | any;
   sectorName: string | any;
   subSectorName: string | any;
   sectorDescription: string | any;
@@ -23,9 +25,10 @@ export class EditsectorComponent implements OnInit {
     sectorDescription: new FormControl('', [Validators.required, Validators.maxLength(200)]),
     isActive: new FormControl(true)
   });
-  constructor(public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router) { }
+  constructor(public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router,private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.userId = this.tokenStorage.getUser().userId;
     this.sub = this.route.params.subscribe(params => {
       this.sectorId = params['id'];
       if (this.sectorId != undefined || this.sectorId > 0) {
@@ -69,6 +72,7 @@ export class EditsectorComponent implements OnInit {
       sectorName: sectorFormData.sectorName,
       subSectorName: sectorFormData.subSectorName,
       sectorDescription: sectorFormData.sectorDescription,
+      loggedUserId: this.userId,
       isActive: true
     }
     this.appService.edit('api/Sector/Edit', sectorModel1).subscribe((response: any) => {

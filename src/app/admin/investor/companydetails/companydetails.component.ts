@@ -68,6 +68,7 @@ export class CompanydetailsComponent implements OnInit {
       this.dashBoardShow = false;
       this.myInvestShow = false;
     }
+    
     this.userId = this.route.snapshot.params['id1'];
     this.founderVerifyId = this.route.snapshot.params['id2'];
     if (this.userId != null && this.founderVerifyId != null) {
@@ -81,6 +82,7 @@ export class CompanydetailsComponent implements OnInit {
 
   //Get the founder detials
   public getFounderDetails(userId, founderVerifyId) {
+    debugger
     this.appService.getAllById("api/FounderVerification/GetAllDetailsById/", userId + "/" + founderVerifyId).subscribe(data => {
       this.StartUpName = data.startupDeatailModel.startUpName;
       this.Address = data.startupDeatailModel.address;

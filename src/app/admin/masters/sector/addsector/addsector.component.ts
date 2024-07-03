@@ -5,6 +5,7 @@ import { AppService } from 'src/app/app.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SectorModel } from '../listsector/Sector.Model';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-addsector',
@@ -14,6 +15,7 @@ import { SectorModel } from '../listsector/Sector.Model';
 export class AddsectorComponent implements OnInit {
   public form: FormGroup;
   sectorId: string | any;
+  userId: string | any;
   private sub: any;
 
   uploadForm = new FormGroup({
@@ -27,9 +29,10 @@ export class AddsectorComponent implements OnInit {
   submitted = false;
 
 
-  constructor(public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router) { }
+  constructor(public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router,private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.userId = this.tokenStorage.getUser().userId;
     this.sectorId = this.route.snapshot.params['id'];
     this.isAddMode = !this.sectorId;
   }
@@ -60,6 +63,7 @@ export class AddsectorComponent implements OnInit {
         sectorName: sectorFormData.sectorName,
         subSectorName: sectorFormData.subSectorName,
         sectorDescription: sectorFormData.sectorDescription,
+        loggedUserId: this.userId,
         isActive: true
 
       }

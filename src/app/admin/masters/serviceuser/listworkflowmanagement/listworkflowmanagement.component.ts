@@ -49,6 +49,7 @@ export class listworkflowmanagement implements OnInit {
   }
   ///download file
   public downloadDocument(serviceCaseId,serviceProviderName) {
+    debugger
     this.appService.downloadById("api/Service/DownloadInvoiceById/", serviceCaseId).subscribe((data: Blob) => {
       const blob = new Blob([data], { type: data.type });
       saveAs(blob, serviceProviderName); 

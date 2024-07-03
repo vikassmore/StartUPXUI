@@ -27,6 +27,7 @@ export class ListcategoryComponent implements OnInit {
   }
   //Get Category list
   public getCategoryMaster() {
+  
     this.appService.getAll("api/Category/getAllCategory").subscribe(data => {
       this.CategoryDataList = data;
       this.CategoryList = data;
@@ -47,6 +48,7 @@ export class ListcategoryComponent implements OnInit {
   }
   //delete Category
   public deleteCategory(category: any) {
+    debugger
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: "400px",
       data: {
@@ -59,7 +61,7 @@ export class ListcategoryComponent implements OnInit {
         const index: number = this.CategoryList.indexOf(category);
         if (index !== -1) {
           this.CategoryList.splice(index, 1);
-          this.appService.deleteById(`api/Funding?fundingId=${category.CategoryId}`, {}).subscribe(data => {
+          this.appService.deleteById(`api/Category?categoryId=${category.categoryId}`, {}).subscribe(data => {
           });
         }
       }

@@ -25,8 +25,8 @@ export const routes = [
   declarations: [
     ListserviceuserComponent,
     AddserviceuserComponent,
-    ListprofilemanagementComponent,
-    listworkflowmanagement,
+    // ListprofilemanagementComponent,
+    // listworkflowmanagement,
     EditserviceuserComponent,
     DenyserviceuserComponent,
 

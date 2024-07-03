@@ -28,8 +28,7 @@ export class InvestordetailsComponent implements OnInit {
   /// Submit 
   public onInvestorSubmit(value: Object): void {
     if (this.isAddMode) {
-      debugger;
-
+    
       this.addInvestor(value);
     } 
   }
@@ -45,7 +44,7 @@ export class InvestordetailsComponent implements OnInit {
   // }
   //Add user Data startupdetails
   private addInvestor= (investorFormData) => { 
-    debugger;   
+    
     if (this.investorId == null) 
     {
       investorFormData.investorId = 0;
@@ -59,10 +58,10 @@ export class InvestordetailsComponent implements OnInit {
       founderId: investorFormData.founderId,  
      isActive: true
     }
-    debugger; 
+   
     console.log(investormodel1)    
     this.appService.add('api/InvestorDetail',investormodel1).subscribe((response) => {
-      debugger;
+    
      if (!Number.isNaN(response))
      {
       this.snackBar.open('Saved successfully!', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });

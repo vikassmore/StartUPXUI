@@ -23,25 +23,29 @@
                 <div class="mat-header-cell ">Description</div>
                 <div class="mat-header-cell text-center" fxFlex="100" fxFlex.gt-sm="12">Action</div>
             </div>
-            <div class="mat-row ">
-                <div class="mat-cell" fxFlex.gt-sm="25">Data</div>
-                <div class="mat-cell">Data</div>
+            <div *ngFor="let category of accreditedList | paginate: { itemsPerPage: count, currentPage: page }" class="mat-row ">
+                <div class="mat-cell " fxFlex.gt-sm="20">{{category.accreditedInvestorName}}</div>
+                <div class="mat-cell ">{{category.description}}</div>
+
                 <div class="mat-cell text-center" fxFlex="100" fxFlex.gt-sm="12">
                     <div class="p-1">
-                        <a [routerLink]="['../addaccreditedinvestor']" mat-mini-fab color="primary" matTooltip="Edit">
-                            <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <button mat-mini-fab color="warn" matTooltip="Delete" class="mx-1">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </button>
+                        <a [routerLink]="['../addaccreditedinvestor',category.accreditedInvestorId]" mat-mini-fab color="primary"
+                        matTooltip="Edit">
+                        <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <button mat-mini-fab color="warn" matTooltip="Delete" class="mx-1"
+                        (click)="deleteaccrideted(category);">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
                     </div>
                 </div>
             </div>
         </div>
         <mat-divider></mat-divider>
-        <div fxLayout="row wrap">
+        <div *ngIf="accreditedList.length > 0" fxLayout="row wrap">
             <div fxFlex="100" class="p-11">
                 <mat-card class="p-0 text-center nobxshbrd">
-                    <!-- <pagination-controls class="product-pagination" autoHide="true" maxSize="5" ></pagination-controls> -->
+                    <pagination-controls class="product-pagination" autoHide="true" maxSize="5"
+                    (pageChange)="onPageChanged($event)"></pagination-controls>
                 </mat-card>
             </div>
         </div>

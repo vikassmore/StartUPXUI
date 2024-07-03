@@ -75,7 +75,7 @@ export class CompanyinterestComponent implements OnInit {
   //Get the founder detials
   public getFounderDetails(userId, founderVerifyId) {
     this.appService.getAllById("api/FounderVerification/GetAllDetailsById/", userId + "/" + founderVerifyId).subscribe(data => {
-      debugger;
+   
       this.gaugingAmount = (data.gaugingAmount) / 1000000;
       this.gaugingPercentage = (data.gaugingPercentage * 100) / data.gaugingAmount;
       this.lastRoundPrice = data.lastRoundPrice;

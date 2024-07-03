@@ -13,9 +13,9 @@ export const routes = [
 
 @NgModule({
   declarations: [
-    AddcategoryComponent,
-    ListcategoryComponent,
-    EditcategoryComponent
+    // AddcategoryComponent,
+    // ListcategoryComponent,
+    // EditcategoryComponent
   ],
   imports: [
     CommonModule,

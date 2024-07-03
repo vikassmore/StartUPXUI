@@ -65,7 +65,7 @@ export class RequestofferingComponent implements OnInit {
   constructor(public dialog: MatDialog, public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router, private _authService: AuthenticationService, public formBuilder: FormBuilder, private tokenStorage: TokenStorageService, private sanitizer: DomSanitizer, private decimalPipe: DecimalPipe) { Chart.register(...registerables); }
 
   ngOnInit(): void {
-    debugger;
+  
     this.userId = this.route.snapshot.params['id'];
     this.founderVerifyId = this.route.snapshot.params['id1'];
     if (this.userId != null && this.founderVerifyId != null) {

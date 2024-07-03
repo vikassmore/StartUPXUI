@@ -34,7 +34,7 @@ export class EditfaqComponent implements OnInit {
   ///Get FAQ By faqMasterId
   getFAQById(faqMasterId): void {
     this.appService.getById('api/Master/GetFAQById/', faqMasterId).subscribe((data: any) => {
-      debugger;
+   
       this.uploadForm.controls['questionName'].setValue(data.question);
       this.uploadForm.controls['answerName'].setValue(data.answer);
     })

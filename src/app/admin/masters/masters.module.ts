@@ -37,8 +37,8 @@ import { GaugingdemandComponent } from './gaugingdemand/gaugingdemand.component'
 import { InvestmentopportunityComponent } from './investmentopportunity/investmentopportunity.component';
 import { ListraisefundingComponent } from './listraisefunding/listraisefunding.component';
 
-import { AddaccreditedinvestorComponent } from './accreditedinvestor/Addaccreditedinvestor/addaccreditedinvestor.component';
-import { ListaccreditedinvestorComponent } from './accreditedinvestor/Listaccreditedinvestor/listaccreditedinvestor.component';
+// import { AddaccreditedinvestorComponent } from './accreditedinvestor/Addaccreditedinvestor/addaccreditedinvestor.component';
+// import { ListaccreditedinvestorComponent } from './accreditedinvestor/Listaccreditedinvestor/listaccreditedinvestor.component';
 import { ListrequestofferingComponent } from './listrequestoffering/listrequestoffering.component';
 import { ListnotableinvestorComponent } from './notableinvestor/listnotableinvestor/listnotableinvestor.component';
 import { AddeditnotableinvestorComponent } from './notableinvestor/addeditnotableinvestor/addeditnotableinvestor.component';
@@ -50,6 +50,9 @@ import { listworkflowmanagement } from './serviceuser/listworkflowmanagement/lis
 import { DenyserviceuserComponent } from './serviceuser/denyserviceuser/denyserviceuser.component';
 import { ListindicateinterestComponent } from './listindicateinterest/listindicateinterest.component';
 import { ListinvestedComponent } from './listinvested/listinvested.component';
+//import { EditaccreditedinvestorComponent } from './accreditedinvestor/editaccreditedinvestor/editaccreditedinvestor.component';
+import { AddaccreditedinvestorComponent } from './accreditedinvestor/addaccreditedinvestor/addaccreditedinvestor.component';
+import { ListaccreditedinvestorComponent } from './accreditedinvestor/listaccreditedinvestor/listaccreditedinvestor.component';
 
 
 
@@ -89,8 +92,9 @@ export const routes = [
 
   { path: 'listraisefunding/:id', component: ListraisefundingComponent, data: { breadcrumb: 'dashboard / raise funding' } },
 
-  { path: 'addaccreditedinvestor', component: AddaccreditedinvestorComponent, data: { breadcrumb: 'masters / Accredited Investor / Add Accredited Investor ' } },
   { path: 'listaccreditedinvestor', component: ListaccreditedinvestorComponent, data: { breadcrumb: 'masters / Accredited Investor  / List of Accredited Investor' } },
+  { path: 'addaccreditedinvestor', component: AddaccreditedinvestorComponent, data: { breadcrumb: 'masters / Accredited Investor / Add Accredited Investor ' } },
+  { path: 'addaccreditedinvestor/:id', component: AddaccreditedinvestorComponent, data: { breadcrumb: 'masters / Accredited Investor / Add Accredited Investor ' } },
 
   { path: 'listrequestoffering/:id', component: ListrequestofferingComponent, data: { breadcrumb: 'dashboard / request offering' } },
   { path: 'listinvested/:id', component: ListinvestedComponent, data: { breadcrumb: 'dashboard / invested' } },
