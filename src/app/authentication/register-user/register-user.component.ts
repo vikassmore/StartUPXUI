@@ -52,11 +52,11 @@ export class RegisterUserComponent implements OnInit {
 
     this._authService.registerUser("api/User", user)
       .subscribe(_ => {
-        debugger;
+      
         console.log("Successful registration");
       },
         error => {
-          debugger;
+        
           console.log(error.error.errors);
         })
   }

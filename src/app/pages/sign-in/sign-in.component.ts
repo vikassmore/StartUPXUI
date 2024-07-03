@@ -70,7 +70,7 @@ export class SignInComponent implements OnInit {
   public onRegisterFormSubmit(values:Object):void {
         if (this.registerForm.valid) {
           var formData = new FormData();
-          debugger;
+       
           formData.append('firstName', this.registerForm.value.firstName);
           formData.append('lastName', this.registerForm.value.lastName);
           formData.append('emailId', this.registerForm.value.emailId);
@@ -80,7 +80,7 @@ export class SignInComponent implements OnInit {
           formData.append('departmentId', this.registerForm.value.departmentId);
 
         //  formData.append('roleId', this.registerForm.value.roleId);
-          debugger;
+      
           console.log(this.registerForm.value)
           this.appService.adduser('api/User/WebRegister', formData).subscribe(data => {
             this.snackBar.open('You registered successfully!', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });

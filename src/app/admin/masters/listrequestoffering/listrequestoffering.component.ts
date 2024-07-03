@@ -25,7 +25,7 @@ export class ListrequestofferingComponent implements OnInit {
   }
   public getAllRequestOfferingDetails() {
     this.appService.getAll("api/InvestorVerification/GetAllRequestOfferDetails").subscribe(data => {
-      debugger
+      
       this.RequestOfferingList = data.map(p => ({
         investorName: p.investorName,
         verified: p.verified,

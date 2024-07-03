@@ -48,7 +48,6 @@ export class ListcategoryComponent implements OnInit {
   }
   //delete Category
   public deleteCategory(category: any) {
-    debugger
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: "400px",
       data: {

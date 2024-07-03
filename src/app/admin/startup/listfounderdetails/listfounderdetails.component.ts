@@ -72,7 +72,7 @@ export class ListfounderdetailsComponent implements OnInit {
 
 
   public deletefounder(item: any) {
-    debugger;
+   
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: "400px",
       data: {

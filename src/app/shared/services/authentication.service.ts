@@ -27,7 +27,7 @@ export class AuthenticationService {
   }
 
   public loginUser = (route: string, body: UserForAuthenticationDto) => {
-    debugger;
+  
     return this._http.post<AuthResponseDto>(this.createCompleteRoute(route, this._envUrl.urlAddress), body, { responseType: 'json' });
   }
 
@@ -116,11 +116,11 @@ export class AuthenticationService {
   ///Incident//
 
   public getAllIncident = (route: string) => {
-    debugger;
+   
     return this._http.get<any>(this.createCompleteRoute(route, this._envUrl.urlAddress));
   }
   public getIncidentById = (route: string) => {
-    debugger;
+  
     return this._http.get<any>(this.createCompleteRoute(route, this._envUrl.urlAddress));
   }
 

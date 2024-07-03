@@ -12,7 +12,7 @@ export class LangComponent implements OnInit {
   constructor(public translateService: TranslateService) { }
 
     ngOnInit() {
-        debugger;
+       
         this.language = this.translateService.getLangs();
         for (let i = 0; i < this.language.length; i++)
         {

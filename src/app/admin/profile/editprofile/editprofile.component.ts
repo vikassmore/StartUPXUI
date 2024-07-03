@@ -30,12 +30,12 @@ export class EditprofileComponent implements OnInit {
     public formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    debugger;
+  
     var userId = JSON.parse(sessionStorage.getItem("userID"));
     this.sub = this.route.params.subscribe(params => {
     this.userId =userId; //params['id'];
     if (this.userId != undefined || this.userId > 0) {
-      debugger;
+    
       this.getuserById(this.userId);
      
     }
@@ -44,7 +44,7 @@ export class EditprofileComponent implements OnInit {
   }
 
   public onfounderSubmit(value: Object): void {
-    debugger;
+
     this.updateUser();
   }
 
@@ -69,7 +69,7 @@ public backButtonClick(){
  }
 }
   getuserById(userId): void {
-    debugger;
+
     this.appService.getuserById('api/User/'+userId).subscribe((data: any) => {
       console.log('f',data);
       this.uploadForm.controls['firstName'].setValue(data.firstName);    
@@ -85,7 +85,7 @@ public backButtonClick(){
   }
 
   private updateUser() {
-    debugger;
+  
     var roleId=window.sessionStorage.getItem("role")
     var formData = new FormData();
     formData.append('firstName', this.uploadForm.value.firstName);
@@ -97,7 +97,7 @@ public backButtonClick(){
    formData.append('password',this.password);
 console.log("aa",formData);
     this.appService.edituser('api/User/Edit',formData).subscribe((response:any) => {
-      debugger;
+   
       if (!Number.isNaN(response)) {
       this.snackBar.open('Updated successfully!', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
      // this.router.navigate([''], { relativeTo: this.route });

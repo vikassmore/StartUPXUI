@@ -80,7 +80,6 @@ export class RequestofferingComponent implements OnInit {
   //Get the founder detials
   public getFounderDetails(userId, founderVerifyId) {
     this.appService.getAllById("api/FounderVerification/GetAllDetailsById/", userId + "/" + founderVerifyId).subscribe(data => {
-      debugger;
       this.LastValuation = data.lastValuation;
       this.StartUpName = data.startupDeatailModel.startUpName;
       this.Address = data.startupDeatailModel.address;
@@ -209,7 +208,6 @@ export class RequestofferingComponent implements OnInit {
     this.addRequestOffering();
   }
   private addRequestOffering = () => {
-    debugger
     let investorinvestmentModel: InvestorInvestmentModel = {
       onWatchList: true,
       investorInvestmentId: 0,
