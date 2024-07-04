@@ -7,14 +7,15 @@
 }
 
 .mtb{
-    background: #e3e3e3 !important;
+  background: transparent !important;
 }
 
 
 .invbtn{
-    padding: 3px 7px;
-    background: #eeeeee;
-    border: 1px solid gray;
+  padding: 3px 7px;
+  color: #fff !important;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 
 .mt-10{
@@ -119,7 +120,7 @@
 
 
 .table-bordered {
-  border: 1px solid #dee2e6;
+  border: 1px solid #dee2e600;
 }
 
 .table {
@@ -133,10 +134,11 @@
 .table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
 }
 
 .table-bordered td, .table-bordered th {
-  border: 1px solid #dee2e6;
+  border: 1px solid #9ba5ae;
   padding: 10px;
 }
 
@@ -152,4 +154,11 @@ th{
   color: gray;
   text-transform: initial;
   font-weight: 100;
+}
+
+.mat-expansion-panel{
+  margin: 0px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-bottom: 10px !important;
 }

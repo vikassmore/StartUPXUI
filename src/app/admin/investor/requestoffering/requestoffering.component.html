@@ -1,68 +1,68 @@
 <div class="p-1 psab">
     <div fxLayout="column" fxLayoutGap="10px" class="container stkn1" style="    padding-bottom: 10px;">
         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 "
-            style="   padding: 10px; background: #f1f1f1;margin-bottom: 10px;">
+            style="   padding: 10px; background: #eff4ff;margin-bottom: 10px;">
             <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idAbout)">
-                <b style="cursor: pointer;"><i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; About
+                <b class="pheads"><i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; About
                     Company</b>
             </div>
             <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idInvestment)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Investment
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Investment
                     Opportunity</b>
             </div>
             <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idCapTable)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Cap. Table
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Cap. Table
                 </b>
             </div>
             <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idInvestor)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Investors </b>
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Investors </b>
             </div>
             <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idCompHigh)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Company
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Company
                     Highlights </b>
             </div>
         </div>
     </div>
     <div fxLayout="column" fxLayoutGap="10px" class="container stkn2" style="    padding-bottom: 10px;">
         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 "
-            style="   padding: 10px; background: #f1f1f1;margin-bottom: 10px;">
+            style="   padding: 10px; background: #eff4ff;margin-bottom: 10px;">
             <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idFounder)">
-                <b style="cursor: pointer;"><i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Founders /
+                <b class="pheads"><i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Founders /
                     Members</b>
             </div>
             <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idFunding)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Funding
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Funding
                     History</b>
             </div>
             <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idManagement)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Management
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Management
                 </b>
             </div>
             <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idPress)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Press </b>
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Press </b>
             </div>
             <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idRisk)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Risk </b>
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Risk </b>
             </div>
         </div>
     </div>
-    <mat-card class="p-0">
+    <div class="p-0">
         <mat-card-content>
             <div fxLayout="column" fxLayoutGap="10px" class="container">
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                     <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
                         <i class="fa fa-arrow-circle-left" aria-hidden="true" style="    font-size: 40px;
-                                color: #37993f;" [routerLink]="['../../../discoverlist']"
+                                color: #172d70;" [routerLink]="['../../../discoverlist']"
                             matTooltip="Back To List"></i>
                     </div>
                     <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
@@ -75,11 +75,10 @@
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                         class="grid-item">
                         <div class="text-center" fxFlex="100">
-                            <img [src]="previewUrl" style="height: 100px; padding: 10px;
-                                    border: 1px solid gray;" class="img1" alt="cinque terre">
+                            <img [src]="previewUrl" style="height: 100px; padding: 10px;" class="img1" alt="cinque terre">
                             <sup style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
-                            <h2 style="color:#1e293b;">{{StartUpName}}</h2>
-                            <span class="blink">{{SectorName}} </span>
+                            <h2 class="crdtxts" style="font-size: 22px;">{{StartUpName}}</h2>
+                            <span class="blink"><b>{{SectorName}} </b></span>
                             <br>
                         </div>
                     </div>
@@ -88,7 +87,7 @@
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                         class="grid-item">
                         <div class="text-center" fxFlex="100">
-                            <button mat-raised-button color="primary" class="submit"  (click)="onButtonClick()">
+                            <button mat-raised-button color="primary" class="submit explr"  (click)="onButtonClick()">
                                 <mat-label><i class="fa fa-check" aria-hidden="true"
                                        ></i>&nbsp;&nbsp;Request Offering</mat-label>
                             </button>
@@ -98,7 +97,7 @@
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;About {{StartUpName}}<br></h2> <br>
+                        <h2 style="color:#1e293b;font-style: italic;" class="crdtxts"><br>&nbsp;About {{StartUpName}}<br></h2> <br>
                     </div>
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
@@ -123,19 +122,18 @@
                 <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <br>
-                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                    <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill
                         class="grid-item">
-                        <p style="line-height: 1.8 !important;color: gray;">{{CompanyDescription}}.</p>
+                        <p style="line-height: 1.8 !important;">{{CompanyDescription}}.</p>
                         <br>
                     </div>
                     <div #idInvestment></div>
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Investment Opportunity<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Investment Opportunity<br></h2>
                     </div>
                 </div>
-                <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxLayout="row wrap " #resizedDiv style="    width: 100%;">
                         <div fxFlex="100" ffxFlex.sm="50" class=" Divbg3 mt-1">
@@ -189,13 +187,13 @@
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Cap. Table<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Cap. Table<br></h2>
                     </div>
                 </div>
                 <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxLayout="column" class="container" style="width: 100%;">
-                        <div class="mat-header-row mt-row" style="margin: 0px;">
+                        <div class="mat-header-row" style="margin: 0px;">
                             <div class="mat-header-cell text-center mt-col" fxFlex="13%">Name Of<br>Series</div>
                             <div class="mat-header-cell text-center mt-col" fxFlex="10%">Share<br>Class</div>
                             <div class="mat-header-cell text-center mt-col" fxFlex="8%">Date Of<br>Financing</div>
@@ -206,6 +204,7 @@
                             <div class="mat-header-cell text-center mt-col" fxFlex="18%">Liquidation<br>Preference</div>
                             <div class="mat-header-cell text-center mt-col" fxFlex="9%">Liquidity<br>Rank</div>
                         </div>
+                        <br>
                         <mat-accordion [togglePosition]="'before'">
                             <div class="mat-row" *ngFor="let funding of fundingList">
                                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -271,20 +270,17 @@
                             </div>
                         </mat-accordion>
                         <div class="row " style="margin-top: 10px;">
-                            <div class="mat-header-cell text-center mt-col" fxFlex="14%">Totals</div>
-                            <div class="mat-header-cell text-center mt-col" fxFlex="6.5%"></div>
-                            <div class="mat-header-cell text-center mt-col" fxFlex="10%"></div>
-                            <div class="mat-header-cell text-center mt-col" fxFlex="12%">${{LastValuation}} M</div>
+                            <div class="mat-header-cell text-center mt-col" fxFlex="8%">Totals</div>
+                            <div class="mat-header-cell text-center mt-col" fxFlex="22%">${{LastValuation}} M</div>
                         </div>
                     </div>
                     <div #idInvestor></div>
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Investors<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Investors<br></h2>
                     </div>
                 </div>
-                <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxLayout="row wrap " #resizedDiv>
                         <div fxFlex="100" ffxFlex.sm="50" class=" Divbg3 mt-2">
@@ -330,10 +326,9 @@
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Company Highlights<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Company Highlights<br></h2>
                     </div>
                 </div>
-                <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxLayout="row wrap " #resizedDiv>
                         <div fxFlex="100" ffxFlex.sm="50" class=" Divbg3 mt-1">
@@ -352,7 +347,7 @@
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Founders / Members<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Founders / Members<br></h2>
                     </div>
                 </div>
                 <br>
@@ -382,9 +377,9 @@
                     </div>
                     <div #idFunding></div>
                 </div>
-                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  ">
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Funding History<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Funding History<br></h2>
                     </div>
                 </div>
                 <br>
@@ -406,9 +401,9 @@
                     </div>
                     <div #idManagement></div>
                 </div>
-                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  ">
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Management<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Management<br></h2>
                     </div>
                 </div>
                 <br>
@@ -418,7 +413,7 @@
                             <div fxFlex="50" ffxFlex.sm="50" class="p-1 p1">
                                 <div class="text-left" fxFlex="100">
                                     <!-- <a href="#" style="text-decoration: none;color: navy;"><h3>Chief Executive Officer</h3></a> -->
-                                    <span class="text-right" style="font-style: italic;">{{ManagementInfo}}</span>
+                                    <span class="text-right" >{{ManagementInfo}}</span>
                                 </div>
                             </div>                       
                         </div>
@@ -427,10 +422,9 @@
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Press<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Press<br></h2>
                     </div>
                 </div>
-                <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxLayout="row wrap " #resizedDiv>
                         <div fxFlex="100" ffxFlex.sm="50" class=" Divbg3 mt-2">
@@ -478,17 +472,16 @@
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Risk<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Risk<br></h2>
                     </div>
                 </div>
-                <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxLayout="row wrap " #resizedDiv>
                         <div fxFlex="100" ffxFlex.sm="50" class=" Divbg3 mt-1">
                             <div fxLayout="row wrap" fxFlex="100">
                                 <div fxFlex="100" ffxFlex.sm="50" class="p-1 p1">
                                     <div class="text-left" fxFlex="100">
-                                        <span class="prv1">The standard chunk of Lorem Ipsum used since the 1500s is
+                                        <span >The standard chunk of Lorem Ipsum used since the 1500s is
                                             reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de
                                             Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact
                                             original form, accompanied by English versions from the 1914 translation by
@@ -501,7 +494,7 @@
                             <div fxLayout="row wrap" fxFlex="100">
                                 <div fxFlex="100" ffxFlex.sm="50" class="p-1 p1">
                                     <div class="text-left" fxFlex="100">
-                                        <span class="prv1">There are many variations of passages of Lorem Ipsum
+                                        <span>There are many variations of passages of Lorem Ipsum
                                             available, but the majority have suffered alteration in some form, by
                                             injected humour, or randomised words which don't look even slightly
                                             believable. If you are going to use a passage of Lorem Ipsum, you need to be
@@ -516,7 +509,7 @@
                             <div fxLayout="row wrap" fxFlex="100">
                                 <div fxFlex="100" ffxFlex.sm="50" class="p-1 p1">
                                     <div class="text-left" fxFlex="100">
-                                        <span class="prv1">It is a long established fact that a reader will be
+                                        <span >It is a long established fact that a reader will be
                                             distracted by the readable content of a page when looking at its layout. The
                                             point of using Lorem Ipsum is that it has a more-or-less normal distribution
                                             of letters, as opposed to using 'Content here, content here', making it look
@@ -532,13 +525,13 @@
                 <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 brdtop ">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Private Competitors<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Private Competitors<br></h2>
                     </div>
                 </div>
                 <div fxLayout="row wrap " #resizedDiv style="margin-left: 40px;margin-top: 20px;">
                     <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100"
                         [routerLink]="['../../../admin/investor/companydetails']" style="cursor:pointer">
-                        <mat-card class="p-0 Divbg4">
+                        <mat-card class="p-0 Divbg4 mat-expansion-panel">
                             <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                                 <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                     <div class="text-left" fxFlex="100">
@@ -549,7 +542,7 @@
                                 </div>
                                 <div fxFlex="65" ffxFlex.sm="50" class="p-1">
                                     <div class="text-left" fxFlex="100">
-                                        <h3>Company Name</h3>
+                                        <h3>Clearly Heals</h3>
                                         <p>Lorem Ipsum is simply dummy text of the printing and chunk of used since
                                             typesetting industry. </p>
                                     </div>
@@ -557,15 +550,15 @@
 
                                 <div fxFlex="25" ffxFlex.sm="50" class="p-1">
                                     <div class="text-center mt-10" fxFlex="100">
-                                        <a class="invbtn">Learn More</a>
+                                        <a class="invbtn explr">Learn More</a>
                                     </div>
                                 </div>
                             </div>
                         </mat-card>
                     </div>
-                    <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" class="mt-1"
+                    <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" class=""
                         [routerLink]="['../../../admin/investor/companydetails']" style="cursor:pointer">
-                        <mat-card class="p-0 Divbg4">
+                        <mat-card class="p-0 Divbg4 mat-expansion-panel">
                             <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                                 <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                     <div class="text-left" fxFlex="100">
@@ -576,7 +569,7 @@
                                 </div>
                                 <div fxFlex="65" ffxFlex.sm="50" class="p-1">
                                     <div class="text-left" fxFlex="100">
-                                        <h3>Company Name</h3>
+                                        <h3>Wasabi Links</h3>
                                         <p>Lorem Ipsum has been the industry's chunk of used since standard dummy text
                                             ever since the today.</p>
                                     </div>
@@ -584,7 +577,7 @@
 
                                 <div fxFlex="25" ffxFlex.sm="50" class="p-1">
                                     <div class="text-center mt-10" fxFlex="100">
-                                        <a class="invbtn">Learn More</a>
+                                        <a class="invbtn explr">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -594,13 +587,13 @@
                 <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 brdtop ">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Public Competitors<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;"class="crdtxts"><br>&nbsp;Public Competitors<br></h2>
                     </div>
                 </div>
                 <div fxLayout="row wrap " #resizedDiv style="margin-left: 40px;margin-top: 20px;">
                     <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" *ngFor="let item of compitetorFounderList"
                         [routerLink]="['../../../admin/investor/companydetails']" style="cursor:pointer">
-                        <mat-card class="p-0 Divbg4">
+                        <mat-card class="p-0 Divbg4 mat-expansion-panel">
                             <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                                 <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                     <div class="text-left" fxFlex="100">
@@ -629,7 +622,7 @@
                                 </div>
                                 <div fxFlex="25" ffxFlex.sm="50" class="p-1">
                                     <div class="text-center mt-10" fxFlex="100">
-                                        <a class="invbtn">Learn More</a>
+                                        <a class="invbtn explr">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -638,5 +631,5 @@
                 </div>
             </div>
         </mat-card-content>
-    </mat-card>
+    </div>
 </div>

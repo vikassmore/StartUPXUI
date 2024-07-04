@@ -1,54 +1,54 @@
 <div class="p-1 psab">
     <div fxLayout="column" fxLayoutGap="10px" class="container stkn1" style="    padding-bottom: 10px;">
         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 "
-            style="   padding: 10px; background: #f1f1f1;margin-bottom: 10px;">
+            style="   padding: 10px; background: #eff4ff;margin-bottom: 10px;">
             <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idAbout)">
-                <b style="cursor: pointer;"><i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; About
+                <b class="pheads"><i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; About
                     Company</b>
             </div>
             <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idInvestor)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Investors</b>
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Investors</b>
             </div>
             <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idFounder)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Founders /
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Founders /
                     Members</b>
             </div>
             <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idFunding)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Funding
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Funding
                     History </b>
             </div>
         </div>
     </div>
     <div fxLayout="column" fxLayoutGap="10px" class="container stkn2" style="    padding-bottom: 10px;">
         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 "
-            style="   padding: 10px; background: #f1f1f1;margin-bottom: 10px;">
+            style="   padding: 10px; background: #eff4ff;margin-bottom: 10px;">
             <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idManagement)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Management
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Management
                     Info</b>
             </div>
             <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idPress)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Press News</b>
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Press News</b>
             </div>
             <div fxFlex.gt-sm="25%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill class="grid-item"
                 (click)="scrollToDiv(idOtherComp)">
-                <b style="cursor: pointer;"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Other
+                <b class="pheads"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; Other
                     Companies </b>
             </div>
         </div>
     </div>
-    <mat-card class="p-0">
+    <div class="p-0">
         <mat-card-content>
             <div fxLayout="column" fxLayoutGap="10px" class="container">
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                     <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
                         <i class="fa fa-arrow-circle-left" aria-hidden="true" style="    font-size: 40px;
-                                color: #37993f;" [routerLink]="['../../../../investor/discoverlist']"
+                                color: #172d70;" [routerLink]="['../../../../investor/discoverlist']"
                             matTooltip="Back To List"></i>
                     </div>
                     <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
@@ -57,7 +57,7 @@
                         class="grid-item text-right">
                         <div class="text-right" fxFlex="100">
                             <i class="fa fa-eye" aria-hidden="true"
-                                style="    font-size: 35px;color: #37993f;    padding-right: 8%;"
+                                style="    font-size: 35px;color: #172d70;   padding-right: 8%;"
                                 matTooltip="Add To Watchlist" (click)="onButtonClick(uploadForm.value)"></i>
                             <mat-label style="display: block;">Add To Watchlist</mat-label>
                         </div>
@@ -67,13 +67,12 @@
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                         class="grid-item">
                         <div class="text-center" fxFlex="100">
-                            <img [src]="previewUrl" style="height: 100px; padding: 10px;
-                                    border: 1px solid gray;" class="img1" alt="cinque terre"><sup
+                            <img [src]="previewUrl" style="height: 100px; padding: 10px;" class="img1" alt="cinque terre"><sup
                                 style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
-                            <h2 style="color:#1e293b;">{{StartUpName}}</h2>
-                            <span class="blink">{{SectorName}} </span>
+                            <h2 class="crdtxts">{{StartUpName}}</h2>
+                            <span class="blink"><b>{{SectorName}} </b></span>
                             <br>
-                            <button mat-raised-button color="primary" class="submit mt-2 " (click)="startInterest();">
+                            <button mat-raised-button color="primary" class="submit mt-2 explr" (click)="startInterest();">
                                 <mat-label><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Submit
                                     Interest</mat-label>
                             </button>
@@ -86,7 +85,7 @@
                         <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                             <div fxFlex="100" ffxFlex.sm="50" class="p-1">
                                 <div class="text-left" fxFlex="100">
-                                    <h3 style="color:#1e293b;">Standard Deals <span class="prv">PREVIEW</span></h3>
+                                    <h3 class="crdtxts">Standard Deals <span class="prv">PREVIEW</span></h3>
                                     <p style="line-height: 1.8 !important;color: black;">Invest into funds that acquires
                                         shares from selling shareholders. Investment usually close in 4-10 weeks.</p>
                                 </div>
@@ -97,7 +96,7 @@
                         <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                             <div fxFlex="100" ffxFlex.sm="50" class="p-1">
                                 <div class="text-left" fxFlex="100">
-                                    <h3 style="color:#1e293b;">Express Deals</h3>
+                                    <h3 class="crdtxts">Express Deals</h3>
                                     <p style="line-height: 1.8 !important;color: black;">Purchase a position in an
                                         existing fund sold by another investor. Investments usually close in 1-3 weeks.
                                     </p>
@@ -134,9 +133,9 @@
                     </div>
                     <div #idAbout></div>
                 </div>
-                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20 brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;About {{StartUpName}}<br></h2> <br>
+                        <h2 style="color:#1e293b;font-style: italic;" class="crdtxts"><br>&nbsp;About {{StartUpName}}<br></h2> <br>
                     </div>
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
@@ -169,7 +168,7 @@
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Investors<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;" class="crdtxts"><br>&nbsp;Investors<br></h2>
                     </div>
                 </div>
                 <br>
@@ -192,13 +191,13 @@
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Founders / Members<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;" class="crdtxts"><br>&nbsp;Founders / Members<br></h2>
                     </div>
                 </div>
                 <br>
-                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                <div  class=" mttop20">
                     <div fxLayout="row wrap " #resizedDiv>
-                        <div fxFlex="100" ffxFlex.sm="50" class="pfvisit Divbg3" *ngFor="let founder of founderList">
+                        <div fxFlex="100" ffxFlex.sm="100" class="pfvisit Divbg3" *ngFor="let founder of founderList">
                             <div fxLayout="row wrap" fxFlex="100">
                                 <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                     <div class="text-left" fxFlex="100">
@@ -219,12 +218,13 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
                     </div>
                     <div #idFunding></div>
                 </div>
-                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  ">
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Funding History<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;" class="crdtxts"><br>&nbsp;Funding History<br></h2>
                     </div>
                 </div>
                 <br>
@@ -246,17 +246,17 @@
                     </div>
                     <div #idManagement></div>
                 </div>
-                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  ">
+                <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Management<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;" class="crdtxts"><br>&nbsp;Management<br></h2>
                     </div>
                 </div>
                 <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2 mttop20">
-                    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="100%" class="block-2 mttop20">
-                        <div fxFlex="100" ffxFlex.sm="50" class=" Divbg3 ">
+                    <div fxFlex="100" ffxFlex.sm="50" class=" Divbg3 ">
+                        <div >
                             <div fxLayout="row wrap" fxFlex="100">
-                                <div fxFlex="50" ffxFlex.sm="50" class="p-1 p1">
+                                <div fxFlex="100" ffxFlex.sm="50" class="p-1 p1">
                                     <div class="text-left" fxFlex="100">
                                         <!-- <a href="#" style="text-decoration: none;color: navy;"><h3>{{ManagementInfo}}</h3></a> -->
                                         <span class="text-right" style="font-style: italic;">{{ManagementInfo}}</span>
@@ -269,10 +269,9 @@
                 </div>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Press<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;" class="crdtxts"><br>&nbsp;Press<br></h2>
                     </div>
                 </div>
-                <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxLayout="row wrap " #resizedDiv>
                         <div fxFlex="100" ffxFlex.sm="50" class=" Divbg3 mt-2">
@@ -321,13 +320,13 @@
                 <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2  brdtop">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h2 style="color:#1e293b;font-style: italic;"><br>&nbsp;Other Companies<br></h2>
+                        <h2 style="color:#1e293b;font-style: italic;" class="crdtxts"><br>&nbsp;Other Companies<br></h2>
                     </div>
                 </div>
                 <div fxLayout="row wrap " #resizedDiv style="margin-left: 40px;margin-top: 20px;">
                     <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" *ngFor="let item of compitetorFounderList"
                         [routerLink]="['../../../admin/investor/companydetails']" style="cursor:pointer">
-                        <mat-card class="p-0 Divbg4">
+                        <mat-card class="p-0 Divbg4 mat-expansion-panel">
                             <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                                 <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                     <div class="text-left" fxFlex="100">
@@ -356,7 +355,7 @@
                                 </div>
                                 <div fxFlex="25" ffxFlex.sm="50" class="p-1">
                                     <div class="text-center mt-10" fxFlex="100">
-                                        <a class="invbtn">Learn More</a>
+                                        <a class="invbtn explr">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -365,5 +364,5 @@
                 </div>
             </div>
         </mat-card-content>
-    </mat-card>
+    </div>
 </div>

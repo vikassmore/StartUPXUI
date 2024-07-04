@@ -7,13 +7,14 @@
 }
 
 .mtb{
-    background: #e3e3e3 !important;
+    background: transparent !important;
 }
 
 
 .invbtn{
     padding: 3px 7px;
-    background: #eeeeee;
+    color: #fff !important;
+    border-radius: 5px;
     border: 1px solid gray;
 }
 
@@ -60,3 +61,10 @@
 .p1{
     padding-left: 7px !important;
 }
+
+.mat-expansion-panel{
+    margin: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 10px !important;
+  }
