@@ -72,7 +72,6 @@ export class ListfounderdetailsComponent implements OnInit {
 
 
   public deletefounder(item: any) {
-   
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: "400px",
       data: {
@@ -82,9 +81,9 @@ export class ListfounderdetailsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(dialogResult => {
       if (dialogResult) {
-        const index: number = this.items.indexOf(item);
+        const index: number = this.founderdetail.indexOf(item);
         if (index !== -1) {
-          this.items.splice(index, 1);
+          this.founderdetail.splice(index, 1);
           this.appService.deleteById(`api/FounderDetail?founderId=${item.founderId}`, {}).subscribe(data => {
 
           });
