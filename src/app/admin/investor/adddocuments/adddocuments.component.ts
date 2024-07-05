@@ -95,7 +95,7 @@ export class AdddocumentsComponent implements OnInit {
     formData.append('filePath', this.uploadForm.value.investorDocument);
     formData.append('userId', this.userId);
     this.appService.add('api/FounderInvestorDocument/AddInvestorDocument', formData).subscribe((response) => {
-   
+      window.location.reload();
       if (!Number.isNaN(response)) {
         if (response != null) {
           this.dialog.closeAll();
