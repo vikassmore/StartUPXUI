@@ -1,24 +1,24 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <mat-card-content>
             <div fxLayout="column" fxLayoutGap="10px" class="container">
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                     <div *ngIf="!myServiceShow && dashBoardShow" fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%"
                         fxLayoutAlign="left" fxFlexFill class="grid-item">
                         <i class="fa fa-arrow-circle-left" aria-hidden="true" style="    font-size: 40px;
-                                color: #37993f;" [routerLink]="['../../../dashboardstartup']"
+                                color: #172d70;" [routerLink]="['../../../dashboardstartup']"
                             matTooltip="Back To List"></i>
                     </div>
                     <div *ngIf="myServiceShow && !dashBoardShow" fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%"
                         fxLayoutAlign="left" fxFlexFill class="grid-item">
                         <i class="fa fa-arrow-circle-left" aria-hidden="true" style="    font-size: 40px;
-                                color: #37993f;" [routerLink]="['../../../listmyservice']"
+                                color: #172d70;" [routerLink]="['../../../listmyservice']"
                             matTooltip="Back To List"></i>
                     </div>
                     <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                         class="grid-item">
                         <div class="text-center" fxFlex="100">
-                            <h2 style="color:#1e293b;">{{serviceProviderName}}</h2>
+                            <h2 class="crdtxts">{{serviceProviderName}}</h2>
                             <span class="blink">{{category}} </span>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                 <div *ngIf="myServiceShow && !dashBoardShow" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%"
                     class="block-2 mttop20">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right"
+                        <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right"
                                 aria-hidden="true"></i>&nbsp;&nbsp;Contact Information<br></h3> <br>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                 <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right"
+                        <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right"
                                 aria-hidden="true"></i>&nbsp;&nbsp;Tags / Keywords<br></h3> <br>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                 <br>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                     <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                        <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right"
+                        <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right"
                                 aria-hidden="true"></i>&nbsp;&nbsp;Service Portfolio<br></h3> <br>
                     </div>
                 </div>
@@ -103,5 +103,5 @@
                 <br>
             </div>
         </mat-card-content>
-    </mat-card>
+    </div>
 </div>

@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; List of Founders</h2>
             <table class="tblsearch">
@@ -9,16 +9,15 @@
                             [(ngModel)]="title" (input)="Search()" (keyup)="Search()" (ngModelChange)="Search()">
                     </td>
                     <td class="tdbtn">
-                        <button mat-raised-button color="primary" type="button"
+                        <button mat-raised-button color="primary" type="button" class="explr"
                             [routerLink]="['../../../admin/startup/founderdetails']"><i class="fa fa-users"
                                 aria-hidden="true"></i>&nbsp; ADD</button>
                     </td>
                 </tr>
             </table>
         </div>
-        <mat-divider></mat-divider>
         <div>
-            <div class="mat-table admin-table">
+            <div class="mat-table admin-table p-1">
                 <div class="mat-header-row">
                     <div class="mat-header-cell" fxFlex.gt-sm="12">Name</div>
                     <!-- <div class="mat-header-cell" fxFlex.gt-sm="12">Last Name</div> -->
@@ -47,7 +46,6 @@
                 </div>
             </div>
         </div>
-        <mat-divider></mat-divider>
         <div *ngIf="founderdetail.length > 0" fxLayout="row wrap">
             <div fxFlex="100" class="p-11">
                 <mat-card class="p-0 text-center nobxshbrd">
@@ -56,7 +54,6 @@
                 </mat-card>
             </div>
         </div>
-        <mat-divider></mat-divider>
         <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
             <div fxLayout="" fxLayoutGap="10px" class="container">
                 <div fxFlex="50%" class="text-left">
@@ -66,5 +63,5 @@
                 </div>
             </div>
         </div>
-    </mat-card>
+    </div>
 </div>

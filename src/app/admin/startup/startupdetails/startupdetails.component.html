@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Startup Details</h2>
         </div>
@@ -10,7 +10,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Startup Name</mat-label>
                                 <input matInput formControlName="startUpName" required>
                                 <mat-error *ngIf="uploadForm.controls.startUpName.errors?.required">Startup Name is
@@ -21,7 +21,7 @@
                         </div>
                         <div fxFlex.gt-sm="66.67%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Address</mat-label>
                                 <input matInput formControlName="address" required>
                                 <mat-error *ngIf="uploadForm.controls.address.errors?.required">Address is
@@ -36,7 +36,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Country</mat-label>
                                 <mat-select matNativeControl formControlName="countryId"
                                     (selectionChange)="onChangeCountry($event)" required>
@@ -50,7 +50,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>State</mat-label>
                                 <mat-select matNativeControl formControlName="stateId"
                                     (selectionChange)="onChangeState($event)" required>
@@ -64,7 +64,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>City</mat-label>
                                 <mat-select matNativeControl formControlName="cityId" ngModel required>
                                     <mat-option *ngFor="let city of cities" [value]="city.cityId">
@@ -79,7 +79,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Founding Year</mat-label>
                                 <input matInput formControlName="foundingYear" (keypress)="keyPressNumbers($event)"
                                     minlength="4" maxlength="4" required>
@@ -91,7 +91,7 @@
                         </div>
                         <div fxFlex.gt-sm="66.67%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Company Description (Max. 500 Characters)</mat-label>
                                 <textarea matInput formControlName="companyDescription" required></textarea>
                                 <mat-error *ngIf="uploadForm.controls.companyDescription.errors?.required">
@@ -106,7 +106,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Website URL</mat-label>
                                 <input matInput formControlName="websiteUrl" required>
                                 <mat-error *ngIf="uploadForm.controls.websiteUrl.errors?.required">Website URL is
@@ -119,7 +119,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <div appearance="outline" class="w-100 sgln">
+                            <div appearance="" class="w-100 sgln">
                                 <mat-label>Logo (.jpg /.jpeg /.png)</mat-label><br />
                                 <input type="file" formControlName="logo" id="file" (change)="onFileSelected($event)">
                                 <mat-error *ngIf="this.imagefile =='' || this.imagefile == null">Please select the logo.
@@ -128,7 +128,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <div appearance="outline" class="w-100 sgln ">
+                            <div appearance="" class="w-100 sgln ">
                                 <!-- <span class="lgprev">Logo Preview</span> -->
                                 <span class="lgprev"><img
                                         style="max-width: 40%; max-height: 60px;border: 1px solid gray;"
@@ -139,7 +139,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <div appearance="outline" class="w-100 sgln1">
+                            <div appearance="" class="w-100 sgln1">
                                 <mat-label>Whether in Stealth ? :</mat-label>
                                 <!-- <mat-slide-toggle color="primary" class="mttop20"></mat-slide-toggle> -->
                                 <mat-slide-toggle color="primary" class="mttop20" formControlName="isStealth"
@@ -151,7 +151,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item mttop20">
-                            <mat-form-field appearance="outline" class="w-100 ">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Employee Count</mat-label>
                                 <mat-select matNativeControl formControlName="employeeCount" required>
                                     <mat-option *ngFor="let employee of employeeCount" [value]="employee.employeeCount">
@@ -164,7 +164,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item mttop20">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Sector</mat-label>
                                 <mat-select matNativeControl formControlName="sectorId" required>
                                     <mat-option *ngFor="let sec of sectors" [value]="sec.sectorId">
@@ -179,7 +179,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Legal Name</mat-label>
                                 <input matInput formControlName="companyLegalName" required>
                                 <mat-error *ngIf="uploadForm.controls.companyLegalName.errors?.required">Legal Name is
@@ -191,7 +191,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Email</mat-label>
                                 <input matInput formControlName="companyEmailId" required>
                                 <mat-error *ngIf="uploadForm.controls.companyEmailId.errors?.required">Email is
@@ -206,7 +206,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Contact</mat-label>
                                 <input matInput formControlName="companyContact" (keypress)="keyPressNumbers($event)"
                                     required>
@@ -225,7 +225,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Company Headquarters address</mat-label>
                                 <input matInput formControlName="companyHeadquartersAddress" required>
                                 <mat-error
@@ -242,7 +242,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Product/Service Description (Max. 500 Characters)</mat-label>
                                 <textarea matInput formControlName="serviceDescription"></textarea>
                                 <mat-error *ngIf="uploadForm.controls.serviceDescription.hasError('maxlength')">Service
@@ -254,7 +254,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="97%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Business Model (Max. 500 Characters)</mat-label>
                                 <textarea matInput formControlName="businessModel"></textarea>
                                 <mat-error *ngIf="uploadForm.controls.businessModel.hasError('maxlength')">Business
@@ -271,7 +271,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Target Customer Base (Max. 500 Characters)</mat-label>
                                 <textarea matInput formControlName="targetCustomerBase"></textarea>
                                 <mat-error *ngIf="uploadForm.controls.targetCustomerBase.hasError('maxlength')">Target
@@ -283,7 +283,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Target Market (Max. 500 Characters)</mat-label>
                                 <textarea matInput formControlName="targetMarket" required></textarea>
                                 <mat-error *ngIf="uploadForm.controls.targetMarket.errors?.required">Target Market
@@ -296,14 +296,14 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="40%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Role</mat-label>
                                 <input matInput #role (change)="onTextChangeRole($event.target)" required>
                             </mat-form-field>
                         </div>
                         <div fxFlex.gt-sm="40%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Name</mat-label>
                                 <input matInput #name (change)="onTextChangeName($event.target)" required>
                             </mat-form-field>
@@ -311,14 +311,14 @@
                         <div fxFlex.gt-sm="20%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
                             <div class="tp-2"><button mat-raised-button color="primary" (click)="addManagementInfo();"
-                                    [disabled]="buttenDisabled"><i class="fa fa-plus" aria-hidden="true"></i> ADD
+                                    [disabled]="buttenDisabled" class="explr"><i class="fa fa-plus" aria-hidden="true"></i> ADD
                                 </button></div>
                         </div>
                     </div>
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Management Information (Max. 500 Characters)</mat-label>
                                 <textarea matInput formControlName="managementInfo" required
                                     (change)="onTextChangeMan($event.target)"></textarea>
@@ -336,7 +336,7 @@
                         <button mat-raised-button color="accent" type="button"
                             [routerLink]="['../../../admin/startup/dashboardstartup']"> <i
                                 class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
-                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid" class="explr"><i
                                 class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
                     </div>
                     <div fxFlex="50%" class="text-right">
@@ -345,5 +345,5 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
 </div>

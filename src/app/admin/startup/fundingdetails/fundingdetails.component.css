@@ -41,7 +41,7 @@
 }
 
 .table-bordered td, .table-bordered th {
-    border: 1px solid #dee2e6;
+    border: 1px solid #939495;
     padding: 10px;
 }
 
@@ -69,4 +69,10 @@ th{
 
 .mat-header-cell {
     padding: 5px 5px !important;
+}
+
+.mt-row {
+    margin: 10px;
+    background: #eff4ff;
+    border: none;
 }

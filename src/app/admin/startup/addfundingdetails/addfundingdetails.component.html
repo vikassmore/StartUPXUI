@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Add Funding Details</h2>
         </div>
@@ -9,7 +9,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Series Name</mat-label>
                                 <mat-select formControlName="fundingId" required>
                                     <mat-option *ngFor="let fund of funding" [value]="fund.fundingId">
@@ -22,7 +22,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Share Class</mat-label>
                                 <input matInput formControlName="shareClass" required>
                                 <mat-error *ngIf="uploadForm.controls.shareClass.errors?.required">share Class
@@ -34,7 +34,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Date of Financing</mat-label>
                                 <input matInput formControlName="dateFinancing" type="date" required>
                                 <mat-error *ngIf="uploadForm.controls.dateFinancing.errors?.required">Date
@@ -49,7 +49,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Shares Outstanding (In Million)</mat-label>
                                 <input matInput formControlName="sharesOutstanding" required
                                     (keypress)="keyPressNumbers($event)">
@@ -63,7 +63,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Issue Price (In Dollar)</mat-label>
                                 <input matInput formControlName="issuePrice" required
                                     (keypress)="keyPressNumbers($event)">
@@ -75,7 +75,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Conversion Price (In Dollar)</mat-label>
                                 <input matInput formControlName="conversionPrice" required
                                     (keypress)="keyPressNumbers($event)">
@@ -91,7 +91,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Total Financing Size (In Dollar)</mat-label>
                                 <input matInput formControlName="totalFinancingSize" required
                                     (keypress)="keyPressNumbers($event)">
@@ -105,7 +105,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Liquidation Preference (In Dollar)</mat-label>
                                 <input matInput formControlName="liquidationPreference" required
                                     (keypress)="keyPressNumbers($event)">
@@ -121,7 +121,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Liquidity Rank</mat-label>
                                 <input matInput formControlName="liquidityRank" required
                                     (keypress)="keyPressNumbers($event)">
@@ -148,7 +148,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Dividend Type</mat-label>
                                 <input matInput formControlName="dividendType" required>
                                 <mat-error *ngIf="uploadForm.controls.dividendType.errors?.required">Divident Type is
@@ -159,7 +159,7 @@
                         </div>
                         <div fxFlex.gt-sm="66.66%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Votes Per Share</mat-label>
                                 <input matInput formControlName="votesPerShare">
                                 <mat-error *ngIf="uploadForm.controls.votesPerShare.hasError('maxlength')">Votes Per
@@ -171,7 +171,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Redemption Rights</mat-label>
                                 <input matInput formControlName="redemptionRights">
                                 <mat-error *ngIf="uploadForm.controls.redemptionRights.hasError('maxlength')">Redemption
@@ -181,7 +181,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Convertible To On Public Listing</mat-label>
                                 <input matInput formControlName="convertibleToOnPublicListing">
                                 <mat-error
@@ -192,7 +192,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Participating Preferred</mat-label>
                                 <input matInput formControlName="participatingPreferred">
                                 <mat-error
@@ -205,7 +205,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Qualified IPO (Max. 200 Characters)</mat-label>
                                 <textarea matInput formControlName="qualifiedIpo" maxlength="200"></textarea>
                                 <mat-error *ngIf="uploadForm.controls.qualifiedIpo.hasError('maxlength')">Qualified Ipo
@@ -216,7 +216,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label> Other Key Provisions (Max. 200 Characters)</mat-label>
                                 <textarea matInput formControlName="otherKeyProvisions" maxlength="200"></textarea>
                                 <mat-error *ngIf="uploadForm.controls.otherKeyProvisions.hasError('maxlength')">OtherKey
@@ -233,7 +233,7 @@
                         <button mat-raised-button color="accent" type="button"
                             [routerLink]="['../../../admin/startup/fundingdetails']"> <i class="fa fa-arrow-circle-left"
                                 aria-hidden="true"></i> BACK</button>
-                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid" class="explr"><i
                                 class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
                     </div>
                     <div fxFlex="50%" class="text-right">
@@ -242,5 +242,5 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
 </div>
