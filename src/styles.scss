@@ -868,7 +868,7 @@ p{
     box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
     height: 15px;
     width: 15px;
-    text-align: center;
+    text-align: right;
     margin-right: 10px;
 }
 
@@ -1060,4 +1060,12 @@ p{
     font-weight: 600;
     text-transform: uppercase;
     color: #152a6a;
+}
+
+.app.blue .mat-flat-button.mat-primary, .app.blue .mat-raised-button.mat-primary, .app.blue .mat-fab.mat-primary, .app.blue .mat-mini-fab.mat-primary {
+    background-color: #12339c !important;
+}
+
+.app.blue .mat-mini-fab.mat-warn {
+    background-color: #d13f3f !important;
 }

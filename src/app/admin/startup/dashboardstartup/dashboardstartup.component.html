@@ -1,7 +1,7 @@
 <div class="p-1">
     <!-- <mat-divider></mat-divider> -->
-    <div fxLayout="row wrap" #resizedDiv>
-        <div fxFlex="100" fxFlex.gt-sm="47" fxFlex.sm="50" class="p-1">
+    <!-- <div fxLayout="row wrap" #resizedDiv> -->
+        <!-- <div fxFlex="100" fxFlex.gt-sm="47" fxFlex.sm="50" class="p-1">
             <div class="relative w-24 h-24" style="margin: 0.7rem 0rem 0rem 0rem; text-align: left;">
                 <h2 style="color:#1e293b;">Welcome Back ! <span style="font-size: small;">(Founder)</span></h2>
                 <span class="blink" [routerLink]="['../../../admin/notification/listnotification']"><i
@@ -15,7 +15,7 @@
                 <i class="fa fa-user lgtype" aria-hidden="true"></i>
                 <h4 class="mt-1">{{founderTypeName}}</h4>
             </div>
-        </div>
+        </div> -->
         <!-- <div fxFlex="100" fxFlex.gt-sm="16" fxFlex.sm="50" class="p-1"> 
             <div class="relative w-24 h-24" style="margin: 1rem 0rem 0rem 0rem; text-align: left;">
                 <h4 style="color: green;"><i class="fa fa-check" aria-hidden="true"></i> Email : Verified </h4>
@@ -53,121 +53,127 @@
                 <h5>{{ProfileStatus}}</h5>
             </div>
         </div> -->
-    </div>
-    <mat-divider></mat-divider>
-    <div fxLayout="row wrap" #resizedDiv>
-        <div fxFlex="100" fxFlex.gt-sm="30" fxFlex.sm="50" class="mt-1" style="display: block; cursor: pointer;">
+    <!-- </div> -->
+
+    <div fxLayout="row wrap" class="nobord" #resizedDiv>
+        <div fxFlex="100" fxFlex.gt-sm="44" fxFlex.sm="50"  style="display: block; cursor: pointer;">
             <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1">
-                <mat-card class="p-0 Divbg2">
-                    <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 103px;"
+                <mat-card class="p-0 Divbg2 crd-mat-card">
+                    <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 123px; margin-left: 15px;"
                         [routerLink]="['../../../admin/startup/listfounderdetails']">
-                        <div fxFlex="50" ffxFlex.sm="50" class="p-1 text-center">
-                            <img src="assets/images/bg/founder1.jpg" class="img1 mtt-25 mtbb-30 mt-1"
-                                style="width:50px;    padding-top: 7px;">
+                        <div fxFlex="35" ffxFlex.sm="50" class="p-1 ">
+                            <img src="assets/images/bg/founder1.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1">
                         </div>
-                        <div fxFlex="50" ffxFlex.sm="50" class="p-1">
-                            <div class="text-center" fxFlex="100" style="margin-top:18px; letter-spacing: 1px;">
-                                <h4>Founders<br><span class="count">{{FounderDetailCount}}</span></h4>
+                        <div fxFlex="65" ffxFlex.sm="50" class="p-1">
+                            <div class="text-center" fxFlex="100" style="margin-top:28px;">
+                                <h4 class="crdhd">Founders<br><span class="count">{{FounderDetailCount}}</span></h4>
                             </div>
                         </div>
                     </div>
-                </mat-card>
+                <!-- </mat-card>
             </div>
         </div>
         <div fxFlex="100" fxFlex.gt-sm="30" fxFlex.sm="50" class="mt-1" style="display: block; cursor: pointer;">
             <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1">
-                <mat-card class="p-0 Divbg2">
-                    <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 103px;"
+                <mat-card class="p-0 Divbg2"> -->
+                    <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 123px;"
                         [routerLink]="['../../../admin/startup/fundingdetails']">
-                        <div fxFlex="50" ffxFlex.sm="50" class="p-1 text-center">
-                            <img src="assets/images/bg/amount1.jpg" class="img1 mtt-25 mtbb-30 mt-1"
-                                style="width:50px;    padding-top: 7px;">
+                        <div fxFlex="35" ffxFlex.sm="50" class="p-1">
+                            <img src="assets/images/bg/amount1.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1">
                         </div>
-                        <div fxFlex="50" ffxFlex.sm="50" class="p-1">
-                            <div class="text-center" fxFlex="100" style="margin-top:18px; letter-spacing: 1px;">
-                                <h4>Funding<br><span class="count">{{FundingDetailCount}}</span></h4>
+                        <div fxFlex="65" ffxFlex.sm="50" class="p-1">
+                            <div class="text-center" fxFlex="100" style="margin-top:28px;">
+                                <h4 class="crdhd">Funding<br><span class="count">{{FundingDetailCount}}</span></h4>
                             </div>
                         </div>
                     </div>
                 </mat-card>
             </div>
         </div>
-        <div fxFlex="100" fxFlex.gt-sm="26" fxFlex.sm="50">
-            <ul class="numbered-list">
-                <li>
-                    <mat-card class="p-0 Divbg2">
-                        <div fxLayout="row wrap" fxFlex="100" style="height: 30px; cursor: pointer;"
-                            [routerLink]="['../../../admin/startup/startupdetails']">
-                            <div fxFlex="15" ffxFlex.sm="50">
-                                <div class="text-left" fxFlex="100" style="display:none">
-                                    <i class="fa fa-check-circle oktick" aria-hidden="true"></i><sup
-                                        style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+
+        <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" style="display: block; cursor: pointer; margin-left: -15px;margin-right: -15px;">
+            <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1">
+                <mat-card class="p-0 Divbg2 crd-mat-card">
+                    <ul class="numbered-list crdnumlist">
+                        <li>
+                            <div class="p-0 ">
+                                <div fxLayout="row wrap" fxFlex="100" style="height: 30px; cursor: pointer;"
+                                    [routerLink]="['../../../admin/startup/startupdetails']">
+                                    <!-- <div fxFlex="15" ffxFlex.sm="50">
+                                        <div class="text-left" fxFlex="100" style="display:none">
+                                            <i class="fa fa-check-circle oktick" aria-hidden="true"></i><sup
+                                                style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                        </div>
+                                    </div> -->
+                                    <div fxFlex="100" ffxFlex.sm="50">
+                                        <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
+                                            <h4 class="crdh1"> <i class="fa fa-building crdico"></i>Startup Details</h4>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div fxFlex="85" ffxFlex.sm="50">
-                                <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
-                                    <h4 style="padding-left:40px">Startup Details</h4>
+                        </li>
+                        <li>
+                            <div class="p-0 ">
+                                <div fxLayout="row wrap" fxFlex="100" style="height: 30px; cursor: pointer;"
+                                    [routerLink]="['../../../admin/startup/listfounderdetails']">
+                                    <!-- <div fxFlex="15" ffxFlex.sm="50">
+                                        <div class="text-left" fxFlex="100" style="display:none">
+                                            <i class="fa fa-check-circle oktick" aria-hidden="true"></i><sup
+                                                style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                        </div>
+                                    </div> -->
+                                    <div fxFlex="100" ffxFlex.sm="50">
+                                        <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
+                                            <h4 class="crdh1"> <i class="fa fa-user-circle-o crdico"></i>Founder Details</h4>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </mat-card>
-                </li>
-                <li>
-                    <mat-card class="p-0 Divbg2">
-                        <div fxLayout="row wrap" fxFlex="100" style="height: 30px; cursor: pointer;"
-                            [routerLink]="['../../../admin/startup/listfounderdetails']">
-                            <div fxFlex="15" ffxFlex.sm="50">
-                                <div class="text-left" fxFlex="100" style="display:none">
-                                    <i class="fa fa-check-circle oktick" aria-hidden="true"></i><sup
-                                        style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                        </li>
+                        <li>
+                            <div class="p-0 ">
+                                <div fxLayout="row wrap" fxFlex="100" style="height: 30px; cursor: pointer;"
+                                    [routerLink]="['../../../admin/startup/fundingdetails']">
+                                    <!-- <div fxFlex="15" ffxFlex.sm="50">
+                                        <div class="text-left" fxFlex="100" style="display:none">
+                                            <i class="fa fa-check-circle oktick" aria-hidden="true"></i><sup
+                                                style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
+                                        </div>
+                                    </div> -->
+                                    <div fxFlex="100" ffxFlex.sm="50">
+                                        <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
+                                            <h4 class="crdh1"> <i class="fa fa-money crdico"></i>Funding Details</h4>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div fxFlex="85" ffxFlex.sm="50">
-                                <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
-                                    <h4 style="padding-left:40px">Founder Details</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </mat-card>
-                </li>
-                <li>
-                    <mat-card class="p-0 Divbg2">
-                        <div fxLayout="row wrap" fxFlex="100" style="height: 30px; cursor: pointer;"
-                            [routerLink]="['../../../admin/startup/fundingdetails']">
-                            <div fxFlex="15" ffxFlex.sm="50">
-                                <div class="text-left" fxFlex="100" style="display:none">
-                                    <i class="fa fa-check-circle oktick" aria-hidden="true"></i><sup
-                                        style="font-size: 13px;margin-top: -16px;">&nbsp;</sup>
-                                </div>
-                            </div>
-                            <div fxFlex="85" ffxFlex.sm="50">
-                                <div class="text-left" fxFlex="100" style="margin-top: 6px; letter-spacing: 1px;">
-                                    <h4 style="padding-left:40px">Funding Details</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </mat-card>
-                </li>
-            </ul>
+                        </li>
+                    </ul>
+                </mat-card>
+            </div>
         </div>
-        <div fxFlex="100" fxFlex.gt-sm="14" fxFlex.sm="50">
-            <div fxFlex="100" fxFlex.gt-sm="12" fxFlex.sm="50" class="p-1">
-                <div class="relative w-24 h-24" style=" text-align: center;">
+        <div fxFlex="100" fxFlex.gt-sm="17" fxFlex.sm="50" style="display: block; cursor: pointer; ">
+            <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1">
+                <div class="relative" style=" text-align: center;">
                     <button color="primary" class="btnverify1 mt-1 btnsv" mat-raised-button [disabled]="buttonDisabled"
                         matTooltip="Send For Verification" (click)="senForVerification();">
-                        <h4 style="line-height: 1;font-size: 13px;"><i class="fa fa-hand-o-up oktick"
-                                aria-hidden="true"></i><br>Send For<br>Verification</h4>
+                        <h4 style="line-height: 1.3;margin-bottom: 5px;"><i class="fa fa-hand-o-up oktick" aria-hidden="true"></i><br>Send For<br>Verification</h4>
                     </button>
+                </div>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="17" fxFlex.sm="50" style="display: block; cursor: pointer;     margin-left: -15px;">
+            <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1">
+                <div class="relative " style=" text-align: center;">
                     <button color="primary" class="btnverify1 mt-1 btnsv" mat-raised-button
                         [disabled]="raisebuttonDisabled" matTooltip="Raise Funding" (click)="raiseFunding();">
-                        <h4 style="line-height: 1;font-size: 13px;"><i class="fa fa-money oktick"
-                                aria-hidden="true"></i><br>Raise<br>Funding</h4>
+                        <h4 style="line-height: 1.3;margin-bottom: 5px;"><i class="fa fa-money oktick" aria-hidden="true"></i><br>Raise<br>Funding</h4>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <mat-divider></mat-divider>
     <!-- <div fxLayout="row wrap" #resizedDiv>
         <div fxFlex="100" fxFlex.gt-sm="30" fxFlex.sm="50" class="p-1"> 
             <div class="relative w-24 h-24" style="margin: 1rem 0rem 0rem 0rem; text-align: center;border-right: 1px solid #b5b5ca;">
@@ -194,17 +200,20 @@
     </div>
     <mat-divider></mat-divider>
     <br> -->
-    <mat-tab-group>
+    <mat-tab-group class="crdtabs">
         <mat-tab label="Services" style="width: 25%;">
-            <div fxLayout="row wrap" #resizedDiv>
+
+            <div fxLayout="row wrap" class="fltright" #resizedDiv>
                 <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="100%" class="block-2">
-                    <div fxLayout="column" fxLayoutGap="10px" class="container srch" fxFlex="28%">
-                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="100%"
-                            class="block-2">
-                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="center center" fxFlexFill
+                    <div fxLayout="column" fxLayoutGap="10px" class="container srch" fxFlex="100%">
+
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
+                            <div fxFlex.gt-sm="70%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                                 class="grid-item">
-                                <mat-form-field appearance="outline" class="w-100">
-                                    <span class="fa fa-search searchtext-icon1"></span>
+                            </div>
+                            <div fxFlex.gt-sm="30%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
+                                class="grid-item">
+                                <mat-form-field appearance="" class="w-100 w-101 fltinput">
                                     <input matInput type="text" class="searchtext1"
                                         placeholder="Search Service Name ..." name="serviceName"
                                         [(ngModel)]="serviceName" (input)="Search()" (keyup)="Search()"
@@ -216,18 +225,27 @@
                                 </mat-form-field>
                             </div>
                         </div>
+
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="100%"
+                            class="block-2">
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="right" fxFlexFill
+                                class="grid-item">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div fxLayout="row wrap" #resizedDiv>
                 <div fxFlex="100" fxFlex.gt-sm="14" fxFlex.sm="50" class="p-1" *ngFor="let service of ServiceList ">
                     <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
-                        <mat-card class="p-0 Divbg4" matTooltip="Explore This Service"
+                        <mat-card class="p-0 Divbg4 crd-mat-card" matTooltip="Explore This Service"
                             [routerLink]="['../../../admin/startup/serviceinfo',service.serviceId,1]">
                             <div fxFlex="100" ffxFlex.sm="50" class="p-1">
                                 <div class="text-center" fxFlex="100">
                                     <sup
-                                        style="font-size: 13px;color: green;font-style: italic;">{{service.serviceProviderName}}</sup>
+                                        style="font-size: 13px;font-style: italic;" class="crdtxts">{{service.serviceProviderName}}</sup>
                                 </div>
                             </div>
                         </mat-card>
@@ -238,7 +256,7 @@
         <mat-tab label="News Feed" style="width: 25%;">
             <div fxLayout="row wrap " #resizedDiv>
                 <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" class="p-1 ">
-                    <mat-card class="p-0 Divbg4">
+                    <mat-card class="p-0 Divbg4 mat-expansion-panel mat-expansion-panel1">
                         <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                             <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                 <div class="text-left" fxFlex="100">
@@ -266,7 +284,7 @@
                     </mat-card>
                 </div>
                 <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" class="p-1 ">
-                    <mat-card class="p-0 Divbg4">
+                    <mat-card class="p-0 Divbg4 mat-expansion-panel mat-expansion-panel1">
                         <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                             <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                 <div class="text-left" fxFlex="100">
@@ -294,7 +312,7 @@
                     </mat-card>
                 </div>
                 <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" class="p-1 ">
-                    <mat-card class="p-0 Divbg4">
+                    <mat-card class="p-0 Divbg4 mat-expansion-panel mat-expansion-panel1">
                         <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                             <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                 <div class="text-left" fxFlex="100">
@@ -322,7 +340,7 @@
                     </mat-card>
                 </div>
                 <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" class="p-1 ">
-                    <mat-card class="p-0 Divbg4">
+                    <mat-card class="p-0 Divbg4 mat-expansion-panel mat-expansion-panel1">
                         <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                             <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                 <div class="text-left" fxFlex="100">
@@ -350,7 +368,7 @@
                     </mat-card>
                 </div>
                 <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100" class="p-1 ">
-                    <mat-card class="p-0 Divbg4">
+                    <mat-card class="p-0 Divbg4 mat-expansion-panel mat-expansion-panel1">
                         <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                             <div fxFlex="10" ffxFlex.sm="50" class="p-1">
                                 <div class="text-left" fxFlex="100">
@@ -390,11 +408,11 @@
             </div>
         </mat-tab>
         <mat-tab label="FAQ's" style="width: 25%;">
-            <mat-accordion *ngFor="let faq of FAQList">
+            <mat-accordion *ngFor="let faq of FAQList" class="crdaccrd">
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title class="fx40">
-                            {{faq.question}}
+                            <i class="fa fa-question-circle" aria-hidden="true" style="font-size: 20px;"></i> &nbsp; <span class="crdqst">{{faq.question}}</span>
                         </mat-panel-title>
                         <mat-panel-description>
                         </mat-panel-description>
@@ -408,7 +426,7 @@
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title class="fx10">
-                            {{policy.policyName}}
+                            <i class="fa fa-book" aria-hidden="true" style="font-size: 20px;"></i> &nbsp; <span class="crdqst">{{policy.policyName}}</span>
                         </mat-panel-title>
                         <mat-panel-description>
                             Summary of the content Term Policy
@@ -419,6 +437,4 @@
             </mat-accordion>
         </mat-tab>
     </mat-tab-group>
-    <mat-divider></mat-divider>
-    <p class="ftr">© Startupx - 2023</p>
 </div>
