@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; List of Service Users</h2>
             <table class="tblsearch">
@@ -15,7 +15,6 @@
                 </tr>
             </table>
         </div>
-        <mat-divider></mat-divider>
         <div>
             <div class="mat-table admin-table">
                 <div class="mat-header-row">
@@ -56,7 +55,6 @@
                 </div>
             </div>
         </div>
-        <mat-divider></mat-divider>
         <div *ngIf="ServiceUserList.length > 0" fxLayout="row wrap">
             <div fxFlex="100" class="p-11">
                 <mat-card class="p-0 text-center nobxshbrd">
@@ -65,7 +63,6 @@
                 </mat-card>
             </div>
         </div>
-        <mat-divider></mat-divider>
         <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
             <div fxLayout="" fxLayoutGap="10px" class="container">
                 <div fxFlex="50%" class="text-left">
@@ -75,5 +72,5 @@
                 </div>
             </div>
         </div>
-    </mat-card>
+    </div>
 </div>

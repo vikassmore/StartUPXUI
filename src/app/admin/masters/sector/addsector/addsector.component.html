@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Sector Details</h2> <mat-icon></mat-icon>
         </div>
@@ -9,7 +9,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Sector Name</mat-label>
                                 <mat-select matNativeControl formControlName="sectorName" required>
                                     <mat-option value="Ecommerce">Ecommerce</mat-option>
@@ -29,7 +29,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Sub-Sector Name</mat-label>
                                 <mat-error *ngIf=" uploadForm.controls.subSectorName.errors?.required">Sub-Sector Name
                                     is required</mat-error>
@@ -41,7 +41,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Sector Description (Max. 200 char.)</mat-label>
                                 <textarea matInput formControlName="sectorDescription" required></textarea>
                                 <mat-error *ngIf=" uploadForm.controls.sectorDescription.errors?.required">Sector
@@ -68,5 +68,5 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
 </div>

@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Add Edit Notable Investor</h2>
         </div>
@@ -9,7 +9,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop5">
                         <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>First Name</mat-label>
                                 <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="firstName"
                                     required>
@@ -21,7 +21,7 @@
                         </div>
                         <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Last Name</mat-label>
                                 <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="lastName"
                                     required>
@@ -34,7 +34,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Email</mat-label>
                                 <input matInput formControlName="emailId" required>
                                 <mat-error *ngIf="uploadForm.controls.emailId.errors?.required">Email is
@@ -46,7 +46,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Mobile No.</mat-label>
                                 <input matInput matInput formControlName="mobileNo" (keypress)="keyPressNumbers($event)"
                                     minlength="10" maxlength="10" required>
@@ -56,7 +56,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Gender</mat-label>
                                 <mat-select matNativeControl formControlName="gender" required>
                                     <mat-option value="Male">Male</mat-option>
@@ -70,7 +70,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Description (Max. 200 Characters)</mat-label>
                                 <textarea matInput formControlName="description" maxlength="200" required></textarea>
                                 <mat-error *ngIf=" uploadForm.controls.description.errors?.required">Description is
@@ -95,5 +95,5 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
 </div>

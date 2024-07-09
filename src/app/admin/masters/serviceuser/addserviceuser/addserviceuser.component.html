@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Add Service User Details</h2> <mat-icon></mat-icon>
         </div>
@@ -9,7 +9,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>First Name</mat-label>
                                 <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="firstName"
                                     required>
@@ -23,7 +23,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Last Name</mat-label>
                                 <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="lastName"
                                     required>
@@ -37,7 +37,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Role</mat-label>
                                 <mat-select matNativeControl formControlName="roleId" required>
                                     <mat-option *ngFor="let service of services" [value]="service.roleId">
@@ -53,7 +53,7 @@
                         class="block-2 mttop20">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Entity Type</mat-label>
                                 <mat-select matNativeControl formControlName="founderTypeId" required>
                                     <mat-option *ngFor="let founder of FounderType" [value]="founder.founderTypeId">
@@ -66,7 +66,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Email</mat-label>
                                 <input matInput formControlName="emailId" required>
                                 <mat-error *ngIf="uploadForm.controls.emailId.errors?.required">Email is
@@ -80,7 +80,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Password</mat-label>
                                 <input matInput formControlName="password" required [type]="hide ? 'password' : 'text'">
                                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
@@ -102,7 +102,7 @@
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill
                                 class="grid-item">
-                                <mat-form-field appearance="outline" class="w-100 tp-2">
+                                <mat-form-field appearance="" class="w-100 w-101">
                                     <mat-label>Select Category</mat-label>
                                     <mat-select formControlName="category" (selectionChange)="onSelectionChange($event)"
                                         required multiple>
@@ -132,5 +132,5 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
 </div>

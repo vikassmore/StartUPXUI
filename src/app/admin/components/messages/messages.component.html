@@ -14,7 +14,7 @@
                 </ng-template>
                 <mat-card class="content" perfectScrollbar>
                     <div fxLayout="column" fxLayoutAlign="none">
-                        <button mat-button *ngFor="let message of NotificationList">
+                        <button mat-button *ngFor="let message of NotificationList" class="p-2">
                             <div fxLayout="column" fxLayoutAlign="none" class="w-100">
                                 <span class="text text-muted">{{message.message}}
                                     <br/> {{message.createdDate | date}} {{message.createdDate | date:'H:mm a'}}</span>

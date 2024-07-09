@@ -587,10 +587,11 @@ p{
 .mydoc{
     margin: 2px !important;
     font-size: 11px;
-    background: #8bcc9a;
+    background: #12339c;
     border-radius: 2px;
+    color: white;
     padding: 2px 6px;
-    border: 1px solid green;
+    border: 1px solid #12339c;
     cursor: pointer;
 }
 
@@ -1068,4 +1069,19 @@ p{
 
 .app.blue .mat-mini-fab.mat-warn {
     background-color: #d13f3f !important;
+}
+
+.app.blue .mat-table {
+    background: transparent !important;
+}
+
+.mat-card {
+    background: transparent !important;
+    color: rgba(0, 0, 0, .87);
+}
+
+.app.blue .product-pagination .ngx-pagination .current {
+    background: #1a3796;
+    color: white;
+    border-radius: 4px;
 }

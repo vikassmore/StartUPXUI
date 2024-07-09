@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Add Policy</h2>
             <mat-icon>keyboard_arrow_right</mat-icon>
@@ -10,7 +10,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Policy Name </mat-label>
                                 <input matInput formControlName="policyName" required>
                             </mat-form-field>
@@ -20,7 +20,7 @@
                         class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Policy Description (Max. 200 char.)</mat-label>
                                 <textarea matInput formControlName="policyDescription" required></textarea>
                                 <mat-error *ngIf=" uploadForm.controls.policyDescription.errors?.required">Policy
@@ -47,5 +47,5 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
 </div>
