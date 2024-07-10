@@ -43,10 +43,11 @@
 }
 
 .mat-tab-group{
-    background: #f0f0f0 !important;
+    background: transparent !important;
     border: 1px solid #dbdbdb;
     border-radius: 8px;
     padding-bottom: 10px;
+    margin-top: 1rem !important;
 }
 
 .mat-tab-body-wrapper{
@@ -64,12 +65,13 @@
 }
 
 .pc1{
-    color: #1976d2;
+    color: #215e9a;
     font-weight: 600;
-    font-size: 17px;
-    margin-top: 10px;
+    font-size: 14px;
+    margin-top: 2px;
     font-style: italic;
     letter-spacing: 1px !important;
+    text-shadow: 0.1px 0.5px 3px #7c81d5;
 }
 
 .pc11{
@@ -81,8 +83,8 @@
 .pc2{
     color: #6ba200;
     font-weight: 600;
-    font-size: 17px;
-    margin-top: 10px;
+    font-size: 14px;
+    margin-top: 2px;
     font-style: italic;
     letter-spacing: 1px !important;
 }
@@ -90,19 +92,21 @@
 .pc3{
     color: #db5400;
     font-weight: 600;
-    font-size: 17px;
-    margin-top: 10px;
+    font-size: 14px;
+    margin-top: 2px;
     font-style: italic;
     letter-spacing: 1px !important;
+    text-shadow: 0.1px 0.5px 3px #9b8e86;
 }
 
 .pc4{
     color: #008d34;
     font-weight: 600;
-    font-size: 17px;
-    margin-top: 10px;
+    font-size: 14px;
+    margin-top: 2px;
     font-style: italic;
     letter-spacing: 1px !important;
+    text-shadow: 0.1px 0.5px 3px #798b77;
 }
 
 .pcl1{
@@ -115,6 +119,7 @@
     margin-bottom: 0px !important;
     text-align: right !important;
     margin-right: 27px !important;
+    text-shadow: 0.1px 0.5px 3px #577797;
 }
 
 .pcl2{
@@ -130,7 +135,7 @@
 }
 
 .pcl3{
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-family: sans-serif;
     font-weight: bold;
     color: #db5400;
@@ -139,10 +144,11 @@
     margin-bottom: 8px !important;
     text-align: right !important;
     margin-right: 27px !important;
+    text-shadow: 0.1px 0.5px 3px #85776e;
 }
 
 .pcl4{
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-family: sans-serif;
     font-weight: bold;
     color: #008d34;
@@ -151,6 +157,7 @@
     margin-bottom: 0px !important;
     text-align: right !important;
     margin-right: 27px !important;
+    text-shadow: 0.1px 0.5px 3px #798b77;
     
 }
 
@@ -170,8 +177,8 @@
     }
 }
 
-.Divbg1:hover{
-    background: -webkit-linear-gradient(50deg,#fcf2d4,#f0c2b4) !important;
+.Divbg1:hover {
+    background: -webkit-linear-gradient(50deg, #dbd4fc, #9dabff) !important;
 }
     
 .Divbg2:hover{
@@ -398,17 +405,24 @@ h1 {
   
 
 
+  .hds1{
+    font-size: 19px !important;
+    font-weight: 600 !important;
+    color: #1976d2 !important;
+    text-shadow: 0.1px 0.5px 3px #818292 !important;
+    letter-spacing: 1 !important;
+    font-style: italic !important;
+    text-transform: capitalize !important;
+  }
 
 
   .heads h1 {
-    text-align:center;
-   
-    text-transform:uppercase;
-    font-size:18px; letter-spacing:1px;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: 16px 0;
-    grid-gap: 18px;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: left;
+    margin-left: 10px !important;
+    margin-top: 10px !important;
     position: relative;
     padding: 0;
     margin: 0;
@@ -418,11 +432,20 @@ h1 {
   }
   
   .heads h1:after,.heads h1:before {
-    content: " ";
+    /* content: " ";
     display: block;
     border-bottom: 2px solid #ccc;
-    background-color:#f8f8f8;
+    background-color:#f8f8f8; */
   }
   
 
-  
+  .crd-mat-card{
+    border-radius: 7px !important;
+    background-image: -webkit-linear-gradient(50deg, #c7d0ff,#e7f0ff ) !important;
+    margin-bottom: 10px;
+    padding: 0px !important;
+}
+
+.mat-expansion-panel{
+    width: 95.5%;
+}

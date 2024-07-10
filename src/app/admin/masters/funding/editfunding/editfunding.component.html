@@ -9,7 +9,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance=" " class="w-100 w-101">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Name of Series</mat-label>
                                 <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="name" required>
                             </mat-form-field>
@@ -18,7 +18,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance=" " class="w-100 w-101">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Series Description (Max. 200 char.)</mat-label>
                                 <textarea matInput formControlName="description" required></textarea>
                                 <mat-error *ngIf=" uploadForm.controls.description.errors?.required">Description is
@@ -35,7 +35,7 @@
                     <div fxFlex="50%" class="text-left">
                         <button mat-raised-button color="accent" type="button" [routerLink]="['../../listfunding']"> <i
                                 class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
-                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid" class="explr"><i
                                 class="fa fa-floppy-o" aria-hidden="true"></i> UPDATE</button>
                     </div>
                     <div fxFlex="50%" class="text-right">

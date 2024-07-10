@@ -1,0 +1,12 @@
+.btns1{
+    width: auto;
+    padding: 0px 3px 0px 3px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: transparent !important;
+    text-transform: uppercase;
+    color: #004487 !important;
+    text-align: left;
+    display: inline-block;
+    cursor: pointer;
+}

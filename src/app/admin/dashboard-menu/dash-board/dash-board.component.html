@@ -8,19 +8,19 @@
             </div>
         </div> -->
     
-        <div fxFlex="100" fxFlex.gt-sm="45" fxFlex.sm="50" class="p-1"> 
+        <!-- <div fxFlex="100" fxFlex.gt-sm="45" fxFlex.sm="50" class="p-1"> 
             <div class="relative w-24 h-24" style="margin: 0.7rem 0rem 0rem 0rem; text-align: left;">
                 <h2 style="color:#1e293b;">Welcome Back ! <span style="font-size: small;">(Admin)</span></h2> 
                 <span class="blink" [routerLink]="['../../../admin/notification/listnotification']"><i class="fa fa-bell" aria-hidden="true"></i> You have {{notificationCount}} new notifications regarding action.</span>
             </div>
-        </div>
+        </div> -->
     
-        <div fxFlex="100" fxFlex.gt-sm="30" fxFlex.sm="50" class="p-1"> 
-            <div class="relative w-24 h-24" style="margin: 1rem 0rem 0rem 0rem; text-align: right;">
+        <!-- <div fxFlex="100" fxFlex.gt-sm="30" fxFlex.sm="50" class="p-1"> 
+            <div class="relative w-24 h-24" style="margin: 1rem 0rem 0rem 0rem; text-align: right;"> -->
                 <!-- <a mat-mini-fab color="primary" class="clb" matTooltip="Check Emails"><i class="fa fa-envelope" aria-hidden="true"></i></a>  -->
     
-            </div>
-        </div>
+            <!-- </div>
+        </div> -->
 
       
         <!-- <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-1"> 
@@ -43,15 +43,15 @@
     </div>
     
     <!-- <mat-divider></mat-divider> -->
-    <br>
 
-    <div class="heads">
+
+    <div class="heads hds1">
         <h1>Startups</h1>
       </div>
 
     <div fxLayout="row wrap" #resizedDiv>
         <div fxFlex="100" fxFlex.gt-sm="16.66" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg2" [routerLink]="['../../../admin/masters/liststartup',2]">
+            <mat-card class="p-0 Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/liststartup',2]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc1">Non-Verified</p>
                 </div>  
@@ -61,7 +61,7 @@
             </mat-card>
         </div>    
         <div fxFlex="100" fxFlex.gt-sm="16.66" fxFlex.sm="50" class="p-1 "> 
-            <mat-card class="p-0 Divbg2" [routerLink]="['../../../admin/masters/liststartup',1]">
+            <mat-card class="p-0 Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/liststartup',1]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc1">Verified</p>
                 </div>         
@@ -71,7 +71,7 @@
             </mat-card>
         </div>
         <div fxFlex="100" fxFlex.gt-sm="16.66" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg2" [routerLink]="['../../../admin/masters/liststartup',3]">
+            <mat-card class="p-0 Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/liststartup',3]">
                 <div class="p-1" fxLayoutAlign="space-between center" >
                     <p class="pc1">Live</p>
                 </div>         
@@ -81,7 +81,7 @@
             </mat-card>
         </div> 
         <div fxFlex="100" fxFlex.gt-sm="16.66" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg2" [routerLink]="['../../../admin/masters/liststartup',4]">
+            <mat-card class="p-0 Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/liststartup',4]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc1">Preview</p>
                 </div>          
@@ -91,7 +91,7 @@
             </mat-card>
         </div>   
         <div fxFlex="100" fxFlex.gt-sm="16.66" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg2" [routerLink]="['../../../admin/masters/liststartup',5]">
+            <mat-card class="p-0 Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/liststartup',5]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc1">Stealth</p>
                 </div>          
@@ -101,7 +101,7 @@
             </mat-card>
         </div> 
         <div fxFlex="100" fxFlex.gt-sm="16.66" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg2" [routerLink]="['../../../admin/masters/listraisefunding',6]">
+            <mat-card class="p-0 Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/listraisefunding',6]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc1">Raise Funding</p>
                 </div>          
@@ -112,15 +112,15 @@
         </div>   
     </div>
     
-    <br>
+    <mat-divider></mat-divider>
 
-    <div class="heads">
+    <div class="heads hds1">
         <h1 style="color: #008d34 !important;">Investors</h1>
     </div>
 
     <div fxLayout="row wrap" #resizedDiv>
         <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg4" [routerLink]="['../../../admin/masters/listinvestor',2]">
+            <mat-card class="Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/listinvestor',2]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc4">Non-Verified</p>
                 </div>  
@@ -130,7 +130,7 @@
             </mat-card>
         </div>  
         <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-1 "> 
-            <mat-card class="p-0 Divbg4" [routerLink]="['../../../admin/masters/listinvestor',1]">
+            <mat-card class="Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/listinvestor',1]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc4">Verified</p>
                 </div>         
@@ -140,7 +140,7 @@
             </mat-card>
         </div>
         <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg4" [routerLink]="['../../../admin/masters/listindicateinterest',4]">
+            <mat-card class="Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/listindicateinterest',4]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc4">Indicate Interested</p>
                 </div>  
@@ -151,7 +151,7 @@
         </div>  
 
         <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg4" [routerLink]="['../../../admin/masters/listinvested',5]">
+            <mat-card class="Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/listinvested',5]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc4">Invested</p>
                 </div>  
@@ -162,7 +162,7 @@
         </div>  
 
         <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg4" [routerLink]="['../../../admin/masters/listrequestoffering',3]">
+            <mat-card class="Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/listrequestoffering',3]">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc4">Request Offering</p>
                 </div>  
@@ -174,15 +174,15 @@
        
     </div>
 
-    <br>
+    <mat-divider></mat-divider>
 
-    <div class="heads">
+    <div class="heads hds1">
         <h1 style="color: #db5400 !important;">Services</h1>
     </div>
 
     <div fxLayout="row wrap" #resizedDiv>
-        <div fxFlex="100" fxFlex.gt-sm="33.33" fxFlex.sm="50" class="p-1 "> 
-            <mat-card class="p-0 Divbg1" [routerLink]="['../../../admin/masters/listserviceuser']">
+        <div fxFlex="100" fxFlex.gt-sm="30" fxFlex.sm="50" class="p-1 "> 
+            <mat-card class="Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/listserviceuser']">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc3">Service Users</p>
                 </div>         
@@ -191,8 +191,8 @@
                 </div>
             </mat-card>
         </div>
-        <!-- <div fxFlex="100" fxFlex.gt-sm="33.33" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg1" [routerLink]="['../../../admin/masters/listprofilemanagement']">
+        <!-- <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-1"> 
+            <mat-card class="Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/listprofilemanagement']">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc3">Profile Management</p>
                 </div>  
@@ -202,8 +202,8 @@
             </mat-card>
         </div>   -->
         
-        <div fxFlex="100" fxFlex.gt-sm="33.33" fxFlex.sm="50" class="p-1"> 
-            <mat-card class="p-0 Divbg1" [routerLink]="['../../../admin/masters/listworkflowmanagement']">
+        <div fxFlex="100" fxFlex.gt-sm="30" fxFlex.sm="50" class="p-1"> 
+            <mat-card class="Divbg1 crd-mat-card" [routerLink]="['../../../admin/masters/listworkflowmanagement']">
                 <div class="p-1" fxLayoutAlign="space-between center">
                     <p class="pc3">Case Management</p>
                 </div>  
@@ -215,18 +215,16 @@
 
     </div>
 
-    
+    <mat-divider></mat-divider>
 
-    <mat-tab-group>
-       
-
+    <mat-tab-group class="crdtabs p-1">
         <mat-tab label="FAQ's" style="width: 25%;">
             <mat-accordion *ngFor="let faq of FAQList">
                 <mat-expansion-panel (opened)="panelOpenState = true"
                 (closed)="panelOpenState = false">
                   <mat-expansion-panel-header>
                     <mat-panel-title class="fx40">
-                        {{faq.question}}
+                        <i class="fa fa-question-circle" aria-hidden="true" style="font-size: 20px;"></i> &nbsp; <span class="crdqst">{{faq.question}}</span>
                     </mat-panel-title>
                     <mat-panel-description>                   
                     </mat-panel-description>
@@ -234,7 +232,7 @@
                   <p>{{faq.answer}}</p>
                 </mat-expansion-panel>               
               </mat-accordion>
-              <button mat-raised-button color="primary" type="button" class="explr" style="margin-top: 10px !important;margin-left: 10px !important;" [routerLink]="['../../../admin/masters/addfaq']"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp; | &nbsp;&nbsp;Add New FAQ</button>
+              <button mat-raised-button color="primary" type="button" class="explr" style="margin-top: 7px !important; margin-right: 30px !important;float: right;" [routerLink]="['../../../admin/masters/addfaq']"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp; | &nbsp;&nbsp;Add New FAQ</button>
         </mat-tab>
         <mat-tab label="Privacy Policy" style="width: 25%;">
             <mat-accordion *ngFor="let policy of PolicyList" >
@@ -242,7 +240,7 @@
                 (closed)="panelOpenState = false">
                   <mat-expansion-panel-header>
                     <mat-panel-title class="fx10">
-                      {{policy.policyName}}
+                      <i class="fa fa-book" aria-hidden="true" style="font-size: 20px;"></i> &nbsp; <span class="crdqst">{{policy.policyName}}</span>
                     </mat-panel-title>
                     <mat-panel-description>
                       Summary of the content Term Policy
@@ -250,13 +248,13 @@
                   </mat-expansion-panel-header>
                   <p>{{policy.policyDescription}}.</p>
                 </mat-expansion-panel>
-                <button mat-raised-button color="primary" type="button" class="explr" style="margin-top: 10px !important;margin-left: 10px !important;" [routerLink]="['../../../admin/masters/addpolicy']"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp; | &nbsp;&nbsp;Add New Policy</button>
+                <button mat-raised-button color="primary" type="button" class="explr" style="margin-top: 7px !important; margin-right: 30px !important;float: right;" [routerLink]="['../../../admin/masters/addpolicy']"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp; | &nbsp;&nbsp;Add New Policy</button>
               </mat-accordion>
         </mat-tab>    
     </mat-tab-group>    
-    <br>
+    <!-- <br>
     <mat-divider></mat-divider>   
-    <p class="ftr">© Startupx - 2023</p>
+    <p class="ftr">© Startupx - 2023</p> -->
     </div>
     
     

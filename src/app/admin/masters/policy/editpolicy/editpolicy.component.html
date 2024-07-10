@@ -10,7 +10,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="33%" class="block-2">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance=" " class="w-100 w-101">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Policy Name </mat-label>
                                 <input matInput formControlName="policyName" required>
                             </mat-form-field>
@@ -20,7 +20,7 @@
                         class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance=" " class="w-100 w-101">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Policy Description (Max. 200 char.)</mat-label>
                                 <textarea matInput formControlName="policyDescription" required></textarea>
                                 <mat-error *ngIf=" uploadForm.controls.policyDescription.errors?.required">Policy
@@ -38,7 +38,7 @@
                     <div fxFlex="50%" class="text-left">
                         <button mat-raised-button color="accent" type="button" [routerLink]="['../../listpolicy']"> <i
                                 class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
-                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid" class="explr"><i
                                 class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
                     </div>
                     <div fxFlex="50%" class="text-right">

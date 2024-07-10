@@ -1,6 +1,6 @@
 
 .table-bordered {
-    border: 1px solid #dee2e6;
+    border: 1px solid #3e3e3f;
   }
   
   .table {
@@ -13,11 +13,10 @@
   
   .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
   }
   
   .table-bordered td, .table-bordered th {
-    border: 1px solid #dee2e6;
+    border: 1px solid #7f7f7f;
     padding: 10px;
   }
   
@@ -29,22 +28,19 @@
     height: 50px;
     border-bottom: 1px solid gainsboro;
     border-radius: 0px;
-    background: #f4f4f4;
 }
 
 .text-center{
   text-align: center !important;
 }
 
-.table {
-  margin-top: 22px;
-  background: #f6f6f6;
-}
 
-.mat-expansion-panel-body {
-  padding: 0 16px 16px !important;
-}
+
 
 .mat-row {
   padding: 0px 0px !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 0px 15px 8px !important;
 }

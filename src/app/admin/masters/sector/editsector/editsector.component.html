@@ -10,7 +10,7 @@
 
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance=" " class="w-100 w-101">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Sector Name</mat-label>
                                 <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="sectorName"
                                     required>
@@ -20,7 +20,7 @@
                         </div>
                         <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance=" " class="w-100 w-101">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Sub Sector Name</mat-label>
                                 <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="subSectorName"
                                     required>
@@ -32,7 +32,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance=" " class="w-100 w-101">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Sector Description (Max. 200 char.)</mat-label>
                                 <textarea matInput formControlName="sectorDescription" required></textarea>
                                 <mat-error *ngIf=" uploadForm.controls.sectorDescription.errors?.required">Sector
@@ -48,9 +48,9 @@
             <div fxLayout="row" fxLayoutAlign="space-between center" class=" p-2 crdfooter">
                 <div fxLayout="" fxLayoutGap="10px" class="container">
                     <div fxFlex="50%" class="text-left">
-                        <button mat-raised-button color="accent" type="button" [routerLink]="['../../listsector']"> <i
+                        <button mat-raised-button color="accent" type="button" [routerLink]="['../../listsector']" > <i
                                 class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
-                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid" class="explr"><i
                                 class="fa fa-floppy-o" aria-hidden="true"></i> UPDATE</button>
                     </div>
                     <div fxFlex="50%" class="text-right">
