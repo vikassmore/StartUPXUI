@@ -16,7 +16,7 @@
             <div> 
                 <table>
                     <tr>
-                        <td class="hname">{{ userInfo.firstName}} {{userInfo.lastName}} <span class="htype">({{roleId}}) </span> <span class="htype">| Organization</span></td>
+                        <td class="hname">{{ userInfo.firstName}} {{userInfo.lastName}} <span class="htype">({{roleId}}) </span> <span class="htype"  *ngIf="roleId === 'Startup' ||roleId === 'Investor' ">| {{founderTypeName}}</span></td>
                     </tr>
                     <!-- It should show Organization or Individual for Startup/Investor other wise not -->
                     <tr>

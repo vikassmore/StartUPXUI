@@ -14,6 +14,7 @@ import { TokenStorageService } from '../services/token-storage.service';
 export class AdminComponent implements OnInit {
   public userInfo: any = [];
   @ViewChild('sidenav') sidenav: any;
+  founderTypeName: any | string;
  // public userImage = 'assets/images/others/admin.jpg';
   //public userImage = '';
   public settings: Settings;
@@ -30,7 +31,7 @@ export class AdminComponent implements OnInit {
   FundingDetailCount:number;
   userId:number;
   roleId:string | any;
-  constructor(public appSettings: AppSettings,
+  constructor(public appSettings: AppSettings, private _authService: AuthenticationService,
     public router: Router,
     private menuService: MenuService, private appService: AppService,private tokenStorage: TokenStorageService) {
     this.settings = this.appSettings.settings;
@@ -41,9 +42,11 @@ export class AdminComponent implements OnInit {
       this.settings.adminSidenavIsOpened = false;
       this.settings.adminSidenavIsPinned = false;      
     };
+      //this.GetFounderType();
    
     this.userId = this.tokenStorage.getUser().userId;
     this.roleId = this.tokenStorage.getUser().roleName;
+    this.founderTypeName = this.tokenStorage.getUser().founderName;
     if (this.userId && this.userId > 0) {
       if (this.roleId === 'Startup') {
         this.getFounderProfileCompletion(this.userId);
@@ -153,6 +156,14 @@ export class AdminComponent implements OnInit {
       console.log(error.error.errors);
     }
   }
+  // public GetFounderType() {
+  //   this._authService.getFounderTypeByuserId("api/FounderType/GetFounderTypeByUserId/UserId?userId=" + this.userId).subscribe((data: any) => {
+  //     this.founderTypeName = data.founderName;
+  //   })
+  //   error => {
+  //     console.log(error.error.errors);
+  //   }
+  // }
 
   getFounderProfileCompletion(userId): void {
     this.appService.getAllById('api/FounderVerification/FounderProfileCompletion/', userId).subscribe((data: any) => {
