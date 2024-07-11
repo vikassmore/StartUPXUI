@@ -1,5 +1,5 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Add Profile Management</h2>
         </div>
@@ -9,7 +9,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                         <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Service Provider Name</mat-label>
                                 <input matInput formControlName="ServiceProviderName" required>
                                 <mat-error *ngIf="uploadForm.controls.ServiceProviderName.errors?.required">Service
@@ -18,7 +18,7 @@
                         </div>
                         <div fxFlex.gt-sm="50%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100 ">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Select Category</mat-label>
                                 <mat-select formControlName="Category" readonly disabled required multiple>
                                     <mat-option *ngFor="let cat of ServiceCategoryList" [value]="cat.name">
@@ -31,7 +31,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Contact Information (Max. 200 Characters)</mat-label>
                                 <textarea matInput formControlName="ContactInformation" required></textarea>
                                 <mat-error *ngIf="uploadForm.controls.ContactInformation.errors?.required">Contact
@@ -45,7 +45,7 @@
                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                             class="grid-item">
-                            <mat-form-field appearance="outline" class="w-100">
+                            <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Tags / Keywords (Max. 500 Characters)</mat-label>
                                 <textarea matInput formControlName="TagsKeywords" required></textarea>
                                 <mat-error *ngIf="uploadForm.controls.TagsKeywords.errors?.required">Tags/Keywords is
@@ -63,7 +63,7 @@
                         <button mat-raised-button color="accent" type="button"
                             [routerLink]="['../../serviceuser/dashboardserviceuser']"> <i
                                 class="fa fa-arrow-circle-left" aria-hidden="true"></i> BACK</button>
-                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid"><i
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!uploadForm.valid" class="explr"><i
                                 class="fa fa-floppy-o" aria-hidden="true"></i> SUBMIT</button>
                     </div>
                     <div fxFlex="50%" class="text-right">
@@ -72,13 +72,13 @@
                 </div>
             </div>
         </form>
-    </mat-card>
+    </div>
     <br />
-    <mat-card class="p-0">
+    <div class="p-0">
         <div fxLayout="row wrap " fxLayoutAlign="space-between center" class="w-100 p-2 crdhead">
             <h2><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Portfolio Documents</h2> <button mat-mini-fab
-                class="addbn prtbtn" color="primary" type="button" matTooltip="Add New Document"
-                (click)="openDialog(serviceProviderId)"><i class="fa fa-plus" aria-hidden="true"></i> ADD</button>
+                class="addbn prtbtn explr" color="primary" type="button" matTooltip="Add New Document"
+                (click)="openDialog(serviceProviderId)" ><i class="fa fa-plus" aria-hidden="true"></i> ADD</button>
         </div>
         <mat-card-content>
             <table class="table table-bordered">
@@ -103,5 +103,5 @@
                 </tbody>
             </table>
         </mat-card-content>
-    </mat-card>
+    </div>
 </div>

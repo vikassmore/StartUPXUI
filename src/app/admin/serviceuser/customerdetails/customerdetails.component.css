@@ -1,6 +1,6 @@
 
 .table-bordered {
-    border: 1px solid #dee2e6;
+    border: 1px solid #939393;
   }
   
   .table {
@@ -13,11 +13,10 @@
   
   .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
   }
   
   .table-bordered td, .table-bordered th {
-    border: 1px solid #dee2e6;
+    border: 1px solid #9f9f9f;
     padding: 10px;
   }
   

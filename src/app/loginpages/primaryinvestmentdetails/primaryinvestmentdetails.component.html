@@ -85,7 +85,7 @@
                                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill
                                             class="grid-item">
-                                            <mat-form-field appearance="outline" class="w-100 tp-2">
+                                            <mat-form-field appearance="" class="w-100 tp-2 w-101">
                                                 <mat-label>Select Sectors</mat-label>
                                                 <mat-select formControlName="interestedSectors" required multiple
                                                     (selectionChange)="onSelectionChange($event)">
@@ -127,7 +127,7 @@
                                     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">
                                         <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="text-left" fxFlexFill
                                             class="grid-item">
-                                            <mat-form-field appearance="outline" class="w-100 mtts-100">
+                                            <mat-form-field appearance="" class="w-100 mtts-100 w-101">
                                                 <mat-label>Investment Amount (In Dollar)</mat-label>
                                                 <input matInput formControlName="investmentAmount"
                                                     (keypress)="keyPressNumbers($event)">
@@ -144,7 +144,7 @@
                                         <div fxFlex="50%" class="text-right">
                                             <button mat-raised-button color="primary" matStepperNext
                                                 [disabled]="!uploadForm.valid" type="button" [routerLink]="['/']"
-                                                (click)="onSubmit()">Submit <i class="fa fa-arrow-circle-right"
+                                                (click)="onSubmit()" class="explr">Submit <i class="fa fa-arrow-circle-right"
                                                     aria-hidden="true"></i></button>
                                         </div>
                                     </div>

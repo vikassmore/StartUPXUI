@@ -6,13 +6,13 @@
                 <br />
                 <h2 class="text-muted text-center"><img src="assets/logostartupx.png" style=" width: 200px;"
                         class="img1" alt="StartupX"> <sup style="font-size: 13px;"></sup></h2>
-                <h2 class="text-muted text-center">Two-Step Verification</h2>
+                <h2 class="text-muted text-center crdtxts">Two-Step Verification</h2>
                 <form [formGroup]="loginForm" (ngSubmit)="twostepverify(loginForm.value)" fxLayout="row wrap">
                     <div class="text-center mt-1" fxFlex="100">
                         <span fxFlex="100" class="pt-1">For added security, Please enter your authentication code to
                             verify.</span>
                     </div>
-                    <mat-form-field appearance="outline" class="w-100 mt-2">
+                    <mat-form-field appearance="" class="w-100 mt-2 w-101">
                         <mat-label>Enter Code</mat-label>
                         <input autofocus matInput formControlName="otp" required (keypress)="keyPressNumbers($event)">
                     </mat-form-field>
@@ -22,7 +22,7 @@
                                 aria-hidden="true"></i> &nbsp;Resent Code</a>
                     </div>
                     <div class="text-center mt-1" fxFlex="100">
-                        <button style="background-color: rgb(55 153 63);" mat-raised-button color="primary"
+                        <button mat-raised-button color="primary" class="explr"
                             type="submit"> VERIFY</button>
                     </div>
                 </form>

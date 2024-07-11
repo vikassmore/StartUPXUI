@@ -9,13 +9,13 @@
                     <img src="assets/logostartupx.png" style=" width: 200px;" class="img1" alt="StartupX"> <sup
                         style="font-size: 13px;"></sup>
                 </h2>
-                <h2 class="text-muted text-center">OTP VERIFICATION</h2>
+                <h2 class="text-muted text-center crdtxts">OTP VERIFICATION</h2>
                 <form [formGroup]="loginForm" (ngSubmit)="forgotUser(loginForm.value)" fxLayout="row wrap">
                     <br />
                     <mat-label class="text-muted text-center" fxFlex="100">Please enter valid OTP sent on your
                         registered email address.</mat-label>
                     <br />
-                    <mat-form-field appearance="outline" class="w-100 mt-2">
+                    <mat-form-field appearance="" class="w-100 mt-2 w-101">
                         <mat-label>OTP</mat-label>
                         <input matInput formControlName="otp" required minlength="6" maxlength="6">
                         <mat-error *ngIf="uploadForm.controls.otp.errors?.required">Please enter
@@ -31,7 +31,7 @@
                                 aria-hidden="true"></i> &nbsp;Resent Code</a>
                     </div>
                     <div class="text-center mt-2" fxFlex="100">
-                        <button mat-raised-button color="primary" class="submit">
+                        <button mat-raised-button color="primary" class="submit explr">
                             <mat-label type="submit">VERIFY OTP</mat-label>
                         </button>
                     </div>

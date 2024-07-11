@@ -1035,7 +1035,15 @@ p{
 }
 
 .app.blue .mat-radio-button.mat-primary .mat-radio-inner-circle, .app.blue .mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .app.blue .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple, .app.blue .mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
-    background-color: #1b3bad;
+    background-color: #1b3bad !important;
+}
+
+.mat-radio-inner-circle{
+    background-color: #1b3bad !important;
+}
+
+.mat-radio-outer-circle{
+    border-color: #3f51b5 !important;
 }
 
 .h3text{
@@ -1084,4 +1092,8 @@ p{
     background: #1a3796;
     color: white;
     border-radius: 4px;
+}
+
+.mat-ink-bar {
+    background-color: #0a194e !important;
 }

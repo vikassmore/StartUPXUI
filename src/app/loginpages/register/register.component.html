@@ -8,7 +8,7 @@
                     <img src="assets/logostartupx.png" style=" width: 200px;" class="img1" alt="StartupX"> <sup
                         style="font-size: 13px;"></sup>
                 </h2>
-                <h2 class="text-muted text-center">REGISTER</h2>
+                <h2 class="text-muted text-center crdtxts">REGISTER</h2>
                 <mat-tab-group mat-stretch-tabs (selectedTabChange)="selectedTabValue($event)" >
                     <mat-tab label="Startup" aria-selected="true"></mat-tab>
                     <mat-tab label="Investor"></mat-tab>
@@ -19,7 +19,7 @@
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                                 class="grid-item">
-                                <mat-form-field appearance="outline" class="w-100">
+                                <mat-form-field appearance="" class="w-100 w-101">
                                     <mat-label>First Name</mat-label>
                                     <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="firstName"
                                         required>
@@ -33,7 +33,7 @@
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill
                                 class="grid-item">
-                                <mat-form-field appearance="outline" class="w-100">
+                                <mat-form-field appearance="" class="w-100 w-101">
                                     <mat-label>Last Name</mat-label>
                                     <input (keypress)="keyPressOnlyChar($event)" matInput formControlName="lastName"
                                         required>
@@ -46,7 +46,7 @@
                         </div>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                                <mat-form-field appearance="outline" class="w-100">
+                                <mat-form-field appearance="" class="w-100 w-101">
                                     <mat-label>Email</mat-label>
                                     <input matInput formControlName="emailId" required>
                                     <mat-error *ngIf="uploadForm.controls.emailId.errors?.required">Email is
@@ -59,7 +59,7 @@
                         </div>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                                <mat-form-field appearance="outline" class="w-100">
+                                <mat-form-field appearance="" class="w-100 w-101">
                                     <mat-label>Password</mat-label>
                                     <input matInput formControlName="password" required [type]="hide ? 'password' : 'text'">
                                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -71,7 +71,7 @@
                         </div>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2">                
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                                <mat-form-field appearance="outline" class="w-100">
+                                <mat-form-field appearance="" class="w-100 w-101">
                                     <mat-label> Confirm Password</mat-label>
                                     <input matInput formControlName="confirmPassword" required >
                                     <!-- <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon> -->
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <div class="text-center mt-1 bts" fxFlex="100">
-                        <button mat-raised-button color="primary" [disabled]="!uploadForm.valid" type="submit" >REGISTER ME</button>
+                        <button mat-raised-button color="primary" [disabled]="!uploadForm.valid" type="submit" class="explr">REGISTER ME</button>
                     </div>
                 </form>
             </div>

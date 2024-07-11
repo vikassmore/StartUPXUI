@@ -1,21 +1,21 @@
-<div class="p-1">
-    <mat-card class="p-0">
+<div class="p-1 psab">
+    <div class="p-0">
             <mat-card-content>
                     <div fxLayout="column" fxLayoutGap="10px" class="container">
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 ">    
                             <div *ngIf="!serviceworkShow && serviceleadShow" fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
                                 <i class="fa fa-arrow-circle-left" aria-hidden="true" style="    font-size: 40px;
-                                color: #37993f;" [routerLink]="['../../../../serviceuser/serviceleads']"  matTooltip="Back"></i>
+                                color: #172d70;" [routerLink]="['../../../../serviceuser/serviceleads']"  matTooltip="Back"></i>
                             </div>
                             <div *ngIf="!serviceleadShow && serviceworkShow" fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
                                 <i class="fa fa-arrow-circle-left" aria-hidden="true" style="    font-size: 40px;
-                                color: #37993f;" [routerLink]="['../../../../serviceuser/listassignmentworkflow']"  matTooltip="Back"></i>
+                                color: #172d70;" [routerLink]="['../../../../serviceuser/listassignmentworkflow']"  matTooltip="Back"></i>
                             </div>
                             <div fxFlex.gt-sm="33.33%" fxFlex.lt-md="50%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
                                 <div class="text-center" fxFlex="100">
                                     <img style="height: 100px; padding: 10px;
-                                    border: 1px solid gray;" [src]="previewUrl" class="img1" alt="Logo">
-                                    <h2 style="color:#1e293b;">{{StartUpName}}</h2>  
+                                    " [src]="previewUrl" class="img1" alt="Logo">
+                                    <h2  class="crdtxts">{{StartUpName}}</h2>  
                                     <span class="blink">{{SectorName}}</span><br/>
                                     <span class="blink">{{WebsiteUrl}}</span>
                                 </div>
@@ -29,30 +29,14 @@
                         </div>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;About<br></h3> <br>
+                                <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;About<br></h3> <br>
                             </div>
                         </div>
                         <br>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             <br>
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <p class="servp">{{CompanyDescription}}.</p>
-                            <br>
-                            </div>
-                        </div>
-                        <hr style="color: gray;">
-                        <br>
-                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
-                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Address<br></h3> <br>
-                            </div>
-                        </div>
-                        <br>
-                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
-                            <br>
-                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <p class="servp">Company Address : {{Address}} </p>
-                                <p class="servp">Company Headquarters Address : {{Address}} </p>
+                                <p class="" style="line-height: 1.7 !important;">{{CompanyDescription}}.</p>
                             <br>
                             </div>
                         </div>
@@ -60,29 +44,14 @@
                         <br>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Contact<br></h3> <br>
+                                <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Address<br></h3> <br>
                             </div>
                         </div>
                         <br>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             <br>
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <p class="servp">Phone No.: {{CompanyContact}}| Email : {{CompanyEmailId}}</p>
-                            <br>
-                            </div>
-                        </div>
-                        <hr style="color: gray;">
-                        <br>
-                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
-                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Product Service Description<br></h3> <br>
-                            </div>
-                        </div>
-                        <br>
-                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
-                            <br>
-                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <p class="servp">{{ServiceDescription}}.</p>
+                                <p class=""  style="line-height: 1.7 !important;"><b>Company Address</b> : {{Address}} <br/> <b>Company Headquarters Address</b> : {{Address}} </p>
                             <br>
                             </div>
                         </div>
@@ -90,29 +59,14 @@
                         <br>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Business Model<br></h3> <br>
+                                <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Contact<br></h3> <br>
                             </div>
                         </div>
                         <br>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             <br>
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <p class="servp">{{BusinessModel}}.</p>
-                            <br>
-                            </div>
-                        </div>
-                        <hr style="color: gray;">
-                        <br>
-                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
-                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Target Customer Base<br></h3> <br>
-                            </div>
-                        </div>
-                        <br>
-                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
-                            <br>
-                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <p class="servp">{{TargetCustomerBase}}.</p>
+                                <p class=""  style="line-height: 1.7 !important;">Phone No.: {{CompanyContact}} <br/> Email : {{CompanyEmailId}}</p>
                             <br>
                             </div>
                         </div>
@@ -120,29 +74,14 @@
                         <br>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Target Market<br></h3> <br>
+                                <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Product Service Description<br></h3> <br>
                             </div>
                         </div>
                         <br>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             <br>
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <p class="servp">{{TargetMarket}}.</p>
-                            <br>
-                            </div>
-                        </div>
-                        <hr style="color: gray;">
-                        <br>
-                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
-                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Management Information<br></h3> <br>
-                            </div>
-                        </div>
-                        <br>
-                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
-                            <br>
-                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <p class="servp">{{ManagementInfo}}.</p>
+                                <p class=""  style="line-height: 1.7 !important;">{{ServiceDescription}}.</p>
                             <br>
                             </div>
                         </div>
@@ -150,7 +89,67 @@
                         <br>
                         <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
                             <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
-                                <h3 style="color:#1e293b;font-style: italic;"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Company Details<br></h3> <br>
+                                <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Business Model<br></h3> <br>
+                            </div>
+                        </div>
+                        <br>
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                            <br>
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                                <p class=""  style="line-height: 1.7 !important;">{{BusinessModel}}.</p>
+                            <br>
+                            </div>
+                        </div>
+                        <hr style="color: gray;">
+                        <br>
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                                <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Target Customer Base<br></h3> <br>
+                            </div>
+                        </div>
+                        <br>
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                            <br>
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                                <p class="" style="line-height: 1.7 !important;">{{TargetCustomerBase}}.</p>
+                            <br>
+                            </div>
+                        </div>
+                        <hr style="color: gray;">
+                        <br>
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                                <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Target Market<br></h3> <br>
+                            </div>
+                        </div>
+                        <br>
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                            <br>
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                                <p class="" style="line-height: 1.7 !important;">{{TargetMarket}}.</p>
+                            <br>
+                            </div>
+                        </div>
+                        <hr style="color: gray;">
+                        <br>
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                                <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Management Information<br></h3> <br>
+                            </div>
+                        </div>
+                        <br>
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                            <br>
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                                <p class="" style="line-height: 1.7 !important;">{{ManagementInfo}}.</p>
+                            <br>
+                            </div>
+                        </div>
+                        <hr style="color: gray;">
+                        <br>
+                        <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxFlex="33%" class="block-2 mttop20">
+                            <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="left" fxFlexFill class="grid-item">
+                                <h3 style="color:#1e293b;font-style: italic;" class="crdtxts"><br><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;Company Details<br></h3> <br>
                             </div>
                         </div>
                         <br>
@@ -179,11 +178,10 @@
                                 </div>
                             </div>
                         </div>
-                        <hr style="color: gray;">
                         <br>
                     </div>
             </mat-card-content>
-    </mat-card>
+    </div>
 </div>
 
 
