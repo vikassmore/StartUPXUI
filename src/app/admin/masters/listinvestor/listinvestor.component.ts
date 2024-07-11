@@ -31,7 +31,7 @@ export class ListinvestorComponent implements OnInit {
 
   openDialog(userId, investorVerifyId): void {
     const dialogRef = this.dialog.open(Notapprove1Component, {
-      width: '100vh',
+      width: '120vh',
       data: { userId: userId, investorVerifyId: investorVerifyId }
     });
   }

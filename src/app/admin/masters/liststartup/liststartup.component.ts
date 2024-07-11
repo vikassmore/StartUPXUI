@@ -37,21 +37,21 @@ export class ListstartupComponent implements OnInit {
 
   openDialog(userId, founderVerifyId): void {
     const dialogRef = this.dialog.open(NotapproveComponent, {
-      width: '100vh',
+      width: '120vh',
       data: { userId: userId, founderVerifyId: founderVerifyId }
     });
   }
 
   openDialog1(userId, founderVerifyId, gaugingAmount): void {
     const dialogRef = this.dialog.open(GaugingdemandComponent, {
-      width: '100vh',
+      width: '120vh',
       data: { userId: userId, founderVerifyId: founderVerifyId, gaugingAmount: gaugingAmount }
     });
   }
 
   openDialog2(userId, founderVerifyId): void {
     const dialogRef = this.dialog.open(InvestmentopportunityComponent, {
-      width: '80vh',
+      width: '120vh',
       data: { userId: userId, founderVerifyId: founderVerifyId }
     });
   }

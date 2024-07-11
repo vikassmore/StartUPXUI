@@ -51,7 +51,7 @@ export class ServiceleadsComponent implements OnInit {
   //method for decline order of founder
   public openDialog(serviceCaseId, serviceId) {
     const dialogRef = this.dialog.open(DeclineserviceComponent, {  //<==open popup for add comment for decline order
-      width: '100vh',
+      width: '120vh',
     });
 
     dialogRef.afterClosed().subscribe(dialogResult => {

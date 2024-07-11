@@ -110,7 +110,7 @@ export class ListserviceuserComponent implements OnInit {
   }
   openDialog(userId): void {
     const dialogRef = this.dialog.open(DenyserviceuserComponent, {
-      width: '100vh',
+      width: '120vh',
       data: { userId: userId }
     });
   }

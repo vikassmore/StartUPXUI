@@ -22,7 +22,7 @@ export class ListassignmentworkflowComponent implements OnInit {
 
   openDialog(serviceCaseId): void {
     const dialogRef = this.dialog.open(UploadinvoiceComponent, {
-      width: '80vh',
+      width: '120vh',
       data: { serviceCaseId: serviceCaseId }
     });
   }
