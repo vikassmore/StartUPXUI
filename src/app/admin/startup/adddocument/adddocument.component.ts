@@ -95,11 +95,12 @@ export class AdddocumentComponent implements OnInit {
     formData.append('filePath', this.uploadForm.value.founderDocument);
     formData.append('userId', this.userId);
     this.appService.add('api/FounderInvestorDocument/AddFounderDocument', formData).subscribe((response) => {
-      window.location.reload();
+      
       if (!Number.isNaN(response)) {
         if (response != null) {
           this.dialog.closeAll();
           this.router.navigate(['/admin/startup/documentdetails'], { relativeTo: this.route });
+          window.location.reload();
           this.snackBar.open(response, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
         } else {
           this.snackBar.open('You have already uploaded document with same name.!', '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });

@@ -65,6 +65,7 @@
                                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                     <mat-error *ngIf="uploadForm.controls.password.errors?.required">Password is required</mat-error>
                                     <mat-error *ngIf="uploadForm.controls.password.hasError('minlength')">Password isn't long enough, minimum of 6 characters</mat-error>
+                                    <mat-error *ngIf="uploadForm.controls.password.hasError('maxlength')">Password cannot be longer than 10 characters</mat-error>
                                     <mat-error *ngIf="uploadForm.controls.password.hasError('pattern')">Password must contain at least one number, one uppercase, one lowercase letter & one special character & at least 6 characters.</mat-error>
                                 </mat-form-field>
                             </div>

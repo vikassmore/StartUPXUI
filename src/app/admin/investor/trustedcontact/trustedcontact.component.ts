@@ -198,8 +198,10 @@ export class TrustedcontactComponent implements OnInit {
     this.appService.add('api/TrustedContactPerson', trustedContactmodel1).subscribe((response) => {
       if (!Number.isNaN(response)) {
         this.snackBar.open(response, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
-        this.router.navigate(['/admin/investor/dashboardinvestor'], { relativeTo: this.route });
-      }
+        this.router.navigate(['/admin/investor/trustedcontact'], { relativeTo: this.route });
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);      }
       else {
         this.snackBar.open('Something went wrong..!', '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });
       }

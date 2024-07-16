@@ -106,9 +106,14 @@ export class FounderdetailsComponent implements OnInit {
         this.founderModel.push(model);
       }
       this.appService.addfounder('api/FounderDetail', this.founderModel).subscribe(data => {
+       
         this.snackBar.open('Saved successfully!', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
         this.router.navigate(['/admin/startup/listfounderdetails'], { relativeTo: this.route });
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       },
+      
         error => {
           this.snackBar.open('Something went wrong!', '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });
         });

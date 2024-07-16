@@ -36,7 +36,7 @@
             <mat-panel-description class="fx-desc">
               <div class="mat-header-cell text-left" fxFlex="12%" matTooltip="Series">{{series.seriesName}}</div>
               <div class="text-center" fxFlex="8%">{{series.shareClass}}</div>
-              <div class="text-center" fxFlex="10%">{{series.dateFinancing | date:'dd/MM/yyyy'}}</div>
+              <div class="text-center" fxFlex="10%">{{series.dateFinancing | date:'dd MMM, yyyy'}}</div>
               <div class="text-center" fxFlex="10%">{{series.sharesOutstanding}} M</div>
               <div class="text-center" fxFlex="10%">{{series.issuePrice | currency:'USD':'symbol'}}</div>
               <div class="text-center" fxFlex="10%">{{series.conversionPrice | currency:'USD':'symbol'}}</div>

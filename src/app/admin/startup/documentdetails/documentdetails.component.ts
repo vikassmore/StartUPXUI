@@ -69,7 +69,7 @@ export class DocumentdetailsComponent implements OnInit {
         if (index !== -1) {
           this.documentdetail.splice(index, 1);
           this.appService.deleteById(`api/FounderInvestorDocument?documentId=${doc.documentId}`, {}).subscribe(data => {
-
+            window.location.reload();
           });
         }
       }

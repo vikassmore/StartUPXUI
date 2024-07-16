@@ -85,7 +85,7 @@ export class ListfounderdetailsComponent implements OnInit {
         if (index !== -1) {
           this.founderdetail.splice(index, 1);
           this.appService.deleteById(`api/FounderDetail?founderId=${item.founderId}`, {}).subscribe(data => {
-
+            window.location.reload();
           });
         }
       }

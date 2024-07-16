@@ -68,6 +68,18 @@ export class AddfundingdetailsComponent implements OnInit {
       return true;
     }
   }
+
+  validatePaste(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const sanitizedValue = inputElement.value.replace(/[^0-9]/g, '');
+    if (sanitizedValue !== inputElement.value) {
+        inputElement.value = sanitizedValue;
+        const formControl = this.uploadForm.get('sharesOutstanding');
+        if (formControl) {
+            formControl.setValue(sanitizedValue);
+        }
+      }
+    }
   //On Submit
   public onSubmit(value: Object): void {
     if (this.uploadForm.valid) {
@@ -112,10 +124,14 @@ export class AddfundingdetailsComponent implements OnInit {
 
       }
       this.appService.add('api/FundingDetails/AddFunding', fundingDetailsmodel1).subscribe((response) => {
+    
         if (!Number.isNaN(response)) {
           if (response == "Record Saved Successfully.") {
             this.snackBar.open(response, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
             this.router.navigate(['/admin/startup/fundingdetails'], { relativeTo: this.route });
+            setTimeout(() => {
+              window.location.reload();
+            }, 1000);
           } else {
             this.snackBar.open(response, '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });
           }

@@ -127,6 +127,9 @@ export class QuestionnairedetailsComponent implements OnInit {
       if (!Number.isNaN(response)) {
         this.snackBar.open(response, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
         this.router.navigate(['/admin/investor/questionnaire'], { relativeTo: this.route });
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000); 
       }
       else {
         this.snackBar.open('Something went wrong..!', '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });

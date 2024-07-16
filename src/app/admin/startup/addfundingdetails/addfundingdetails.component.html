@@ -16,7 +16,7 @@
                                         <span>{{fund.name}}</span>
                                     </mat-option>
                                 </mat-select>
-                                <mat-error *ngIf="uploadForm.controls.fundingId.errors?.required">Please Select Series
+                                <mat-error *ngIf="uploadForm.controls.fundingId.errors?.required">Please select Series
                                     Name</mat-error>
                             </mat-form-field>
                         </div>
@@ -25,7 +25,7 @@
                             <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Share Class</mat-label>
                                 <input matInput formControlName="shareClass" required>
-                                <mat-error *ngIf="uploadForm.controls.shareClass.errors?.required">share Class
+                                <mat-error *ngIf="uploadForm.controls.shareClass.errors?.required">Share Class
                                     is
                                     required</mat-error>
                                 <mat-error *ngIf="uploadForm.controls.shareClass.hasError('maxlength')">Share Class
@@ -41,7 +41,7 @@
                                     Financing is
                                     required</mat-error>
                                 <mat-error *ngIf="uploadForm.controls.dateFinancing.hasError('maxlength')">Date
-                                    Financing
+                                   of Financing
                                     cannot exceed more than 50 characters</mat-error>
                             </mat-form-field>
                         </div>
@@ -52,7 +52,7 @@
                             <mat-form-field appearance="" class="w-100 w-101">
                                 <mat-label>Shares Outstanding (In Million)</mat-label>
                                 <input matInput formControlName="sharesOutstanding" required
-                                    (keypress)="keyPressNumbers($event)">
+                                    (keypress)="keyPressNumbers($event)" (input)="validatePaste($event)">
                                 <mat-error *ngIf="uploadForm.controls.sharesOutstanding.errors?.required">Shares
                                     Outstanding is
                                     required</mat-error>

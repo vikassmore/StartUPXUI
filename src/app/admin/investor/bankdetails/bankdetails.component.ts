@@ -95,6 +95,9 @@ export class BankdetailsComponent implements OnInit {
       if (!Number.isNaN(response)) {
         this.snackBar.open(response, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
         this.router.navigate(['/admin/investor/bankdetails'], { relativeTo: this.route });
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       }
       else {
         this.snackBar.open('Something went wrong..!', '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });
