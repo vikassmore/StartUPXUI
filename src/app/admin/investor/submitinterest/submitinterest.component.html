@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutGap="10px" class="container">
     <form [formGroup]="uploadForm" (ngSubmit)="onButtonClick(uploadForm.value)" autocomplete="off">
         <div fxFlex.gt-sm="100%" fxFlex.lt-md="100%" fxLayoutAlign="center center" class="grid-item">
-            <mat-stepper orientation="horizontal" class="w-100">
+            <mat-stepper orientation="horizontal" style="width: 100% !important;">
                 <mat-step>
                     <ng-template matStepContent>
                         <div fxLayout="column" fxLayoutGap="10px" class="container">
@@ -11,9 +11,9 @@
                                 </div>
                             </div>
                             <div fxFlex="100%" fxLayoutAlign="center center" fxFlexFill class="grid-item">
-                                <mat-form-field appearance="outline" class="w-100">
+                                <mat-form-field appearance="" class="w-100 w-101">
                                     <mat-label>Investment Value</mat-label>
-                                    <input matInput formControlName="indicateInterest" type="number" style="color: #000;">
+                                    <input matInput formControlName="indicateInterest" type="text" style="color: #000;">
                                     <mat-error *ngIf="uploadForm.controls.indicateInterest.errors?.required">
                                         Enter your Interested Investment
                                     </mat-error>

@@ -60,7 +60,8 @@
                     <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 132px; margin-left: 15px;"
                         [routerLink]="['../../../admin/investor/myinvestment']">
                         <div fxFlex="38" ffxFlex.sm="50" class="p-1">
-                            <img src="assets/images/bg/amount1.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1">
+                            <!-- <img src="assets/images/bg/amount1.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1"> -->
+                            <img src="assets/images/bg/funding.png" class="crdimg4">
                         </div>
                         <div fxFlex="62" ffxFlex.sm="50" class="p-1">
                             <div class="text-left" fxFlex="100" style="margin-top:35px;">
@@ -78,7 +79,8 @@
                     <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 132px;"
                         [routerLink]="['../../../admin/investor/mywatchlist']">
                         <div fxFlex="38" ffxFlex.sm="50" class="p-1">
-                            <img src="assets/images/bg/watchlist.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1">
+                            <!-- <img src="assets/images/bg/watchlist.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1"> -->
+                            <img src="assets/images/bg/watchlist.png" class="crdimg4">
                         </div>
                         <div fxFlex="62" ffxFlex.sm="50" class="p-1">
                             <div class="text-left" fxFlex="100" style="margin-top:35px;">
@@ -96,7 +98,8 @@
                     <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 132px;"
                         [routerLink]="['../../../admin/investor/mydocuments']">
                         <div fxFlex="38" ffxFlex.sm="50" class="p-1">
-                            <img src="assets/images/bg/documents.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1">
+                            <!-- <img src="assets/images/bg/documents.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1"> -->
+                            <img src="assets/images/bg/documents.png" class="crdimg4">
                         </div>
                         <div fxFlex="62" ffxFlex.sm="50" class="p-1">
                             <div class="text-left" fxFlex="100" style="margin-top:35px;">
@@ -173,9 +176,10 @@
         <div fxFlex="100" fxFlex.gt-sm="10" fxFlex.sm="50">
             <div fxFlex="100" fxFlex.gt-sm="15" fxFlex.sm="50" class="p-1">
                 <div class=" " style=" text-align: center;">
-                    <button color="primary" class="btnverify1 mt-1 btnsv" mat-raised-button type="button"
+                    <button color="primary" class="btnverify1 mt-1 btnsv" mat-raised-button type="button" style="color: #0a194e !important;"
                         [disabled]="buttonDisabled" matTooltip="Send For Verification" (click)="senForVerification();">
-                        <h4 style="line-height: 1.3;margin-bottom: 5px;"><i class="fa fa-hand-o-up oktick" aria-hidden="true"></i><br>Send For<br>Verification</h4>
+                        <img src="assets/images/bg/sfv.png" class="crdimg5">
+                        <h4 style="line-height: 1.3;margin-bottom: 5px;" class="crdh5">Send For<br>Verification</h4>
                     </button>
                 </div>
             </div>
@@ -184,6 +188,15 @@
     </div>
 
     <!-- <mat-divider></mat-divider> -->
+
+    <div fxLayout="row wrap text-right ftright" style="float: right;" #resizedDiv class="p-1">
+        <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="text-center" fxFlexFill class="grid-item">
+            <button [disabled]="investmentDisabled" mat-raised-button color="primary" type="button"
+                class="explr explrbtn" [routerLink]="['../../../admin/investor/discoverlist']"><i class="fa fa-binoculars"
+                aria-hidden="true"></i>&nbsp;&nbsp; | &nbsp;&nbsp;Investment Opportunities
+            </button>
+        </div>
+    </div>
 
     <mat-tab-group class="crdtabs">
         <mat-tab label="Discover Startups"  style="width: 25%;">
@@ -208,14 +221,7 @@
                     </mat-card>
                 </div>
             </div>
-            <div fxLayout="row wrap text-right ftright" style="float: right;" #resizedDiv class="p-1">
-                <div fxFlex.gt-sm="100%" fxFlex.lt-md="50%" fxLayoutAlign="text-center" fxFlexFill class="grid-item">
-                    <button [disabled]="investmentDisabled" mat-raised-button color="primary" type="button"
-                        class="explr " style="width: 100%;"[routerLink]="['../../../admin/investor/discoverlist']"><i class="fa fa-binoculars"
-                        aria-hidden="true"></i>&nbsp;&nbsp; | &nbsp;&nbsp;Investment Opportunities
-                    </button>
-                </div>
-            </div>
+         
         </mat-tab>
         <!-- <mat-tab label="Services" style="width: 25%;">
             <div fxLayout="row wrap" #resizedDiv>

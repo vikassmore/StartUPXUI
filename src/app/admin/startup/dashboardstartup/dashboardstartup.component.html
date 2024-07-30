@@ -62,7 +62,8 @@
                     <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 123px; margin-left: 15px;"
                         [routerLink]="['../../../admin/startup/listfounderdetails']">
                         <div fxFlex="35" ffxFlex.sm="50" class="p-1 ">
-                            <img src="assets/images/bg/founder1.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1">
+                            <!-- <img src="assets/images/bg/founder1.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1"> -->
+                            <img src="assets/images/bg/founders.png" class="crdimg4">
                         </div>
                         <div fxFlex="65" ffxFlex.sm="50" class="p-1">
                             <div class="text-center" fxFlex="100" style="margin-top:28px;">
@@ -79,7 +80,8 @@
                     <div fxLayout="row wrap" fxFlex="100" style=" cursor: pointer;    height: 123px;"
                         [routerLink]="['../../../admin/startup/fundingdetails']">
                         <div fxFlex="35" ffxFlex.sm="50" class="p-1">
-                            <img src="assets/images/bg/amount1.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1">
+                            <!-- <img src="assets/images/bg/amount1.jpg" class="img1 crdimg mtt-25 mtbb-30 mt-1"> -->
+                            <img src="assets/images/bg/funding.png" class="crdimg4">
                         </div>
                         <div fxFlex="65" ffxFlex.sm="50" class="p-1">
                             <div class="text-center" fxFlex="100" style="margin-top:28px;">
@@ -156,9 +158,10 @@
         <div fxFlex="100" fxFlex.gt-sm="17" fxFlex.sm="50" style="display: block; cursor: pointer; ">
             <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1">
                 <div class="relative" style=" text-align: center;">
-                    <button color="primary" class="btnverify1 mt-1 btnsv" mat-raised-button [disabled]="buttonDisabled"
+                    <button color="primary" class="btnverify1 mt-1 btnsv" mat-raised-button [disabled]="buttonDisabled" style="color: #0a194e !important;"
                         matTooltip="Send For Verification" (click)="senForVerification();">
-                        <h4 style="line-height: 1.3;margin-bottom: 5px;"><i class="fa fa-hand-o-up oktick" aria-hidden="true"></i><br>Send For<br>Verification</h4>
+                        <img src="assets/images/bg/sfv.png" class="crdimg5">
+                        <h4 style="line-height: 1.3;margin-bottom: 5px;" class="crdh5">Send For<br>Verification</h4>
                     </button>
                 </div>
             </div>
@@ -166,9 +169,10 @@
         <div fxFlex="100" fxFlex.gt-sm="17" fxFlex.sm="50" style="display: block; cursor: pointer;     margin-left: -15px;">
             <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="50" class="p-1">
                 <div class="relative " style=" text-align: center;">
-                    <button color="primary" class="btnverify1 mt-1 btnsv" mat-raised-button
+                    <button color="primary" class="btnverify1 mt-1 btnsv" mat-raised-button style="color: #0a194e !important;"
                         [disabled]="raisebuttonDisabled" matTooltip="Raise Funding" (click)="raiseFunding();">
-                        <h4 style="line-height: 1.3;margin-bottom: 5px;"><i class="fa fa-money oktick" aria-hidden="true"></i><br>Raise<br>Funding</h4>
+                        <img src="assets/images/bg/rf.png" class="crdimg5">
+                        <h4 style="line-height: 1.3;margin-bottom: 5px;" class="crdh5">Raise<br>Funding</h4>
                     </button>
                 </div>
             </div>
