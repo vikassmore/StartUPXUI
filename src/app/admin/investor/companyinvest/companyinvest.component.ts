@@ -12,6 +12,7 @@ import { InvestorInvestmentModel } from './InvestorInvestment.Model';
 import { Chart, registerables } from 'chart.js';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
+import { OtherCompaniespopupComponent } from '../other-companiespopup/other-companiespopup.component';
 
 @Component({
   selector: 'app-companyinvest',
@@ -113,6 +114,12 @@ export class CompanyinvestComponent implements OnInit {
   uploadForm = new FormGroup({
     onWatchList: new FormControl(),
   });
+
+  openDialogOtherCompanies(): void {
+    const dialogRef = this.dialog.open(OtherCompaniespopupComponent, {
+      width: '60vh',
+    });
+  }
   constructor(public dialog: MatDialog, public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router, private _authService: AuthenticationService, public formBuilder: FormBuilder, private tokenStorage: TokenStorageService, private sanitizer: DomSanitizer, private decimalPipe: DecimalPipe) { Chart.register(...registerables); }
 
   ngOnInit(): void {

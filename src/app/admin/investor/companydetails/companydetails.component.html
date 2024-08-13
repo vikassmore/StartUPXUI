@@ -330,7 +330,7 @@
                 <br>
                 <div fxLayout="row wrap " #resizedDiv style="margin-left: 40px;margin-top: 20px;">
                     <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.sm="100"  *ngFor="let item of compitetorFounderList"
-                        [routerLink]="['../../../admin/investor/companydetails']" style="cursor:pointer">
+                       style="cursor:pointer">
                         <mat-card class="p-0 Divbg4 mat-expansion-panel">
                             <div fxLayout="row wrap" fxFlex="100" class=" mt-1">
                                 <div fxFlex="10" ffxFlex.sm="50" class="p-1">
@@ -360,7 +360,7 @@
                                 </div>
                                 <div fxFlex="25" ffxFlex.sm="50" class="p-1">
                                     <div class="text-center mt-10" fxFlex="100">
-                                        <a class="invbtn explr ">Learn More</a>
+                                        <a class="invbtn explr "  (click)="openDialog()">Learn More</a>
                                     </div>
                                 </div>
                             </div>

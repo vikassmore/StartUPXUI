@@ -8,6 +8,8 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DecimalPipe } from '@angular/common';
+import { OtherCompaniespopupComponent } from '../other-companiespopup/other-companiespopup.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-companydetails',
@@ -52,7 +54,13 @@ export class CompanydetailsComponent implements OnInit {
   MinimumInvestmentSize: string;
   formType: string | any;
   previewUrl: any;
-  constructor(public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router, private _authService: AuthenticationService, public formBuilder: FormBuilder, private tokenStorage: TokenStorageService, private sanitizer: DomSanitizer, private decimalPipe: DecimalPipe) { }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(OtherCompaniespopupComponent, {
+      width: '60vh',
+    });
+  }
+  constructor(public dialog: MatDialog,public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router, private _authService: AuthenticationService, public formBuilder: FormBuilder, private tokenStorage: TokenStorageService, private sanitizer: DomSanitizer, private decimalPipe: DecimalPipe) { }
 
   ngOnInit(): void {
     if (this.route.snapshot.params['id'] == 1) {

@@ -12,6 +12,7 @@ import { InvestorInvestmentModel } from '../companyinvest/InvestorInvestment.Mod
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 import { SubmitinterestComponent } from '../submitinterest/submitinterest.component';
+import { OtherCompaniespopupComponent } from '../other-companiespopup/other-companiespopup.component';
 
 @Component({
   selector: 'app-companyinterest',
@@ -52,10 +53,20 @@ export class CompanyinterestComponent implements OnInit {
   investorProfileCompetion: string | any;
   verified: boolean;
   investorList: any = [];
+
+
+
+  
   uploadForm = new FormGroup({
     onWatchList: new FormControl(),
 
   });
+
+  openDialogOtherCompanies(): void {
+    const dialogRef = this.dialog.open(OtherCompaniespopupComponent, {
+      width: '60vh',
+    });
+  }
   constructor(public dialog: MatDialog, public appService: AppService, public snackBar: MatSnackBar, private route: ActivatedRoute, private router: Router, private _authService: AuthenticationService, public formBuilder: FormBuilder, private tokenStorage: TokenStorageService, private sanitizer: DomSanitizer, private decimalPipe: DecimalPipe) { }
 
   ngOnInit(): void {

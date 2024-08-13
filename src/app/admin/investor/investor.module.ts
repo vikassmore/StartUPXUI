@@ -26,6 +26,7 @@ import { MydocumentsComponent } from './mydocuments/mydocuments.component';
 import { CompanyinterestComponent } from './companyinterest/companyinterest.component';
 import { AdddocumentsComponent } from './adddocuments/adddocuments.component';
 import { RequestofferingComponent } from './requestoffering/requestoffering.component';
+import { OtherCompaniespopupComponent } from './other-companiespopup/other-companiespopup.component';
 
 
 export const routes = [
@@ -74,7 +75,8 @@ export const routes = [
     MydocumentsComponent,
     CompanyinterestComponent,
     AdddocumentsComponent,
-    RequestofferingComponent
+    RequestofferingComponent,
+    OtherCompaniespopupComponent
   ],
   imports: [
     CommonModule,
